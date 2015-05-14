@@ -1,7 +1,7 @@
 Pitaya
 --
 
-Pitaya is an HTTP networking library written in Swift which tastes sweet.
+Pitaya is a HTTP networking library written in Swift which tastes sweet.
 
 ![Pitaya logo](http://lvwenhan.com/content/uploadfile/201505/d1591431607600.png)
 
