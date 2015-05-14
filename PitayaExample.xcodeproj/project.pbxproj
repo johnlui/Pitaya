@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; };
+		463712331B04C4EA0019E1AB /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46C7CAC21B04AA4000CC3B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */; };
+		46C7CAC41B04AA4000CC3B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC31B04AA4000CC3B70 /* ViewController.swift */; };
+		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
+		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
+		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
+		46C7CAD81B04AA4000CC3B70 /* PitayaExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		463712261B04C20E0019E1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 463712051B04C2050019E1AB;
+			remoteInfo = Pitaya;
+		};
+		463712281B04C20E0019E1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 463712101B04C2050019E1AB;
+			remoteInfo = PitayaTests;
+		};
+		4637122F1B04C48C0019E1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 463712041B04C2050019E1AB;
+			remoteInfo = Pitaya;
+		};
+		46C7CAD21B04AA4000CC3B70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46C7CAB41B04AA4000CC3B70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46C7CABB1B04AA4000CC3B70;
+			remoteInfo = PitayaExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		463712321B04C4DF0019E1AB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				463712331B04C4EA0019E1AB /* Pitaya.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		463712211B04C20D0019E1AB /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = Pitaya/Pitaya.xcodeproj; sourceTree = "<group>"; };
+		46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitayaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C7CAC01B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46C7CAC31B04AA4000CC3B70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitayaExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C7CAD61B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitayaExampleTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46C7CAB91B04AA4000CC3B70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46C7CACE1B04AA4000CC3B70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		463712221B04C20D0019E1AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				463712271B04C20E0019E1AB /* Pitaya.framework */,
+				463712291B04C20E0019E1AB /* PitayaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46C7CAB31B04AA4000CC3B70 = {
+			isa = PBXGroup;
+			children = (
+				463712211B04C20D0019E1AB /* Pitaya.xcodeproj */,
+				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
+				46C7CAD41B04AA4000CC3B70 /* PitayaExampleTests */,
+				46C7CABD1B04AA4000CC3B70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46C7CABD1B04AA4000CC3B70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */,
+				46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46C7CABE1B04AA4000CC3B70 /* PitayaExample */ = {
+			isa = PBXGroup;
+			children = (
+				46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */,
+				46C7CAC31B04AA4000CC3B70 /* ViewController.swift */,
+				46C7CAC51B04AA4000CC3B70 /* Main.storyboard */,
+				46C7CAC81B04AA4000CC3B70 /* Images.xcassets */,
+				46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */,
+				46C7CABF1B04AA4000CC3B70 /* Supporting Files */,
+			);
+			path = PitayaExample;
+			sourceTree = "<group>";
+		};
+		46C7CABF1B04AA4000CC3B70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46C7CAC01B04AA4000CC3B70 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46C7CAD41B04AA4000CC3B70 /* PitayaExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */,
+				46C7CAD51B04AA4000CC3B70 /* Supporting Files */,
+			);
+			path = PitayaExampleTests;
+			sourceTree = "<group>";
+		};
+		46C7CAD51B04AA4000CC3B70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46C7CAD61B04AA4000CC3B70 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46C7CABB1B04AA4000CC3B70 /* PitayaExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46C7CADB1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExample" */;
+			buildPhases = (
+				46C7CAB81B04AA4000CC3B70 /* Sources */,
+				46C7CAB91B04AA4000CC3B70 /* Frameworks */,
+				46C7CABA1B04AA4000CC3B70 /* Resources */,
+				463712321B04C4DF0019E1AB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				463712301B04C48C0019E1AB /* PBXTargetDependency */,
+			);
+			name = PitayaExample;
+			productName = PitayaExample;
+			productReference = 46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46C7CAD01B04AA4000CC3B70 /* PitayaExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46C7CADE1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExampleTests" */;
+			buildPhases = (
+				46C7CACD1B04AA4000CC3B70 /* Sources */,
+				46C7CACE1B04AA4000CC3B70 /* Frameworks */,
+				46C7CACF1B04AA4000CC3B70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46C7CAD31B04AA4000CC3B70 /* PBXTargetDependency */,
+			);
+			name = PitayaExampleTests;
+			productName = PitayaExampleTests;
+			productReference = 46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46C7CAB41B04AA4000CC3B70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "http://lvwenhan.com";
+				TargetAttributes = {
+					46C7CABB1B04AA4000CC3B70 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					46C7CAD01B04AA4000CC3B70 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 46C7CABB1B04AA4000CC3B70;
+					};
+				};
+			};
+			buildConfigurationList = 46C7CAB71B04AA4000CC3B70 /* Build configuration list for PBXProject "PitayaExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46C7CAB31B04AA4000CC3B70;
+			productRefGroup = 46C7CABD1B04AA4000CC3B70 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 463712221B04C20D0019E1AB /* Products */;
+					ProjectRef = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				46C7CABB1B04AA4000CC3B70 /* PitayaExample */,
+				46C7CAD01B04AA4000CC3B70 /* PitayaExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		463712271B04C20E0019E1AB /* Pitaya.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pitaya.framework;
+			remoteRef = 463712261B04C20E0019E1AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		463712291B04C20E0019E1AB /* PitayaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PitayaTests.xctest;
+			remoteRef = 463712281B04C20E0019E1AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46C7CABA1B04AA4000CC3B70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
+				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
+				46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46C7CACF1B04AA4000CC3B70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46C7CAB81B04AA4000CC3B70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C7CAC41B04AA4000CC3B70 /* ViewController.swift in Sources */,
+				46C7CAC21B04AA4000CC3B70 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46C7CACD1B04AA4000CC3B70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46C7CAD81B04AA4000CC3B70 /* PitayaExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		463712301B04C48C0019E1AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Pitaya;
+			targetProxy = 4637122F1B04C48C0019E1AB /* PBXContainerItemProxy */;
+		};
+		46C7CAD31B04AA4000CC3B70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46C7CABB1B04AA4000CC3B70 /* PitayaExample */;
+			targetProxy = 46C7CAD21B04AA4000CC3B70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		46C7CAC51B04AA4000CC3B70 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46C7CAC61B04AA4000CC3B70 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46C7CACB1B04AA4000CC3B70 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46C7CAD91B04AA4000CC3B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46C7CADA1B04AA4000CC3B70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46C7CADC1B04AA4000CC3B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PitayaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46C7CADD1B04AA4000CC3B70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PitayaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		46C7CADF1B04AA4000CC3B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PitayaExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PitayaExample.app/PitayaExample";
+			};
+			name = Debug;
+		};
+		46C7CAE01B04AA4000CC3B70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PitayaExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PitayaExample.app/PitayaExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46C7CAB71B04AA4000CC3B70 /* Build configuration list for PBXProject "PitayaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46C7CAD91B04AA4000CC3B70 /* Debug */,
+				46C7CADA1B04AA4000CC3B70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46C7CADB1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46C7CADC1B04AA4000CC3B70 /* Debug */,
+				46C7CADD1B04AA4000CC3B70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46C7CADE1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46C7CADF1B04AA4000CC3B70 /* Debug */,
+				46C7CAE01B04AA4000CC3B70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46C7CAB41B04AA4000CC3B70 /* Project object */;
+}
