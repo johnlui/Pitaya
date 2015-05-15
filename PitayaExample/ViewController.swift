@@ -27,7 +27,13 @@ class ViewController: UIViewController {
             }) { (string) -> Void in
                 println(string)
         }
-        Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", ["get": "pitaya"], { (error) -> Void in
+        Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya"], { (error) -> Void in
+            NSLog(error.localizedDescription)
+            }) { (string) -> Void in
+                println(string)
+        }
+        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!)!)
+        Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (string) -> Void in
                 println(string)

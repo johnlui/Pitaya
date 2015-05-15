@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CEBE458D-31D5-42A3-99AD-74183C2D9426</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PitayaExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C11A99CED67E3C7772539BCD7615F4015EFE00E7</key>
+		<string>github.com:johnlui/Pitaya.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PitayaExample.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C11A99CED67E3C7772539BCD7615F4015EFE00E7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:johnlui/Pitaya.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C11A99CED67E3C7772539BCD7615F4015EFE00E7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C11A99CED67E3C7772539BCD7615F4015EFE00E7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PitayaExample</string>
+		</dict>
+	</array>
+</dict>
+</plist>

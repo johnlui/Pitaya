@@ -21,8 +21,7 @@ class PitayaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
+    func testBaseRequest() {
         // Basic GET and POST
         Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
@@ -34,8 +33,9 @@ class PitayaTests: XCTestCase {
             }) { (string) -> Void in
                 XCTAssert(string == "", "POST should success and return empty string with no params")
         }
-        
-        
+    }
+    
+    func testRequestWithParams() {
         // GET and POST with params
         let param1 = randomStringWithLength(200)
         let param2 = randomStringWithLength(200)
@@ -50,8 +50,22 @@ class PitayaTests: XCTestCase {
             }) { (string) -> Void in
                 XCTAssert(string == param1 + param2, "POST should success and return the string with the param key 'get'")
         }
-        
-        // TODO: file upload test case
+    }
+    func testFileUpload() {
+        /* --------------------------
+        *    NOTICE: you must copy Pitaya.png in "Supporting Files" directory to /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents
+        *  --------------------------
+        */
+        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!)!)
+        Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], { (error) -> Void in
+            XCTAssert(false, error.localizedDescription)
+            }) { (string) -> Void in
+                XCTAssert(string == "1", "file upload")
+        }
+    }
+    
+    func testWait() {
+        sleep(5) // wait Network for 5 seconds
     }
     
     func testPerformanceExample() {

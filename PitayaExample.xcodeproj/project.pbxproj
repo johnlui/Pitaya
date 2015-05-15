@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; };
 		463712331B04C4EA0019E1AB /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46C0F1C31B05CC3B004786D5 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C0F1C21B05CC3B004786D5 /* Pitaya.png */; };
 		46C7CAC21B04AA4000CC3B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */; };
 		46C7CAC41B04AA4000CC3B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC31B04AA4000CC3B70 /* ViewController.swift */; };
 		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		463712211B04C20D0019E1AB /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = Pitaya/Pitaya.xcodeproj; sourceTree = "<group>"; };
+		46C0F1C21B05CC3B004786D5 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitayaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C7CAC01B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		46C7CABF1B04AA4000CC3B70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46C0F1C21B05CC3B004786D5 /* Pitaya.png */,
 				46C7CAC01B04AA4000CC3B70 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
+				46C0F1C31B05CC3B004786D5 /* Pitaya.png in Resources */,
 				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
 				46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */,
 			);
