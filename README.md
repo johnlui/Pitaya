@@ -3,13 +3,14 @@ Pitaya
 
 Pitaya is a HTTP networking library written in Swift which tastes sweet.
 
-![Pitaya logo](http://lvwenhan.com/content/uploadfile/201505/d1591431607600.png)
+![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.png)
 
 ##Features
 
 - [x] Fast file upload through "Content-Type: multipart/form-data"
-- [x] Support all HTTP methods
+- [x] All HTTP methods Supports
 - [x] Multi-level API to keep your code clean
+- [x] Well tested
 
 ##Requirements
 
@@ -18,7 +19,11 @@ Pitaya is a HTTP networking library written in Swift which tastes sweet.
 
 ##Installation
 
-You can only install Pitaya manually now, just like: https://github.com/Alamofire/Alamofire#manually
+```bash
+git clone https://github.com/johnlui/Pitaya
+open Pitaya/Pitaya
+```
+then drag Pitaya.xcodeproj to your Project, that's it!
 
 ##Usage
 
