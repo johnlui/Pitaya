@@ -51,8 +51,8 @@ upload files:
 
 ```swift
 let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
-Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], { () -> Void in
-    println("Error")
+Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], { (error) -> Void in
+    NSLog(error.localizedDescription)
     }) { (string) -> Void in
         println(string)
 }
@@ -62,8 +62,8 @@ POST params and files:
 
 ```swift
 let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
-Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], { () -> Void in
-    println("Error")
+Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], { (error) -> Void in
+    NSLog(error.localizedDescription)
     }) { (string) -> Void in
         println(string)
 }
