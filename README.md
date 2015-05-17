@@ -1,6 +1,10 @@
 Pitaya
 --
 
+[![Carthage Compatibility](https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat)][carthage]
+[![License](https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat)][cocoadocs]
+[![Platform](https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat)][cocoadocs]
+
 Pitaya is a sweet HTTP networking library especially for large file uploads written in Swift. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 
 ![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.png)
