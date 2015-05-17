@@ -88,6 +88,7 @@ Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pit
 }
 ```
 
+###they are all Asynchronous now.
 
 ##Contribution
 
