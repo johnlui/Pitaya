@@ -19,6 +19,25 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 
 ##Installation
 
+###Carthage
+
+Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with Homebrew using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Pitaya into your Xcode project using Carthage, specify it in your Cartfile:
+
+```
+github "JohnLui/Pitaya" >= 0.1
+```
+
+###Manually
+
 ```bash
 git clone https://github.com/johnlui/Pitaya
 open Pitaya/Pitaya
