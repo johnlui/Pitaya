@@ -12,7 +12,7 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 ##Features
 
 - [x] Fast file upload through "Content-Type: multipart/form-data"
-- [x] All HTTP methods Supports
+- [x] HTTP Basic Authorization supported
 - [x] Multi-level API to keep your code clean
 - [x] Well tested
 
@@ -36,7 +36,7 @@ $ brew install carthage
 
 To integrate Pitaya into your Xcode project using Carthage, specify it in your Cartfile:
 
-```
+```json
 github "JohnLui/Pitaya" >= 0.1
 ```
 
@@ -50,7 +50,7 @@ then drag Pitaya.xcodeproj to your Project, that's it!
 
 ##Usage
 
-Make a request:
+####Make a request:
 
 ```swift
 Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
@@ -60,7 +60,7 @@ Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> V
 }
 ```
 
-with params:
+####with params:
 
 ```swift
 Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", ["get": "pitaya"], { (error) -> Void in
@@ -70,7 +70,7 @@ Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", ["get": "pitay
 }
 ```
 
-upload files:
+####upload files:
 
 ```swift
 let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
@@ -81,7 +81,7 @@ Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file]
 }
 ```
 
-POST params and files:
+####POST params and files:
 
 ```swift
 let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
@@ -92,7 +92,20 @@ Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pit
 }
 ```
 
-###they are all Asynchronous now.
+####HTTP Basic Authorization
+
+
+```swift
+let pitaya = PitayaClass.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
+    NSLog(error.localizedDescription)
+}) { (string) -> Void in
+    println(string)
+}
+```
+
+
+###They are all Asynchronous.
 
 ##Contribution
 
