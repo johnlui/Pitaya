@@ -65,7 +65,7 @@ class PitayaTests: XCTestCase {
     }
     
     func testAuth() {
-        let pitaya = PitayaClass.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+        let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
         pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
         }) { (string) -> Void in

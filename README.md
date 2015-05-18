@@ -96,7 +96,7 @@ Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pit
 
 
 ```swift
-let pitaya = PitayaClass.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
 pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
 }) { (string) -> Void in

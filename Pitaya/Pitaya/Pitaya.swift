@@ -20,19 +20,19 @@ extension String {
 }
 
 public func request(method: HTTPMethod, url: String, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = PitayaClass(url: url, method: method, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = PitayaClass(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = PitayaClass(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = PitayaClass(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 
@@ -53,7 +53,7 @@ public struct File {
         self.url = url
     }
 }
-public class PitayaClass {
+public class PitayaManager {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
@@ -95,8 +95,8 @@ public class PitayaClass {
         self.errorCallback = errorCallback
         self.callback = callback
     }
-    public static func build(method: HTTPMethod, url: String) -> PitayaClass {
-        return PitayaClass(url: url, method: method)
+    public static func build(method: HTTPMethod, url: String) -> PitayaManager {
+        return PitayaManager(url: url, method: method)
     }
     public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
         self.errorCallback = errorCallback
