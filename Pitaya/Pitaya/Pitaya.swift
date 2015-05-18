@@ -12,22 +12,27 @@ extension String {
     var nsdata: NSData {
         return self.dataUsingEncoding(NSUTF8StringEncoding)!
     }
+    var base64: String! {
+        let utf8EncodeData: NSData! = self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        let base64EncodingData = utf8EncodeData.base64EncodedStringWithOptions(nil)
+        return base64EncodingData
+    }
 }
 
 public func request(method: HTTPMethod, url: String, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = Pitaya(url: url, method: method, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaClass(url: url, method: method, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = Pitaya(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaClass(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = Pitaya(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaClass(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
-    let pitaya = Pitaya(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
+    let pitaya = PitayaClass(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
 
@@ -48,15 +53,15 @@ public struct File {
         self.url = url
     }
 }
-class Pitaya {
+public class PitayaClass {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
     let method: String!
-    let params: Dictionary<String, AnyObject>
-    let files: Array<File>
-    let errorCallback: (error: NSError) -> Void
-    let callback:(string: String) -> Void
+    var params: Dictionary<String, AnyObject>
+    var files: Array<File>
+    var errorCallback: ((error: NSError) -> Void)?
+    var callback: ((string: String) -> Void)?
     
     let session = NSURLSession.sharedSession()
     let url: String!
@@ -81,7 +86,7 @@ class Pitaya {
         return "Pitaya"
         }()
     
-    init(url: String, method: HTTPMethod!, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(String) -> Void) {
+    init(url: String, method: HTTPMethod!, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> = Array<File>(), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
         self.url = url
         self.request = NSMutableURLRequest(URL: NSURL(string: url)!)
         self.method = method.rawValue
@@ -89,6 +94,19 @@ class Pitaya {
         self.files = files
         self.errorCallback = errorCallback
         self.callback = callback
+    }
+    public static func build(method: HTTPMethod, url: String) -> PitayaClass {
+        return PitayaClass(url: url, method: method)
+    }
+    public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
+        self.errorCallback = errorCallback
+        self.callback = callback
+        
+        buildRequest()
+        let authString = "Basic " + (auth.0 + ":" + auth.1).base64
+        self.request.addValue(authString, forHTTPHeaderField: "Authorization")
+        buildBody()
+        fireTask()
     }
     func fire() {
         buildRequest()
@@ -100,14 +118,17 @@ class Pitaya {
             if error != nil {
                 let e = NSError(domain: self.errorDomain, code: error.code, userInfo: error.userInfo)
                 NSLog(e.localizedDescription)
-                self.errorCallback(error: e)
+                self.errorCallback?(error: e)
             } else {
                 if let httpResponse = response as? NSHTTPURLResponse {
                     let code = httpResponse.statusCode
+                    if code == 401 {
+                        self.errorCallback?(error: NSError(domain: self.errorDomain, code: 401, userInfo: nil))
+                    }
                     println("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))")
                 }
                 let string = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                self.callback(string: string)
+                self.callback?(string: string)
             }
         })
         task.resume()

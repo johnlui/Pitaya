@@ -64,6 +64,14 @@ class PitayaTests: XCTestCase {
         }
     }
     
+    func testAuth() {
+        let pitaya = PitayaClass.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+        pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
+            XCTAssert(false, error.localizedDescription)
+        }) { (string) -> Void in
+        }
+    }
+    
     func testWait() {
         sleep(5) // wait Network for 5 seconds
     }
