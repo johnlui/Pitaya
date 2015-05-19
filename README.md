@@ -25,7 +25,7 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 
 ###Carthage
 
-Carthage is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
 You can install Carthage with Homebrew using the following command:
 
@@ -104,8 +104,28 @@ pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
 }
 ```
 
-
 ###They are all Asynchronous.
+
+##Play with JSON
+
+You can use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse string to JSON:
+
+
+```swift
+extension String {
+    var nsdata: NSData {
+        return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    }
+}
+
+Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
+    NSLog(error.localizedDescription)
+    }) { (string) -> Void in
+        let json = JSON(data: string.nsdata)
+        ... ...
+}
+```
+
 
 ##Contribution
 
