@@ -98,6 +98,12 @@ public class PitayaManager {
     public static func build(method: HTTPMethod, url: String) -> PitayaManager {
         return PitayaManager(url: url, method: method)
     }
+    public func addParams(params: Dictionary<String, AnyObject>) {
+        self.params = params
+    }
+    public func addFiles(files: Array<File>) {
+        self.files = files
+    }
     public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
         self.errorCallback = errorCallback
         self.callback = callback
@@ -108,7 +114,10 @@ public class PitayaManager {
         buildBody()
         fireTask()
     }
-    func fire() {
+    public func fire(errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
+        self.errorCallback = errorCallback
+        self.callback = callback
+        
         buildRequest()
         buildBody()
         fireTask()

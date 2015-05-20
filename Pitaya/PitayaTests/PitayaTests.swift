@@ -43,12 +43,12 @@ class PitayaTests: XCTestCase {
         Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", ["get": param1, "get2": param2], { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (string) -> Void in
-                XCTAssert(string == param1 + param2, "GET should success and return the string with the param key 'get'")
+                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
         }
         Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": param1, "post2": param2], { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (string) -> Void in
-                XCTAssert(string == param1 + param2, "POST should success and return the string with the param key 'get'")
+                XCTAssert(string == param1 + param2, "POST should success and return the strings together")
         }
     }
     func testFileUpload() {
@@ -69,6 +69,38 @@ class PitayaTests: XCTestCase {
         pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
         }) { (string) -> Void in
+        }
+    }
+    
+    func testAddParamsFunction() {
+        let param1 = randomStringWithLength(200)
+        let param2 = randomStringWithLength(200)
+        
+        var pitaya = PitayaManager.build(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        pitaya.addParams(["get": param1, "get2": param2])
+        pitaya.fire(errorCallback: { (error) -> Void in
+            XCTAssert(false, error.localizedDescription)
+            }) { (string) -> Void in
+                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+        }
+        
+        pitaya = PitayaManager.build(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        pitaya.addParams(["post": param1, "post2": param2])
+        pitaya.fire(errorCallback: { (error) -> Void in
+            XCTAssert(false, error.localizedDescription)
+            }) { (string) -> Void in
+                XCTAssert(string == param1 + param2, "POST should success and return the strings together")
+        }
+    }
+    
+    func testAddFilesFunction() {
+        let pitaya = PitayaManager.build(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!)!)
+        pitaya.addFiles([file])
+        pitaya.fire(errorCallback: { (error) -> Void in
+            XCTAssert(false, error.localizedDescription)
+            }) { (string) -> Void in
+                XCTAssert(string == "1", "file upload")
         }
     }
     

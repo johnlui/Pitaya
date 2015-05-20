@@ -104,6 +104,25 @@ pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
 }
 ```
 
+####Params and Files with HTTP Basic Authorization
+
+```swift
+let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+
+// add params
+pitaya.addParams(["hello": "pitaya"])
+
+// add files
+let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!)!)
+pitaya.addFiles([file])
+
+pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
+    NSLog(error.localizedDescription)
+}) { (string) -> Void in
+    println(string)
+}
+```
+
 ###They are all Asynchronous.
 
 ##Play with JSON
