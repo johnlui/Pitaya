@@ -13,6 +13,7 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 
 - [x] Fast file upload through "Content-Type: multipart/form-data"
 - [x] HTTP Basic Authorization supported
+- [x] Asynchronous & Blocking(blocked in thread II)
 - [x] Multi-level API to keep your code clean
 - [x] Well tested
 
