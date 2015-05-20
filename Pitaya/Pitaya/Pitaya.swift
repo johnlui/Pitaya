@@ -115,8 +115,12 @@ public class PitayaManager {
         fireTask()
     }
     public func fire(errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
-        self.errorCallback = errorCallback
-        self.callback = callback
+        if let a = errorCallback {
+            self.errorCallback = a
+        }
+        if let a = callback {
+            self.callback = a
+        }
         
         buildRequest()
         buildBody()
