@@ -51,6 +51,14 @@ then drag Pitaya.xcodeproj to your Project, that's it!
 
 ##Usage
 
+###Import
+
+
+```swift
+import Pitaya
+```
+
+
 ####Make a request:
 
 ```swift
