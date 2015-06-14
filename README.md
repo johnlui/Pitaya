@@ -41,6 +41,8 @@ To integrate Pitaya into your Xcode project using Carthage, specify it in your C
 github "JohnLui/Pitaya" >= 0.1
 ```
 
+Then follow [this](https://github.com/Carthage/Carthage#if-youre-building-for-ios).
+
 ###Manually
 
 ```bash
