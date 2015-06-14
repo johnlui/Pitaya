@@ -41,7 +41,14 @@ To integrate Pitaya into your Xcode project using Carthage, specify it in your C
 github "JohnLui/Pitaya" >= 0.1
 ```
 
-Then follow [this](https://github.com/Carthage/Carthage#if-youre-building-for-ios).
+Then fetch and build Pitaya:
+
+```bash
+carthage update
+```
+
+At last, add it to "Embedded Binaries" in the general panel use the "Add Other..." button. The Pitaya.framework binary file is lying in `./Carthage/Build/iOS` directory.
+
 
 ###Manually
 
