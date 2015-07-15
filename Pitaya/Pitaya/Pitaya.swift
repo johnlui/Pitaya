@@ -57,6 +57,8 @@ public class PitayaManager {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
+    var HTTPBodyRaw = ""
+    
     let method: String!
     var params: Dictionary<String, AnyObject>
     var files: Array<File>
@@ -104,6 +106,9 @@ public class PitayaManager {
     public func addFiles(files: Array<File>) {
         self.files = files
     }
+    public func setHTTPBodyRaw(rawString: String) {
+        self.HTTPBodyRaw = rawString
+    }
     public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
         self.errorCallback = errorCallback
         self.callback = callback
@@ -148,7 +153,9 @@ public class PitayaManager {
     }
     func buildBody() {
         let data = NSMutableData()
-        if self.files.count > 0 {
+        if self.HTTPBodyRaw != "" {
+            data.appendData(self.HTTPBodyRaw.nsdata)
+        } else if self.files.count > 0 {
             if self.method == "GET" {
                 NSLog("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\n------------------------\n\n")
             }
@@ -180,7 +187,9 @@ public class PitayaManager {
         request.HTTPMethod = self.method
         
         // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
-        if self.files.count > 0 {
+        if self.HTTPBodyRaw != "" {
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        } else if self.files.count > 0 {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
         } else if self.params.count > 0 {
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

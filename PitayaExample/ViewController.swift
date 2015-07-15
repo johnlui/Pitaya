@@ -38,8 +38,9 @@ class ViewController: UIViewController {
             }) { (string) -> Void in
                 print(string)
         }
-        let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
-        pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
+        let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
+        pitaya.setHTTPBodyRaw("{\"fuck\":\"you\"}")
+        pitaya.fire({ (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (string) -> Void in
                 print(string)
