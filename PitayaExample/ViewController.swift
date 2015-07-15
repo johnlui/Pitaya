@@ -38,6 +38,12 @@ class ViewController: UIViewController {
             }) { (string) -> Void in
                 print(string)
         }
+        let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
+        pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
+            NSLog(error.localizedDescription)
+            }) { (string) -> Void in
+                print(string)
+        }
     }
 
 }
