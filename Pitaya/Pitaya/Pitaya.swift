@@ -71,15 +71,15 @@ public class PitayaManager {
     // User-Agent Header; see http://tools.ietf.org/html/rfc7231#section-5.5.3
     let userAgent: String = {
         if let info = NSBundle.mainBundle().infoDictionary {
-            let executable: AnyObject = info[kCFBundleExecutableKey] ?? "Unknown"
-            let bundle: AnyObject = info[kCFBundleIdentifierKey] ?? "Unknown"
-            let version: AnyObject = info[kCFBundleVersionKey] ?? "Unknown"
+            let executable: AnyObject = info[kCFBundleExecutableKey as String] ?? "Unknown"
+            let bundle: AnyObject = info[kCFBundleIdentifierKey as String] ?? "Unknown"
+            let version: AnyObject = info[kCFBundleVersionKey as String] ?? "Unknown"
             let os: AnyObject = NSProcessInfo.processInfo().operatingSystemVersionString ?? "Unknown"
             
             var mutableUserAgent = NSMutableString(string: "\(executable)/\(bundle) (\(version); OS \(os))") as CFMutableString
             let transform = NSString(string: "Any-Latin; Latin-ASCII; [:^ASCII:] Remove") as CFString
             if CFStringTransform(mutableUserAgent, nil, transform, 0) == 1 {
-                return mutableUserAgent as NSString as! String
+                return mutableUserAgent as NSString as String
             }
         }
         
@@ -129,7 +129,7 @@ public class PitayaManager {
     func fireTask() {
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if error != nil {
-                let e = NSError(domain: self.errorDomain, code: error.code, userInfo: error.userInfo)
+                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
                 NSLog(e.localizedDescription)
                 self.errorCallback?(error: e)
             } else {
@@ -138,9 +138,9 @@ public class PitayaManager {
                     if code == 401 {
                         self.errorCallback?(error: NSError(domain: self.errorDomain, code: 401, userInfo: nil))
                     }
-                    println("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))")
+                    print("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))", appendNewline: false)
                 }
-                let string = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 self.callback?(string: string)
             }
         })
@@ -196,7 +196,7 @@ public class PitayaManager {
             components += self.queryComponents(key, value)
         }
         
-        return join("&", components.map{"\($0)=\($1)"} as [String])
+        return "&".join(components.map{"\($0)=\($1)"} as [String])
     }
     func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
