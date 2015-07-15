@@ -14,7 +14,7 @@ extension String {
     }
     var base64: String! {
         let utf8EncodeData: NSData! = self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        let base64EncodingData = utf8EncodeData.base64EncodedStringWithOptions(nil)
+        let base64EncodingData = utf8EncodeData.base64EncodedStringWithOptions([])
         return base64EncodingData
     }
 }
@@ -27,11 +27,11 @@ public func request(method: HTTPMethod, url: String, params: Dictionary<String, 
     let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
     let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File> = Array<File>(), errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
     let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
@@ -191,7 +191,7 @@ public class PitayaManager {
     // stolen from Alamofire
     func buildParams(parameters: [String: AnyObject]) -> String {
         var components: [(String, String)] = []
-        for key in sorted(Array(parameters.keys), <) {
+        for key in Array(parameters.keys).sort(<) {
             let value: AnyObject! = parameters[key]
             components += self.queryComponents(key, value)
         }
