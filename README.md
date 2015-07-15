@@ -20,7 +20,8 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 ##Requirements
 
 * iOS 8.0+
-* Xcode 6.3 (Swift 1.2)
+* Xcode 6.3 (Swift 1.2) in [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
+* Xcode 7 (Swift 2.0) in [v0.3](https://github.com/johnlui/Pitaya/releases/tag/v0.3)
 
 ##Installation
 
