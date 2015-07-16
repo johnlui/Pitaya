@@ -19,19 +19,19 @@ extension String {
     }
 }
 
-public func request(method: HTTPMethod, url: String, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback:((string: String) -> Void)?) {
     let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((string: String) -> Void)? ) {
     let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((string: String) -> Void)?) {
     let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: (error: NSError) -> Void, callback:(string: String) -> Void) {
+public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((string: String) -> Void)? ) {
     let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
