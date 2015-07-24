@@ -19,19 +19,19 @@ extension String {
     }
 }
 
-public func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback:((string: String) -> Void)?) {
+public func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)?) {
     let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((string: String) -> Void)? ) {
+public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)? ) {
     let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((string: String) -> Void)?) {
+public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)?) {
     let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((string: String) -> Void)? ) {
+public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)? ) {
     let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
 }
@@ -63,7 +63,7 @@ public class PitayaManager {
     var params: Dictionary<String, AnyObject>
     var files: Array<File>
     var errorCallback: ((error: NSError) -> Void)?
-    var callback: ((string: String) -> Void)?
+    var callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)?
     
     let session = NSURLSession.sharedSession()
     let url: String!
@@ -88,7 +88,7 @@ public class PitayaManager {
         return "Pitaya"
         }()
     
-    init(url: String, method: HTTPMethod!, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> = Array<File>(), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
+    init(url: String, method: HTTPMethod!, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> = Array<File>(), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)? = nil) {
         self.url = url
         self.request = NSMutableURLRequest(URL: NSURL(string: url)!)
         self.method = method.rawValue
@@ -109,7 +109,7 @@ public class PitayaManager {
     public func setHTTPBodyRaw(rawString: String) {
         self.HTTPBodyRaw = rawString
     }
-    public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
+    public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)? = nil) {
         self.errorCallback = errorCallback
         self.callback = callback
         
@@ -119,7 +119,7 @@ public class PitayaManager {
         buildBody()
         fireTask()
     }
-    public func fire(errorCallback: ((error: NSError) -> Void)? = nil, callback: ((string: String) -> Void)? = nil) {
+    public func fire(errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)? = nil) {
         if let a = errorCallback {
             self.errorCallback = a
         }
@@ -139,20 +139,32 @@ public class PitayaManager {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.errorCallback?(error: e)
                 }
-            } else {
-                if let httpResponse = response as? NSHTTPURLResponse {
-                    let code = httpResponse.statusCode
-                    if code == 401 {
-                        self.errorCallback?(error: NSError(domain: self.errorDomain, code: 401, userInfo: nil))
-                    }
-                    print("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))\n", appendNewline: false)
-                }
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.callback?(string: string)
-                }
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.callback?(data: data, response: response as? NSHTTPURLResponse, error: error)
             }
         })
+//            { (data, response, error) -> Void in
+//            if error != nil {
+//                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
+//                NSLog(e.localizedDescription)
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.errorCallback?(error: e)
+//                }
+//            } else {
+//                if let httpResponse = response as? NSHTTPURLResponse {
+//                    let code = httpResponse.statusCode
+//                    if code == 401 {
+//                        self.errorCallback?(error: NSError(domain: self.errorDomain, code: 401, userInfo: nil))
+//                    }
+//                    print("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))\n", appendNewline: false)
+//                }
+//                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.callback?(string: string)
+//                }
+//            }
+//        })
         task.resume()
     }
     func buildBody() {
