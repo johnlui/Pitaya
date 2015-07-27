@@ -39,7 +39,7 @@ $ brew install carthage
 To integrate Pitaya into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```json
-github "JohnLui/Pitaya" >= 0.1
+github "JohnLui/Pitaya"
 ```
 
 Then fetch and build Pitaya:
