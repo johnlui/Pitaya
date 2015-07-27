@@ -72,42 +72,64 @@ import Pitaya
 ####Make a request:
 
 ```swift
-Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
+Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (string) -> Void in
-        println(string)
+    }) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
 ####with params:
 
 ```swift
-Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", ["get": "pitaya"], { (error) -> Void in
+Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (string) -> Void in
-        println(string)
+    }) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
 ####upload files:
 
 ```swift
-let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
-Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], { (error) -> Void in
+let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
+Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (string) -> Void in
-        println(string)
+    }) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
 ####POST params and files:
 
 ```swift
-let file = File(name: "photo", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Info", ofType: "plist")!)!)
-Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], { (error) -> Void in
+let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
+Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (string) -> Void in
-        println(string)
+    }) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
+}
+```
+
+####RAW HTTP BODY
+
+```swift
+let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
+pitaya.setHTTPBodyRaw("{\"fuck\":\"you\"}")
+pitaya.fire({ (error) -> Void in
+    NSLog(error.localizedDescription)
+    }) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
@@ -118,8 +140,10 @@ Pitaya.request(.POST, "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pit
 let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
 pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-}) { (string) -> Void in
-    println(string)
+}) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
@@ -132,13 +156,15 @@ let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/
 pitaya.addParams(["hello": "pitaya"])
 
 // add files
-let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!)!)
+let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
 pitaya.addFiles([file])
 
 pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-}) { (string) -> Void in
-    println(string)
+}) { (data, response, error) -> Void in
+        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+        print("HTTP body: " + string, appendNewline: true)
+        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
 }
 ```
 
