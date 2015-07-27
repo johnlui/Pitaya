@@ -144,27 +144,6 @@ public class PitayaManager {
                 self.callback?(data: data, response: response as? NSHTTPURLResponse, error: error)
             }
         })
-//            { (data, response, error) -> Void in
-//            if error != nil {
-//                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
-//                NSLog(e.localizedDescription)
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    self.errorCallback?(error: e)
-//                }
-//            } else {
-//                if let httpResponse = response as? NSHTTPURLResponse {
-//                    let code = httpResponse.statusCode
-//                    if code == 401 {
-//                        self.errorCallback?(error: NSError(domain: self.errorDomain, code: 401, userInfo: nil))
-//                    }
-//                    print("Pitaya HTTP Status: \(code) \(NSHTTPURLResponse.localizedStringForStatusCode(code))\n", appendNewline: false)
-//                }
-//                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    self.callback?(string: string)
-//                }
-//            }
-//        })
         task.resume()
     }
     func buildBody() {
