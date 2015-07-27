@@ -54,10 +54,12 @@ At last, add it to "Embedded Binaries" in the general panel use the "Add Other..
 ###Manually
 
 ```bash
-git clone https://github.com/johnlui/Pitaya
+git submodule add https://github.com/johnlui/Pitaya.git
 open Pitaya/Pitaya
 ```
 then drag Pitaya.xcodeproj to your Project, that's it!
+
+If you want to run your project on device with Pitaya, just go to PROJECT->TARGETS->[your prokect name]->General->Embedded Binaries, click ＋, select Pitaya.frameWork and click "Add".
 
 ##Usage
 
