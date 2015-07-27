@@ -19,6 +19,8 @@ extension String {
     }
 }
 
+public var DEBUG = false
+
 public func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?, error: NSError?) -> Void)?) {
     let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
     pitaya.fire()
@@ -132,10 +134,12 @@ public class PitayaManager {
         fireTask()
     }
     func fireTask() {
+        if DEBUG { NSLog("Pitaya Request HEADERS: " + request.allHTTPHeaderFields!.description) }
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            if DEBUG { NSLog("Pitaya Response: " + response!.description) }
             if error != nil {
                 let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
-                NSLog(e.localizedDescription)
+                NSLog("Pitaya Error: " + e.localizedDescription)
                 dispatch_async(dispatch_get_main_queue()) {
                     self.errorCallback?(error: e)
                 }

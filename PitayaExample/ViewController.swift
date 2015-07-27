@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
+        Pitaya.DEBUG = true
         Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response, error) -> Void in
