@@ -61,10 +61,14 @@ then drag Pitaya.xcodeproj to your Project, that's it!
 
 If you want to run your project on device with Pitaya, just go to PROJECT->TARGETS->[your prokect name]->General->Embedded Binaries, click ＋, select Pitaya.frameWork and click "Add".
 
+###Source File
+
+Drag Pitaya/Pitaya/Pitaya.swift into your project.
+
 ##Usage
 
 ###Import
-
+Only for sub-project using.
 
 ```swift
 import Pitaya
