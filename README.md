@@ -177,17 +177,11 @@ You can use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse stri
 
 
 ```swift
-extension String {
-    var nsdata: NSData {
-        return self.dataUsingEncoding(NSUTF8StringEncoding)!
-    }
-}
-
 Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (string) -> Void in
-        let json = JSON(data: string.nsdata)
-        ... ...
+    }) { (data, response, error) -> Void in
+        let json = JSON(data: data)
+        print(json["title"])
 }
 ```
 
