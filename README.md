@@ -60,7 +60,7 @@ If you want to run your project on device with Pitaya, just go to PROJECT->TARGE
 
 ###Source File
 
-Drag Pitaya/Pitaya/Pitaya.swift into your project.
+Drag `Pitaya/Pitaya/Pitaya.swift` into your project.
 
 ##Usage
 
