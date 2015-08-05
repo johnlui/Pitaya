@@ -47,7 +47,7 @@ class BasicAuthenticationTestCase: AuthenticationTestCase {
         let pitaya = PitayaManager.build(.GET, url: URLString)
         pitaya.fireWithBasicAuth(("invalid", "credentials"), errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 res = response
                 
                 expectation.fulfill()
@@ -67,7 +67,7 @@ class BasicAuthenticationTestCase: AuthenticationTestCase {
         let pitaya = PitayaManager.build(.GET, url: URLString)
         pitaya.fireWithBasicAuth((user, password), errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 res = response
                 
                 expectation.fulfill()

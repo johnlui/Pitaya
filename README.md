@@ -77,7 +77,7 @@ import Pitaya
 ```swift
 Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -89,7 +89,7 @@ Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCall
 ```swift
 Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -102,7 +102,7 @@ Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: 
 let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
 Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -115,7 +115,7 @@ Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [
 let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
 Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -129,7 +129,7 @@ let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
 pitaya.setHTTPBodyRaw("{\"fuck\":\"you\"}")
 pitaya.fire({ (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -143,7 +143,7 @@ pitaya.fire({ (error) -> Void in
 let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
 pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-}) { (data, response, error) -> Void in
+}) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -164,7 +164,7 @@ pitaya.addFiles([file])
 
 pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
     NSLog(error.localizedDescription)
-}) { (data, response, error) -> Void in
+}) { (data, response) -> Void in
         let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
         print("HTTP body: " + string, appendNewline: true)
         print("HTTP status: " + response!.statusCode.description, appendNewline: true)
@@ -181,7 +181,7 @@ You can use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse stri
 ```swift
 Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
     NSLog(error.localizedDescription)
-    }) { (data, response, error) -> Void in
+    }) { (data, response) -> Void in
         let json = JSON(data: data)
         print(json["title"])
 }

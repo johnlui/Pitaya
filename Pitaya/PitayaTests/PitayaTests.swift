@@ -25,13 +25,13 @@ class PitayaTests: XCTestCase {
         // Basic GET and POST
         Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "", "GET should success and return empty string with no params")
         }
         Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "", "POST should success and return empty string with no params")
         }
@@ -44,13 +44,13 @@ class PitayaTests: XCTestCase {
         
         Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["get": param1, "get2": param2], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
         }
         Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": param1, "post2": param2], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "POST should success and return the strings together")
         }
@@ -63,7 +63,7 @@ class PitayaTests: XCTestCase {
         let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
         Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "1", "file upload")
         }
@@ -75,7 +75,7 @@ class PitayaTests: XCTestCase {
         let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
         pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 res = response
                 
                 expectation.fulfill()
@@ -92,7 +92,7 @@ class PitayaTests: XCTestCase {
         pitaya.addParams(["get": param1, "get2": param2])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
         }
@@ -101,7 +101,7 @@ class PitayaTests: XCTestCase {
         pitaya.addParams(["post": param1, "post2": param2])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "POST should success and return the strings together")
         }
@@ -113,7 +113,7 @@ class PitayaTests: XCTestCase {
         pitaya.addFiles([file])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)
-            }) { (data, response, error) -> Void in
+            }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "1", "file upload")
         }
