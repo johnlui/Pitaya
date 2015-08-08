@@ -60,7 +60,7 @@ class PitayaTests: XCTestCase {
         *    NOTICE: you must copy Pitaya.png in "Supporting Files" directory to /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents
         *  --------------------------
         */
-        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
+        let file = File(name: "file", url: NSBundle(forClass: PitayaTests.self).URLForResource("Pitaya", withExtension: "png")!)
         Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
@@ -109,7 +109,7 @@ class PitayaTests: XCTestCase {
     
     func testAddFilesFunction() {
         let pitaya = PitayaManager.build(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php")
-        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
+        let file = File(name: "file", url: NSBundle(forClass: PitayaTests.self).URLForResource("Pitaya", withExtension: "png")!)
         pitaya.addFiles([file])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)

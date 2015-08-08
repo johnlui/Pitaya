@@ -82,7 +82,7 @@ public class PitayaManager {
             
             var mutableUserAgent = NSMutableString(string: "\(executable)/\(bundle) (\(version); OS \(os))") as CFMutableString
             let transform = NSString(string: "Any-Latin; Latin-ASCII; [:^ASCII:] Remove") as CFString
-            if CFStringTransform(mutableUserAgent, nil, transform, 0) == 1 {
+            if CFStringTransform(mutableUserAgent, nil, transform, false) {
                 return mutableUserAgent as NSString as String
             }
         }
@@ -165,7 +165,7 @@ public class PitayaManager {
             }
             for file in self.files {
                 data.appendData("--\(self.boundary)\r\n".nsdata)
-                data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.url.description.lastPathComponent)\"\r\n\r\n".nsdata)
+                data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata)
                 if let a = NSData(contentsOfURL: file.url) {
                     data.appendData(a)
                     data.appendData("\r\n".nsdata)
