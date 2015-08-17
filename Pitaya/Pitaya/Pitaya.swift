@@ -143,9 +143,10 @@ public class PitayaManager {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.errorCallback?(error: e)
                 }
-            }
-            dispatch_async(dispatch_get_main_queue()) {
-                self.callback?(data: data, response: response as? NSHTTPURLResponse)
+            } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.callback?(data: data, response: response as? NSHTTPURLResponse)
+                }
             }
         })
         task.resume()

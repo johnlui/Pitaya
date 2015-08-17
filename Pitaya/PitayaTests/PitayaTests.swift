@@ -23,13 +23,13 @@ class PitayaTests: XCTestCase {
     }
     func testBaseRequest() {
         // Basic GET and POST
-        Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
+        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "", "GET should success and return empty string with no params")
         }
-        Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
@@ -42,13 +42,13 @@ class PitayaTests: XCTestCase {
         let param1 = randomStringWithLength(200)
         let param2 = randomStringWithLength(200)
         
-        Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["get": param1, "get2": param2], errorCallback: { (error) -> Void in
+        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["get": param1, "get2": param2], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
         }
-        Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": param1, "post2": param2], errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["post": param1, "post2": param2], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
@@ -61,7 +61,7 @@ class PitayaTests: XCTestCase {
         *  --------------------------
         */
         let file = File(name: "file", url: NSBundle(forClass: PitayaTests.self).URLForResource("Pitaya", withExtension: "png")!)
-        Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
             XCTAssert(false, error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
@@ -88,7 +88,7 @@ class PitayaTests: XCTestCase {
         let param1 = randomStringWithLength(200)
         let param2 = randomStringWithLength(200)
         
-        var pitaya = PitayaManager.build(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        var pitaya = PitayaManager.build(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
         pitaya.addParams(["get": param1, "get2": param2])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)
@@ -97,7 +97,7 @@ class PitayaTests: XCTestCase {
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
         }
         
-        pitaya = PitayaManager.build(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        pitaya = PitayaManager.build(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
         pitaya.addParams(["post": param1, "post2": param2])
         pitaya.fire({ (error) -> Void in
             XCTAssert(false, error.localizedDescription)
@@ -108,7 +108,7 @@ class PitayaTests: XCTestCase {
     }
     
     func testAddFilesFunction() {
-        let pitaya = PitayaManager.build(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php")
+        let pitaya = PitayaManager.build(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
         let file = File(name: "file", url: NSBundle(forClass: PitayaTests.self).URLForResource("Pitaya", withExtension: "png")!)
         pitaya.addFiles([file])
         pitaya.fire({ (error) -> Void in

@@ -23,14 +23,14 @@ class ViewController: UIViewController {
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
         Pitaya.DEBUG = true
-        Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
+        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 print("HTTP body: " + string, appendNewline: true)
                 print("HTTP status: " + response!.statusCode.description, appendNewline: true)
         }
-        Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 print("HTTP status: " + response!.statusCode.description, appendNewline: true)
         }
         let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
-        Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
