@@ -90,7 +90,7 @@ Pitaya.request(.GET, url: "http://httpbin.org/get", errorCallback: nil) { (data,
     print("Got it!")
 }
 ```
-###[Read the documentation](https://github.com/johnlui/Pitaya/wiki/Request)
+##### [Read the documentation](https://github.com/johnlui/Pitaya/wiki/Request)
 
 ###They are all Asynchronous.
 
