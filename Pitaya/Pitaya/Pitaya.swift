@@ -19,23 +19,26 @@ extension String {
     }
 }
 
-public var DEBUG = false
-
-public func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-    let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
-    pitaya.fire()
-}
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-    let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
-    pitaya.fire()
-}
-public func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-    let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
-    pitaya.fire()
-}
-public func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-    let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
-    pitaya.fire()
+public class Pitaya {
+    
+    public static var DEBUG = false
+    
+    public static func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
+        let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
+        pitaya.fire()
+    }
+    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
+        let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
+        pitaya.fire()
+    }
+    public static func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
+        let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
+        pitaya.fire()
+    }
+    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
+        let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
+        pitaya.fire()
+    }
 }
 
 public enum HTTPMethod: String {
@@ -134,9 +137,9 @@ public class PitayaManager {
         fireTask()
     }
     func fireTask() {
-        if DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description) } }
+        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description) } }
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description) } }
+            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description) } }
             if error != nil {
                 let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
                 NSLog("Pitaya Error: " + e.localizedDescription)

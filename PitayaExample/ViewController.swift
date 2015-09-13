@@ -22,13 +22,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
-//        Pitaya.DEBUG = true
+        Pitaya.DEBUG = true
         Pitaya.request(.GET, url: "http://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
             for (i,j) in response!.allHeaderFields {
                 print("\(i): \(j)")
             }
         }
-        /*
+        
         Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
                 print("HTTP body: " + string, string, terminator: "\n")
                 print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
         }
-        */
+
     }
 
 }
