@@ -73,106 +73,24 @@ If you drag Pitaya project into your project, you may need to import it before u
 import Pitaya
 ```
 
-If you use Pitaya by Drag `Pitaya/Pitaya/Pitaya.swift` into your project, you may remove all the "Pitaya." in the code below, because "Pitaya" is only the namespace of Pitaya sub-project, not a name of a Class.
+If you use Pitaya by Drag `Pitaya/Pitaya/Pitaya.swift` into your project.
 
-####Make a request:
+###GET
 
-```swift
-Pitaya.request(.GET, url: "http://pitayaswift.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
-```
-
-####with params:
+Just give Google a hit:
 
 ```swift
-Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
+Pitaya.request(.GET, url: "https://www.google.com", errorCallback: nil, callback: nil)
 ```
 
-####upload files:
+###GET with callback
 
 ```swift
-let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
-Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
+Pitaya.request(.GET, url: "http://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
+    print("Got it!")
 }
 ```
-
-####POST params and files:
-
-```swift
-let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
-Pitaya.request(.POST, url: "http://pitayaswift.sinaapp.com/pitaya.php", ["post": "pitaya", "post2": "pitaya2"], files: [file], errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
-```
-
-####RAW HTTP BODY
-
-```swift
-let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
-pitaya.setHTTPBodyRaw("{\"fuck\":\"you\"}")
-pitaya.fire({ (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
-```
-
-####HTTP Basic Authorization
-
-
-```swift
-let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
-pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-}) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
-```
-
-####Params and Files with HTTP Basic Authorization
-
-```swift
-let pitaya = PitayaManager.build(.GET, url: "http://httpbin.org/basic-auth/user/passwd")
-
-// add params
-pitaya.addParams(["hello": "pitaya"])
-
-// add files
-let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
-pitaya.addFiles([file])
-
-pitaya.fireWithBasicAuth(("user", "passwd"), errorCallback: { (error) -> Void in
-    NSLog(error.localizedDescription)
-}) { (data, response) -> Void in
-        let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-        print("HTTP body: " + string, appendNewline: true)
-        print("HTTP status: " + response!.statusCode.description, appendNewline: true)
-}
-```
+###[Read the documentation](https://github.com/johnlui/Pitaya/wiki/Request)
 
 ###They are all Asynchronous.
 
