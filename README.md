@@ -14,7 +14,6 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 - [x] Multi-level API to keep your code clean
 - [x] Well tested
 - [ ] Fully JSON support
-- [ ] Asynchronous and synchronous support
 
 ##Requirements
 
