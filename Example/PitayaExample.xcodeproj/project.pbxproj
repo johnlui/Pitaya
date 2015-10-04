@@ -15,7 +15,6 @@
 		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
 		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
-		46C7CAD81B04AA4000CC3B70 /* PitayaExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */; };
 		C8BE3B681BBDB77600B04BE4 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +39,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 463712041B04C2050019E1AB;
 			remoteInfo = Pitaya;
-		};
-		46C7CAD21B04AA4000CC3B70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46C7CAB41B04AA4000CC3B70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46C7CABB1B04AA4000CC3B70;
-			remoteInfo = PitayaExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -74,9 +66,6 @@
 		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitayaExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46C7CAD61B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitayaExampleTests.swift; sourceTree = "<group>"; };
 		C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,13 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46C7CACE1B04AA4000CC3B70 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +96,6 @@
 				C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */,
 				463712211B04C20D0019E1AB /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
-				46C7CAD41B04AA4000CC3B70 /* PitayaExampleTests */,
 				46C7CABD1B04AA4000CC3B70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */,
-				46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,23 +130,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		46C7CAD41B04AA4000CC3B70 /* PitayaExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */,
-				46C7CAD51B04AA4000CC3B70 /* Supporting Files */,
-			);
-			path = PitayaExampleTests;
-			sourceTree = "<group>";
-		};
-		46C7CAD51B04AA4000CC3B70 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				46C7CAD61B04AA4000CC3B70 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,24 +152,6 @@
 			productReference = 46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		46C7CAD01B04AA4000CC3B70 /* PitayaExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46C7CADE1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExampleTests" */;
-			buildPhases = (
-				46C7CACD1B04AA4000CC3B70 /* Sources */,
-				46C7CACE1B04AA4000CC3B70 /* Frameworks */,
-				46C7CACF1B04AA4000CC3B70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				46C7CAD31B04AA4000CC3B70 /* PBXTargetDependency */,
-			);
-			name = PitayaExampleTests;
-			productName = PitayaExampleTests;
-			productReference = 46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,10 +165,6 @@
 				TargetAttributes = {
 					46C7CABB1B04AA4000CC3B70 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					46C7CAD01B04AA4000CC3B70 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 46C7CABB1B04AA4000CC3B70;
 					};
 				};
 			};
@@ -247,7 +188,6 @@
 			projectRoot = "";
 			targets = (
 				46C7CABB1B04AA4000CC3B70 /* PitayaExample */,
-				46C7CAD01B04AA4000CC3B70 /* PitayaExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,13 +222,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46C7CACF1B04AA4000CC3B70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -301,14 +234,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46C7CACD1B04AA4000CC3B70 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46C7CAD81B04AA4000CC3B70 /* PitayaExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -316,11 +241,6 @@
 			isa = PBXTargetDependency;
 			name = Pitaya;
 			targetProxy = 4637122F1B04C48C0019E1AB /* PBXContainerItemProxy */;
-		};
-		46C7CAD31B04AA4000CC3B70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46C7CABB1B04AA4000CC3B70 /* PitayaExample */;
-			targetProxy = 46C7CAD21B04AA4000CC3B70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -445,40 +365,6 @@
 			};
 			name = Release;
 		};
-		46C7CADF1B04AA4000CC3B70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PitayaExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PitayaExample.app/PitayaExample";
-			};
-			name = Debug;
-		};
-		46C7CAE01B04AA4000CC3B70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PitayaExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PitayaExample.app/PitayaExample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,15 +382,6 @@
 			buildConfigurations = (
 				46C7CADC1B04AA4000CC3B70 /* Debug */,
 				46C7CADD1B04AA4000CC3B70 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		46C7CADE1B04AA4000CC3B70 /* Build configuration list for PBXNativeTarget "PitayaExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46C7CADF1B04AA4000CC3B70 /* Debug */,
-				46C7CAE01B04AA4000CC3B70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

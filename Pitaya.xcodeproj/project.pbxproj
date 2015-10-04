@@ -10,10 +10,10 @@
 		4637120B1B04C2050019E1AB /* Pitaya.h in Headers */ = {isa = PBXBuildFile; fileRef = 4637120A1B04C2050019E1AB /* Pitaya.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
 		463712181B04C2050019E1AB /* PitayaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463712171B04C2050019E1AB /* PitayaTests.swift */; };
-		4637122B1B04C21F0019E1AB /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4637122A1B04C21F0019E1AB /* Pitaya.swift */; };
-		46ADFD251B765D380079EF17 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = 46ADFD241B765D380079EF17 /* Pitaya.png */; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
 		8EDD226E1B623BD500FAD39F /* BasicAuthenticationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226D1B623BD500FAD39F /* BasicAuthenticationTestCase.swift */; };
+		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
+		C81EC6081BC18CA5008E9348 /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EC6071BC18CA5008E9348 /* Pitaya.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +33,10 @@
 		463712101B04C2050019E1AB /* PitayaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitayaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463712161B04C2050019E1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		463712171B04C2050019E1AB /* PitayaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitayaTests.swift; sourceTree = "<group>"; };
-		4637122A1B04C21F0019E1AB /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
-		46ADFD241B765D380079EF17 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pitaya.png; path = ../../Pitaya.png; sourceTree = "<group>"; };
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		8EDD226D1B623BD500FAD39F /* BasicAuthenticationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuthenticationTestCase.swift; sourceTree = "<group>"; };
+		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
+		C81EC6071BC18CA5008E9348 /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				4637120A1B04C2050019E1AB /* Pitaya.h */,
+				C81EC6071BC18CA5008E9348 /* Pitaya.swift */,
 				463712081B04C2050019E1AB /* Supporting Files */,
-				4637122A1B04C21F0019E1AB /* Pitaya.swift */,
 			);
 			path = Pitaya;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			children = (
 				463712171B04C2050019E1AB /* PitayaTests.swift */,
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
-				46ADFD241B765D380079EF17 /* Pitaya.png */,
+				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
 				8EDD226C1B623BB000FAD39F /* Core */,
 				463712151B04C2050019E1AB /* Supporting Files */,
 			);
@@ -221,7 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46ADFD251B765D380079EF17 /* Pitaya.png in Resources */,
+				C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4637122B1B04C21F0019E1AB /* Pitaya.swift in Sources */,
+				C81EC6081BC18CA5008E9348 /* Pitaya.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
