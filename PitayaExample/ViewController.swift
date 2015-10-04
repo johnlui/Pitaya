@@ -22,13 +22,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
-        Pitaya.DEBUG = true
-        Pitaya.request(.GET, url: "http://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
+        let request = PitayaManager.build(.GET, url: "http://fuck.io/")
+        request.addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!, SSLValidateErrorCallBack: { () -> Void in
+            print("遭受中间人攻击！")
+        })
+        request.fire({ (error) -> Void in
+            print(error)
+            }) { (data, response) -> Void in
+                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                print("HTTP body: " + string, terminator: "\n")
+                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
+        }
+        return;
+        Pitaya.DEBUG = false
+        Pitaya.request(.GET, url: "https://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
             for (i,j) in response!.allHeaderFields {
                 print("\(i): \(j)")
             }
         }
-        
         Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in
@@ -52,7 +63,7 @@ class ViewController: UIViewController {
                 print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
         }
         let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
-        pitaya.setHTTPBodyRaw("{\"fuck\":\"you\"}")
+        pitaya.addHTTPBodyRaw("{\"fuck\":\"you\"}")
         pitaya.fire({ (error) -> Void in
             NSLog(error.localizedDescription)
             }) { (data, response) -> Void in

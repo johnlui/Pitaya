@@ -58,7 +58,7 @@ public struct File {
         self.url = url
     }
 }
-public class PitayaManager {
+public class PitayaManager: NSObject, NSURLSessionDelegate {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
@@ -70,10 +70,13 @@ public class PitayaManager {
     var errorCallback: ((error: NSError) -> Void)?
     var callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?
     
-    let session = NSURLSession.sharedSession()
+    var session: NSURLSession!
     let url: String!
     var request: NSMutableURLRequest!
     var task: NSURLSessionTask!
+    
+    var localCertData: NSData!
+    var sSLValidateErrorCallBack: (() -> Void)?
     
     // User-Agent Header; see http://tools.ietf.org/html/rfc7231#section-5.5.3
     let userAgent: String = {
@@ -101,6 +104,34 @@ public class PitayaManager {
         self.files = files
         self.errorCallback = errorCallback
         self.callback = callback
+
+        super.init()
+        self.session = NSURLSession(configuration: NSURLSession.sharedSession().configuration, delegate: self, delegateQueue: NSURLSession.sharedSession().delegateQueue)
+    }
+    @objc public func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+        if let localCertificateData = self.localCertData {
+            if let serverTrust = challenge.protectionSpace.serverTrust,
+                certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
+                remoteCertificateData: NSData = SecCertificateCopyData(certificate) {
+                    if localCertificateData.isEqualToData(remoteCertificateData) {
+                        let credential = NSURLCredential(forTrust: serverTrust)
+                        challenge.sender?.useCredential(credential, forAuthenticationChallenge: challenge)
+                        completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
+                    } else {
+                        challenge.sender?.cancelAuthenticationChallenge(challenge)
+                        completionHandler(NSURLSessionAuthChallengeDisposition.CancelAuthenticationChallenge, nil)
+                        self.sSLValidateErrorCallBack?()
+                    }
+            } else {
+                NSLog("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
+            }
+        } else {
+            completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, nil)
+        }
+    }
+    public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) {
+        self.localCertData = data
+        self.sSLValidateErrorCallBack = SSLValidateErrorCallBack
     }
     public static func build(method: HTTPMethod, url: String) -> PitayaManager {
         return PitayaManager(url: url, method: method)
@@ -111,7 +142,7 @@ public class PitayaManager {
     public func addFiles(files: Array<File>) {
         self.files = files
     }
-    public func setHTTPBodyRaw(rawString: String) {
+    public func addHTTPBodyRaw(rawString: String) {
         self.HTTPBodyRaw = rawString
     }
     public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {

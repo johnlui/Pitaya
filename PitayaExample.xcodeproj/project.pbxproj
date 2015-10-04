@@ -16,6 +16,7 @@
 		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
 		46C7CAD81B04AA4000CC3B70 /* PitayaExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */; };
+		C8BE3B681BBDB77600B04BE4 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		46C7CAD11B04AA4000CC3B70 /* PitayaExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitayaExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C7CAD61B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46C7CAD71B04AA4000CC3B70 /* PitayaExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitayaExampleTests.swift; sourceTree = "<group>"; };
+		C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		46C7CAB31B04AA4000CC3B70 = {
 			isa = PBXGroup;
 			children = (
+				C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */,
 				463712211B04C20D0019E1AB /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
 				46C7CAD41B04AA4000CC3B70 /* PitayaExampleTests */,
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8BE3B681BBDB77600B04BE4 /* lvwenhancom.cer in Resources */,
 				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
 				46C0F1C31B05CC3B004786D5 /* Pitaya.png in Resources */,
 				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
