@@ -56,7 +56,7 @@ At last, add it to "Embedded Binaries" in the general panel use the "Add Other..
 
 ```bash
 git submodule add https://github.com/johnlui/Pitaya.git
-open Pitaya/Pitaya
+open .
 ```
 then drag Pitaya.xcodeproj to your Project, that's it!
 
@@ -64,7 +64,7 @@ If you want to run your project on device with Pitaya, just go to PROJECT->TARGE
 
 ###Source File
 
-Drag `Pitaya/Pitaya/Pitaya.swift` into your project.
+Drag `Pitaya.swift` into your project.
 
 ##Use
 
@@ -74,8 +74,6 @@ If you drag Pitaya project into your project, you may need to import it before u
 ```swift
 import Pitaya
 ```
-
-If you use Pitaya by Drag `Pitaya/Pitaya/Pitaya.swift` into your project.
 
 ###GET
 
