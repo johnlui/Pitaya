@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; };
-		463712331B04C4EA0019E1AB /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 463712271B04C20E0019E1AB /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46C0F1C31B05CC3B004786D5 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C0F1C21B05CC3B004786D5 /* Pitaya.png */; };
 		46C7CAC21B04AA4000CC3B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */; };
 		46C7CAC41B04AA4000CC3B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7CAC31B04AA4000CC3B70 /* ViewController.swift */; };
 		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
 		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
-		C8BE3B681BBDB77600B04BE4 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */; };
+		C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; };
+		C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C892C3DF1BC24CA300406ED5 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C892C3DE1BC24CA300406ED5 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
+		C892C3E01BC24CC300406ED5 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		463712261B04C20E0019E1AB /* PBXContainerItemProxy */ = {
+		C892C3D61BC24C8000406ED5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			containerPortal = C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 463712051B04C2050019E1AB;
 			remoteInfo = Pitaya;
 		};
-		463712281B04C20E0019E1AB /* PBXContainerItemProxy */ = {
+		C892C3D81BC24C8000406ED5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			containerPortal = C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 463712101B04C2050019E1AB;
 			remoteInfo = PitayaTests;
 		};
-		4637122F1B04C48C0019E1AB /* PBXContainerItemProxy */ = {
+		C892C3DC1BC24C8E00406ED5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+			containerPortal = C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 463712041B04C2050019E1AB;
 			remoteInfo = Pitaya;
@@ -49,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				463712331B04C4EA0019E1AB /* Pitaya.framework in Embed Frameworks */,
+				C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,8 +57,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		463712211B04C20D0019E1AB /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = Pitaya/Pitaya.xcodeproj; sourceTree = "<group>"; };
-		46C0F1C21B05CC3B004786D5 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		46C7CABC1B04AA4000CC3B70 /* PitayaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitayaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C7CAC01B04AA4000CC3B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +64,9 @@
 		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = "<group>"; };
+		C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../lvwenhancom.cer; sourceTree = "<group>"; };
+		C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = ../Pitaya.xcodeproj; sourceTree = "<group>"; };
+		C892C3DE1BC24CA300406ED5 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pitaya.png; path = ../../Pitaya.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,27 +74,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463712311B04C48F0019E1AB /* Pitaya.framework in Frameworks */,
+				C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		463712221B04C20D0019E1AB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				463712271B04C20E0019E1AB /* Pitaya.framework */,
-				463712291B04C20E0019E1AB /* PitayaTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		46C7CAB31B04AA4000CC3B70 = {
 			isa = PBXGroup;
 			children = (
-				C8BE3B671BBDB73B00B04BE4 /* lvwenhancom.cer */,
-				463712211B04C20D0019E1AB /* Pitaya.xcodeproj */,
+				C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */,
+				C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
 				46C7CABD1B04AA4000CC3B70 /* Products */,
 			);
@@ -124,10 +115,19 @@
 		46C7CABF1B04AA4000CC3B70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				46C0F1C21B05CC3B004786D5 /* Pitaya.png */,
+				C892C3DE1BC24CA300406ED5 /* Pitaya.png */,
 				46C7CAC01B04AA4000CC3B70 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C892C3D21BC24C8000406ED5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C892C3D71BC24C8000406ED5 /* Pitaya.framework */,
+				C892C3D91BC24C8000406ED5 /* PitayaTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +145,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				463712301B04C48C0019E1AB /* PBXTargetDependency */,
+				C892C3DD1BC24C8E00406ED5 /* PBXTargetDependency */,
 			);
 			name = PitayaExample;
 			productName = PitayaExample;
@@ -181,8 +181,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 463712221B04C20D0019E1AB /* Products */;
-					ProjectRef = 463712211B04C20D0019E1AB /* Pitaya.xcodeproj */;
+					ProductGroup = C892C3D21BC24C8000406ED5 /* Products */;
+					ProjectRef = C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -193,18 +193,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		463712271B04C20E0019E1AB /* Pitaya.framework */ = {
+		C892C3D71BC24C8000406ED5 /* Pitaya.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pitaya.framework;
-			remoteRef = 463712261B04C20E0019E1AB /* PBXContainerItemProxy */;
+			remoteRef = C892C3D61BC24C8000406ED5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		463712291B04C20E0019E1AB /* PitayaTests.xctest */ = {
+		C892C3D91BC24C8000406ED5 /* PitayaTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = PitayaTests.xctest;
-			remoteRef = 463712281B04C20E0019E1AB /* PBXContainerItemProxy */;
+			remoteRef = C892C3D81BC24C8000406ED5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -214,9 +214,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8BE3B681BBDB77600B04BE4 /* lvwenhancom.cer in Resources */,
+				C892C3E01BC24CC300406ED5 /* lvwenhancom.cer in Resources */,
 				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
-				46C0F1C31B05CC3B004786D5 /* Pitaya.png in Resources */,
+				C892C3DF1BC24CA300406ED5 /* Pitaya.png in Resources */,
 				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
 				46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */,
 			);
@@ -237,10 +237,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		463712301B04C48C0019E1AB /* PBXTargetDependency */ = {
+		C892C3DD1BC24C8E00406ED5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Pitaya;
-			targetProxy = 4637122F1B04C48C0019E1AB /* PBXContainerItemProxy */;
+			targetProxy = C892C3DC1BC24C8E00406ED5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -349,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PitayaExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PitayaExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

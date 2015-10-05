@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
-        let request = PitayaManager.build(.GET, url: "http://fuck.io/")
+        let request = PitayaManager.build(.GET, url: "https://lvwenhan.com/")
         request.addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!, SSLValidateErrorCallBack: { () -> Void in
             print("遭受中间人攻击！")
         })
