@@ -7,7 +7,8 @@ Pitaya is a sweet HTTP networking library especially for large file uploads writ
 
 ####[Read the documentation](https://github.com/johnlui/Pitaya/wiki)
 
-![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.png)
+![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.gif)
+By [brian banton](https://dribbble.com/shots/1324676-Dragon-Fruit-Falls-Victim-to-Flying-Meat-Cleaver)
 
 ##Features
 
