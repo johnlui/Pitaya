@@ -14,6 +14,8 @@
 		8EDD226E1B623BD500FAD39F /* BasicAuthenticationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226D1B623BD500FAD39F /* BasicAuthenticationTestCase.swift */; };
 		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
 		C81EC6081BC18CA5008E9348 /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EC6071BC18CA5008E9348 /* Pitaya.swift */; settings = {ASSET_TAGS = (); }; };
+		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; settings = {ASSET_TAGS = (); }; };
+		C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		8EDD226D1B623BD500FAD39F /* BasicAuthenticationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuthenticationTestCase.swift; sourceTree = "<group>"; };
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		C81EC6071BC18CA5008E9348 /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = SOURCE_ROOT; };
+		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
+		C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitayaSSLPinningTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				463712171B04C2050019E1AB /* PitayaTests.swift */,
+				C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */,
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
+				C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */,
 				8EDD226C1B623BB000FAD39F /* Core */,
 				463712151B04C2050019E1AB /* Supporting Files */,
 			);
@@ -222,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */,
+				C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +249,7 @@
 			files = (
 				8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */,
 				8EDD226E1B623BD500FAD39F /* BasicAuthenticationTestCase.swift in Sources */,
+				C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift in Sources */,
 				463712181B04C2050019E1AB /* PitayaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
