@@ -1,63 +1,13 @@
 //
-//  Pitaya.swift
+//  PitayaManager.swift
 //  Pitaya
 //
-//  Created by JohnLui on 15/5/14.
-//  Copyright (c) 2015年 http://lvwenhan.com. All rights reserved.
+//  Created by 吕文翰 on 15/10/7.
+//  Copyright © 2015年 http://lvwenhan.com. All rights reserved.
 //
 
 import Foundation
 
-extension String {
-    var nsdata: NSData {
-        return self.dataUsingEncoding(NSUTF8StringEncoding)!
-    }
-    var base64: String! {
-        let utf8EncodeData: NSData! = self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        let base64EncodingData = utf8EncodeData.base64EncodedStringWithOptions([])
-        return base64EncodingData
-    }
-}
-
-public class Pitaya {
-    
-    public static var DEBUG = false
-    
-    public static func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-        let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-        let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-}
-
-public enum HTTPMethod: String {
-    case DELETE = "DELETE"
-    case GET = "GET"
-    case HEAD = "HEAD"
-    case OPTIONS = "OPTIONS"
-    case PATCH = "PATCH"
-    case POST = "POST"
-    case PUT = "PUT"
-}
-public struct File {
-    let name: String!
-    let url: NSURL!
-    public init(name: String, url: NSURL) {
-        self.name = name
-        self.url = url
-    }
-}
 public class PitayaManager: NSObject, NSURLSessionDelegate {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
@@ -104,7 +54,7 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         self.files = files
         self.errorCallback = errorCallback
         self.callback = callback
-
+        
         super.init()
         self.session = NSURLSession(configuration: NSURLSession.sharedSession().configuration, delegate: self, delegateQueue: NSURLSession.sharedSession().delegateQueue)
     }
