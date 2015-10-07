@@ -186,29 +186,9 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         var components: [(String, String)] = []
         for key in Array(parameters.keys).sort(<) {
             let value: AnyObject! = parameters[key]
-            components += self.queryComponents(key, value)
+            components += Helper.queryComponents(key, value)
         }
         
         return components.map{"\($0)=\($1)"}.joinWithSeparator("&")
-    }
-    func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
-        var components: [(String, String)] = []
-        if let dictionary = value as? [String: AnyObject] {
-            for (nestedKey, value) in dictionary {
-                components += queryComponents("\(key)[\(nestedKey)]", value)
-            }
-        } else if let array = value as? [AnyObject] {
-            for value in array {
-                components += queryComponents("\(key)", value)
-            }
-        } else {
-            components.appendContentsOf([(escape(key), escape("\(value)"))])
-        }
-        
-        return components
-    }
-    func escape(string: String) -> String {
-        let legalURLCharactersToBeEscaped: CFStringRef = ":&=;+!@#$()',*"
-        return CFURLCreateStringByAddingPercentEscapes(nil, string, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
     }
 }
