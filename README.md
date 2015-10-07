@@ -4,11 +4,11 @@ Pitaya
 
 > Thus, programs must be written for people to read, and only incidentally for machines to execute.
 > 
-> Harold Abelson, "Structure and Interpretation of Computer Programs" ( S.I.C.P )
+> Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 
-####[Read the documentation](https://github.com/johnlui/Pitaya/wiki)
+[Read the documentation](https://github.com/johnlui/Pitaya/wiki).
 
 ##Features
 
