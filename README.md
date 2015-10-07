@@ -1,4 +1,3 @@
-![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.gif)
 Pitaya
 ----------
 ![Platform](https://camo.githubusercontent.com/770175f6c01d89c84a020706126a9e6399ff76c4/68747470733a2f2f696d672e736869656c64732e696f2f636f636f61706f64732f702f4b696e676669736865722e7376673f7374796c653d666c6174) ![License](https://img.shields.io/github/license/johnlui/Pitaya.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/Pitaya.svg)](https://travis-ci.org/johnlui/Pitaya)
@@ -7,9 +6,6 @@ Pitaya
 > ——《Structure and Interpretation of Computer Programs 》 Harold Abelson
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
-
-Logo of Pitaya is from [brian banton](https://dribbble.com/shots/1324676-Dragon-Fruit-Falls-Victim-to-Flying-Meat-Cleaver).
-
 
 ####[Read the documentation](https://github.com/johnlui/Pitaya/wiki)
 
