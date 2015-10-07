@@ -10,6 +10,16 @@ import Foundation
 
 class Helper {
     // stolen from Alamofire
+    static func buildParams(parameters: [String: AnyObject]) -> String {
+        var components: [(String, String)] = []
+        for key in Array(parameters.keys).sort(<) {
+            let value: AnyObject! = parameters[key]
+            components += Helper.queryComponents(key, value)
+        }
+        
+        return components.map{"\($0)=\($1)"}.joinWithSeparator("&")
+    }
+    // stolen from Alamofire
     static func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
         if let dictionary = value as? [String: AnyObject] {

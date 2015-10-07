@@ -15,8 +15,8 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
     var HTTPBodyRaw = ""
     
     let method: String!
-    var params: Dictionary<String, AnyObject>
-    var files: Array<File>
+    var params: [String: AnyObject]?
+    var files: [File]?
     var errorCallback: ((error: NSError) -> Void)?
     var callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?
     
@@ -46,7 +46,7 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         return "Pitaya"
         }()
     
-    init(url: String, method: HTTPMethod!, params: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>(), files: Array<File> = Array<File>(), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
+    init(url: String, method: HTTPMethod!, params: [String: AnyObject]? = nil, files: [File]? = nil, errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
         self.url = url
         self.request = NSMutableURLRequest(URL: NSURL(string: url)!)
         self.method = method.rawValue
@@ -86,10 +86,10 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
     public static func build(method: HTTPMethod, url: String) -> PitayaManager {
         return PitayaManager(url: url, method: method)
     }
-    public func addParams(params: Dictionary<String, AnyObject>) {
+    public func addParams(params: [String: AnyObject]?) {
         self.params = params
     }
-    public func addFiles(files: Array<File>) {
+    public func addFiles(files: [File]?) {
         self.files = files
     }
     public func addHTTPBodyRaw(rawString: String) {
@@ -139,32 +139,36 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         let data = NSMutableData()
         if self.HTTPBodyRaw != "" {
             data.appendData(self.HTTPBodyRaw.nsdata)
-        } else if self.files.count > 0 {
+        } else if self.files?.count > 0 {
             if self.method == "GET" {
                 NSLog("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\n------------------------\n\n")
             }
-            for (key, value) in self.params {
-                data.appendData("--\(self.boundary)\r\n".nsdata)
-                data.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".nsdata)
-                data.appendData("\(value.description)\r\n".nsdata)
+            if let ps = self.params {
+                for (key, value) in ps {
+                    data.appendData("--\(self.boundary)\r\n".nsdata)
+                    data.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".nsdata)
+                    data.appendData("\(value.description)\r\n".nsdata)
+                }
             }
-            for file in self.files {
-                data.appendData("--\(self.boundary)\r\n".nsdata)
-                data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata)
-                if let a = NSData(contentsOfURL: file.url) {
-                    data.appendData(a)
-                    data.appendData("\r\n".nsdata)
+            if let fs = self.files {
+                for file in fs {
+                    data.appendData("--\(self.boundary)\r\n".nsdata)
+                    data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata)
+                    if let a = NSData(contentsOfURL: file.url) {
+                        data.appendData(a)
+                        data.appendData("\r\n".nsdata)
+                    }
                 }
             }
             data.appendData("--\(self.boundary)--\r\n".nsdata)
-        } else if self.params.count > 0 && self.method != "GET" {
-            data.appendData(buildParams(self.params).nsdata)
+        } else if self.params?.count > 0 && self.method != "GET" {
+            data.appendData(Helper.buildParams(self.params!).nsdata)
         }
         request.HTTPBody = data
     }
     func buildRequest() {
-        if self.method == "GET" && self.params.count > 0 {
-            self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + buildParams(self.params))!)
+        if self.method == "GET" && self.params?.count > 0 {
+            self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + Helper.buildParams(self.params!))!)
         }
         
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
@@ -173,22 +177,11 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
         if self.HTTPBodyRaw != "" {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        } else if self.files.count > 0 {
+        } else if self.files?.count > 0 {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
-        } else if self.params.count > 0 {
+        } else if self.params?.count > 0 {
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         }
         request.addValue(self.userAgent, forHTTPHeaderField: "User-Agent")
-    }
-    
-    // stolen from Alamofire
-    func buildParams(parameters: [String: AnyObject]) -> String {
-        var components: [(String, String)] = []
-        for key in Array(parameters.keys).sort(<) {
-            let value: AnyObject! = parameters[key]
-            components += Helper.queryComponents(key, value)
-        }
-        
-        return components.map{"\($0)=\($1)"}.joinWithSeparator("&")
     }
 }
