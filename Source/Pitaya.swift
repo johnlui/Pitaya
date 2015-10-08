@@ -48,6 +48,19 @@ public class Pitaya {
     }
     
     /**
+    add error callback to self (Pitaya object).
+    this will called only when network error, if we can receive any data from server, responseData() will be fired.
+    
+    - parameter errorCallback: errorCallback Closure
+    
+    - returns: self (Pitaya object)
+    */
+    public func onNetworkError(errorCallback: ((error: NSError) -> Void)) -> Pitaya {
+        self.errorCallback = errorCallback
+        return self
+    }
+    
+    /**
     async response the http body in NSData type
     
     - parameter callback: callback Closure
@@ -65,15 +78,14 @@ public class Pitaya {
     - parameter response: void
     */
     public func responseString(callback: ((string: String?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pm = PitayaManager(url: self.url, method: self.method, params: self.params, files: self.files, errorCallback: self.errorCallback, callback: { (data, response) -> Void in
+        self.responseData { (data, response) -> Void in
             var string = ""
             if let d = data,
-                   s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
+                s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
                     string = s
             }
             callback?(string: string, response: response)
-        })
-        pm.fire()
+        }
     }
     
     public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
