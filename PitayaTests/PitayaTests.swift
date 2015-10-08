@@ -21,20 +21,36 @@ class PitayaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+
+    // Basic GET and POST
     func testBaseRequest() {
-        // Basic GET and POST
-        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
+        let expectation = expectationWithDescription("testBaseRequest")
+        
+        Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
+            .onNetworkError({ (error) -> Void in
+                XCTAssert(false, error.localizedDescription)
+                
+                expectation.fulfill()
+            })
+            .responseData { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "", "GET should success and return empty string with no params")
+                
+                expectation.fulfill()
         }
-        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
+        Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
+            .onNetworkError({ (error) -> Void in
+                XCTAssert(false, error.localizedDescription)
+                
+                expectation.fulfill()
+            })
+            .responseData { (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == "", "POST should success and return empty string with no params")
+                
+                expectation.fulfill()
         }
+        waitForExpectationsWithTimeout(10, handler: nil)
     }
     
     func testRequestWithParams() {
@@ -42,27 +58,31 @@ class PitayaTests: XCTestCase {
         let param1 = randomStringWithLength(200)
         let param2 = randomStringWithLength(200)
         
-        let expectation = expectationWithDescription("401")
+        let expectation = expectationWithDescription("testRequestWithParams")
         
         Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addParams(["get": param1, "get2": param2])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
+                
                 expectation.fulfill()
             })
             .responseData({ (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+                
                 expectation.fulfill()
             })
         Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addParams(["get": param1, "get2": param2])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
+                
                 expectation.fulfill()
             })
             .responseString({ (string, response) -> Void in
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+                
                 expectation.fulfill()
             })
         
