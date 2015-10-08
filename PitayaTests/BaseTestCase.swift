@@ -10,8 +10,8 @@ import XCTest
 import Pitaya
 
 class BaseTestCase: XCTestCase {
-    let defaultTimeout: NSTimeInterval = 10
-    let defaultFileUploadTimeout: NSTimeInterval = 60
+    let defaultTimeout: NSTimeInterval = 60
+    let defaultFileUploadTimeout: NSTimeInterval = 600
     
     func URLForResource(fileName: String, withExtension: String) -> NSURL {
         let bundle = NSBundle(forClass: BaseTestCase.self)
