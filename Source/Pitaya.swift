@@ -16,13 +16,17 @@ public class Pitaya {
     /// if set to true, Pitaya will log all information in a NSURLSession lifecycle
     public static var DEBUG = false
     
-    var method: HTTPMethod!
-    var url: String!
-    var params: [String: AnyObject]?
-    var files: [File]?
-    var errorCallback: ((error: NSError) -> Void)?
-    var callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?
+    var pitayaManager: PitayaManager!
     
+    var localCertData: NSData!
+    var sSLValidateErrorCallBack: (() -> Void)?
+    
+    public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
+        let p = Pitaya()
+        p.pitayaManager = PitayaManager.build(method, url: url)
+        return p
+    }
+
     /**
     add params to self (Pitaya object)
     
@@ -31,7 +35,7 @@ public class Pitaya {
     - returns: self (Pitaya object)
     */
     public func addParams(params: [String: AnyObject]) -> Pitaya {
-        self.params = params
+        self.pitayaManager.addParams(params)
         return self
     }
     
@@ -43,7 +47,12 @@ public class Pitaya {
     - returns: self (Pitaya object)
     */
     public func addFiles(files: [File]) -> Pitaya {
-        self.files = files
+        self.pitayaManager.addFiles(files)
+        return self
+    }
+    
+    public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
+        self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
     
@@ -56,7 +65,7 @@ public class Pitaya {
     - returns: self (Pitaya object)
     */
     public func onNetworkError(errorCallback: ((error: NSError) -> Void)) -> Pitaya {
-        self.errorCallback = errorCallback
+        self.pitayaManager.addErrorCallback(errorCallback)
         return self
     }
     
@@ -67,8 +76,7 @@ public class Pitaya {
     - parameter response: void
     */
     public func responseData(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pm = PitayaManager(url: self.url, method: self.method, params: self.params, files: self.files, errorCallback: self.errorCallback, callback: callback)
-        pm.fire()
+        self.pitayaManager?.fire(callback)
     }
     
     /**
@@ -88,28 +96,18 @@ public class Pitaya {
         }
     }
     
-    public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
-        let p = Pitaya()
-        p.method = method
-        p.url = url
-        return p
+    public func responseDataWithBasicAuth(username username: String, password: String, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
+        self.pitayaManager?.fireWithBasicAuth((username, password), callback: callback)
     }
     
-    public static func request(method: HTTPMethod, url: String, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pitaya = PitayaManager(url: url, method: method, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-        let pitaya = PitayaManager(url: url, method: method, params: params, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        let pitaya = PitayaManager(url: url, method: method, files: files, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
-    }
-    public static func request(method: HTTPMethod, url: String, params: Dictionary<String, AnyObject>, files: Array<File>, errorCallback: ((error: NSError) -> Void)?, callback:((data: NSData?, response: NSHTTPURLResponse?) -> Void)? ) {
-        let pitaya = PitayaManager(url: url, method: method, params: params, files: files, errorCallback: errorCallback, callback: callback)
-        pitaya.fire()
+    public func responseStringWithBasicAuth(username username: String, password: String, callback: ((string: String?, response: NSHTTPURLResponse?) -> Void)?) {
+        self.responseDataWithBasicAuth(username: username, password: password) { (data, response) -> Void in
+            var string = ""
+            if let d = data,
+                s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
+                    string = s
+            }
+            callback?(string: string, response: response)
+        }
     }
 }
-

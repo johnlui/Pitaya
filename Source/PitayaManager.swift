@@ -46,45 +46,21 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         return "Pitaya"
         }()
     
-    init(url: String, method: HTTPMethod!, params: [String: AnyObject]? = nil, files: [File]? = nil, errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
+    public static func build(method: HTTPMethod, url: String) -> PitayaManager {
+        return PitayaManager(url: url, method: method)
+    }
+
+    private init(url: String, method: HTTPMethod!) {
         self.url = url
         self.request = NSMutableURLRequest(URL: NSURL(string: url)!)
         self.method = method.rawValue
-        self.params = params
-        self.files = files
-        self.errorCallback = errorCallback
-        self.callback = callback
         
         super.init()
         self.session = NSURLSession(configuration: NSURLSession.sharedSession().configuration, delegate: self, delegateQueue: NSURLSession.sharedSession().delegateQueue)
     }
-    @objc public func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-        if let localCertificateData = self.localCertData {
-            if let serverTrust = challenge.protectionSpace.serverTrust,
-                certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
-                remoteCertificateData: NSData = SecCertificateCopyData(certificate) {
-                    if localCertificateData.isEqualToData(remoteCertificateData) {
-                        let credential = NSURLCredential(forTrust: serverTrust)
-                        challenge.sender?.useCredential(credential, forAuthenticationChallenge: challenge)
-                        completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
-                    } else {
-                        challenge.sender?.cancelAuthenticationChallenge(challenge)
-                        completionHandler(NSURLSessionAuthChallengeDisposition.CancelAuthenticationChallenge, nil)
-                        self.sSLValidateErrorCallBack?()
-                    }
-            } else {
-                NSLog("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
-            }
-        } else {
-            completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, nil)
-        }
-    }
     public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) {
         self.localCertData = data
         self.sSLValidateErrorCallBack = SSLValidateErrorCallBack
-    }
-    public static func build(method: HTTPMethod, url: String) -> PitayaManager {
-        return PitayaManager(url: url, method: method)
     }
     public func addParams(params: [String: AnyObject]?) {
         self.params = params
@@ -92,11 +68,13 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
     public func addFiles(files: [File]?) {
         self.files = files
     }
+    public func addErrorCallback(errorCallback: ((error: NSError) -> Void)?) {
+        self.errorCallback = errorCallback
+    }
     public func addHTTPBodyRaw(rawString: String) {
         self.HTTPBodyRaw = rawString
     }
-    public func fireWithBasicAuth(auth: (String, String), errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
-        self.errorCallback = errorCallback
+    public func fireWithBasicAuth(auth: (String, String), callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
         self.callback = callback
         
         buildRequest()
@@ -105,19 +83,16 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         buildBody()
         fireTask()
     }
-    public func fire(errorCallback: ((error: NSError) -> Void)? = nil, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
-        if let a = errorCallback {
-            self.errorCallback = a
-        }
-        if let a = callback {
-            self.callback = a
+    public func fire(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
+        if let _ = callback {
+            self.callback = callback
         }
         
         buildRequest()
         buildBody()
         fireTask()
     }
-    func fireTask() {
+    private func fireTask() {
         if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description) } }
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description) } }
@@ -135,7 +110,7 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         })
         task.resume()
     }
-    func buildBody() {
+    private func buildBody() {
         let data = NSMutableData()
         if self.HTTPBodyRaw != "" {
             data.appendData(self.HTTPBodyRaw.nsdata)
@@ -166,7 +141,7 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         }
         request.HTTPBody = data
     }
-    func buildRequest() {
+    private func buildRequest() {
         if self.method == "GET" && self.params?.count > 0 {
             self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + Helper.buildParams(self.params!))!)
         }

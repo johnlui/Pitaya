@@ -11,10 +11,17 @@ import Pitaya
 
 class WithParams: BaseTestCase {
     
-    func testGETWithParams() {
-        let param1 = randomStringWithLength(200)
-        let param2 = randomStringWithLength(200)
+    var param1: String!
+    var param2: String!
+    
+    override func setUp() {
+        super.setUp()
         
+        self.param1 = randomStringWithLength(200)
+        self.param2 = randomStringWithLength(200)
+    }
+    
+    func testGETWithParams() {
         let expectation = expectationWithDescription("testGETWithParams")
         
         Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
@@ -25,7 +32,7 @@ class WithParams: BaseTestCase {
                 expectation.fulfill()
             })
             .responseString { (string, response) -> Void in
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+                XCTAssert(string == self.param1 + self.param2, "GET should success and return the strings together")
                 
                 expectation.fulfill()
         }
@@ -34,9 +41,6 @@ class WithParams: BaseTestCase {
     }
     
     func testPOSTWithParams() {
-        let param1 = randomStringWithLength(200)
-        let param2 = randomStringWithLength(200)
-        
         let expectation = expectationWithDescription("testPOSTWithParams")
         
         Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
@@ -45,7 +49,7 @@ class WithParams: BaseTestCase {
                 XCTAssert(false, error.localizedDescription)
             })
             .responseString({ (string, response) -> Void in
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+                XCTAssert(string == self.param1 + self.param2, "GET should success and return the strings together")
                 
                 expectation.fulfill()
             })
