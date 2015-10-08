@@ -10,7 +10,7 @@ private typealias URLSessionDelegate = PitayaManager
 
 extension URLSessionDelegate {
     
-    @objc public func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    @objc func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         if let localCertificateData = self.localCertData {
             if let serverTrust = challenge.protectionSpace.serverTrust,
                 certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),

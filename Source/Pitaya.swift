@@ -17,10 +17,7 @@ public class Pitaya {
     public static var DEBUG = false
     
     var pitayaManager: PitayaManager!
-    
-    var localCertData: NSData!
-    var sSLValidateErrorCallBack: (() -> Void)?
-    
+
     public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url)
@@ -53,6 +50,11 @@ public class Pitaya {
     
     public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
         self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
+        return self
+    }
+    
+    public func setHTTPBodyRaw(string: String) -> Pitaya {
+        self.pitayaManager.sethttpBodyRaw(string)
         return self
     }
     

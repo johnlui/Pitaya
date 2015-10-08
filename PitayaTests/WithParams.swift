@@ -28,8 +28,6 @@ class WithParams: BaseTestCase {
             .addParams(["get": param1, "get2": param2])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
-                
-                expectation.fulfill()
             })
             .responseString { (string, response) -> Void in
                 XCTAssert(string == self.param1 + self.param2, "GET should success and return the strings together")

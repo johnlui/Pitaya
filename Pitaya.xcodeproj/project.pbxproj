@@ -11,6 +11,7 @@
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
 		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
+		C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */; settings = {ASSET_TAGS = (); }; };
 		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; settings = {ASSET_TAGS = (); }; };
 		C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */; settings = {ASSET_TAGS = (); }; };
 		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -18,6 +19,7 @@
 		C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */; settings = {ASSET_TAGS = (); }; };
 		C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */; settings = {ASSET_TAGS = (); }; };
 		C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; settings = {ASSET_TAGS = (); }; };
@@ -45,6 +47,7 @@
 		463712161B04C2050019E1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
+		C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBodyRaw.swift; sourceTree = "<group>"; };
 		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitayaSSLPinning.swift; sourceTree = "<group>"; };
 		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFiles.swift; sourceTree = "<group>"; };
 		C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+NSURLSessionDelegate.swift"; path = "Source/PitayaManager+NSURLSessionDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+Static.swift"; path = "Source/PitayaManager+Static.swift"; sourceTree = SOURCE_ROOT; };
 		C8CF0E541BC55671002E2D0A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pitaya.swift; path = Source/Pitaya.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E561BC5568E002E2D0A /* String+NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+NSData.swift"; path = "Source/String+NSData.swift"; sourceTree = SOURCE_ROOT; };
 		C8CF0E581BC556AC002E2D0A /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Base64.swift"; path = "Source/String+Base64.swift"; sourceTree = SOURCE_ROOT; };
@@ -104,6 +108,7 @@
 				4637120A1B04C2050019E1AB /* Pitaya.h */,
 				C8CF0E541BC55671002E2D0A /* Pitaya.swift */,
 				C8CF0E5A1BC556D0002E2D0A /* PitayaManager.swift */,
+				C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */,
 				C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */,
 				C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */,
 				C8CF0E5C1BC556F8002E2D0A /* File.swift */,
@@ -132,6 +137,7 @@
 				C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */,
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
 				C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */,
+				C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */,
 				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
 				C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */,
 				463712151B04C2050019E1AB /* Supporting Files */,
@@ -263,6 +269,7 @@
 				C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */,
 				C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */,
 				C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */,
+				C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */,
 				C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */,
 				C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */,
 				C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */,
@@ -277,6 +284,7 @@
 				C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinning.swift in Sources */,
 				C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */,
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
+				C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */,
 				C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */,
 				C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PitayaManager: NSObject, NSURLSessionDelegate {
+class PitayaManager: NSObject, NSURLSessionDelegate {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
@@ -45,12 +45,8 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         
         return "Pitaya"
         }()
-    
-    public static func build(method: HTTPMethod, url: String) -> PitayaManager {
-        return PitayaManager(url: url, method: method)
-    }
 
-    private init(url: String, method: HTTPMethod!) {
+    init(url: String, method: HTTPMethod!) {
         self.url = url
         self.request = NSMutableURLRequest(URL: NSURL(string: url)!)
         self.method = method.rawValue
@@ -58,23 +54,23 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         super.init()
         self.session = NSURLSession(configuration: NSURLSession.sharedSession().configuration, delegate: self, delegateQueue: NSURLSession.sharedSession().delegateQueue)
     }
-    public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) {
+    func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) {
         self.localCertData = data
         self.sSLValidateErrorCallBack = SSLValidateErrorCallBack
     }
-    public func addParams(params: [String: AnyObject]?) {
+    func addParams(params: [String: AnyObject]?) {
         self.params = params
     }
-    public func addFiles(files: [File]?) {
+    func addFiles(files: [File]?) {
         self.files = files
     }
-    public func addErrorCallback(errorCallback: ((error: NSError) -> Void)?) {
+    func addErrorCallback(errorCallback: ((error: NSError) -> Void)?) {
         self.errorCallback = errorCallback
     }
-    public func addHTTPBodyRaw(rawString: String) {
+    func sethttpBodyRaw(rawString: String) {
         self.HTTPBodyRaw = rawString
     }
-    public func fireWithBasicAuth(auth: (String, String), callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
+    func fireWithBasicAuth(auth: (String, String), callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
         self.callback = callback
         
         buildRequest()
@@ -83,7 +79,7 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         buildBody()
         fireTask()
     }
-    public func fire(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
+    func fire(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
         if let _ = callback {
             self.callback = callback
         }
@@ -150,9 +146,10 @@ public class PitayaManager: NSObject, NSURLSessionDelegate {
         request.HTTPMethod = self.method
         
         // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
-        if self.HTTPBodyRaw != "" {
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        } else if self.files?.count > 0 {
+//        if self.HTTPBodyRaw != "" {
+//            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        } else
+        if self.files?.count > 0 {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
         } else if self.params?.count > 0 {
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

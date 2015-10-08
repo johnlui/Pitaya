@@ -26,6 +26,6 @@ class AddFiles: BaseTestCase {
                 expectation.fulfill()
             })
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectationsWithTimeout(self.defaultFileUploadTimeout, handler: nil)
     }
 }
