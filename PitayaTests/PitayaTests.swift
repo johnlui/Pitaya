@@ -22,86 +22,6 @@ class PitayaTests: XCTestCase {
         super.tearDown()
     }
 
-    // Basic GET and POST
-    func testBaseRequest() {
-        let expectation = expectationWithDescription("testBaseRequest")
-        
-        Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .onNetworkError({ (error) -> Void in
-                XCTAssert(false, error.localizedDescription)
-                
-                expectation.fulfill()
-            })
-            .responseData { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == "", "GET should success and return empty string with no params")
-                
-                expectation.fulfill()
-        }
-        Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .onNetworkError({ (error) -> Void in
-                XCTAssert(false, error.localizedDescription)
-                
-                expectation.fulfill()
-            })
-            .responseData { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == "", "POST should success and return empty string with no params")
-                
-                expectation.fulfill()
-        }
-        waitForExpectationsWithTimeout(10, handler: nil)
-    }
-    
-    func testRequestWithParams() {
-        // GET and POST with params
-        let param1 = randomStringWithLength(200)
-        let param2 = randomStringWithLength(200)
-        
-        let expectation = expectationWithDescription("testRequestWithParams")
-        
-        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["get": param1, "get2": param2])
-            .onNetworkError({ (error) -> Void in
-                XCTAssert(false, error.localizedDescription)
-                
-                expectation.fulfill()
-            })
-            .responseData({ (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
-                
-                expectation.fulfill()
-            })
-        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["get": param1, "get2": param2])
-            .onNetworkError({ (error) -> Void in
-                XCTAssert(false, error.localizedDescription)
-                
-                expectation.fulfill()
-            })
-            .responseString({ (string, response) -> Void in
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
-                
-                expectation.fulfill()
-            })
-        
-        waitForExpectationsWithTimeout(10, handler: nil)
-        return;
-        
-        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["get": param1, "get2": param2], errorCallback: { (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
-        }
-        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["post": param1, "post2": param2], errorCallback: { (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == param1 + param2, "POST should success and return the strings together")
-        }
-    }
     func testFileUpload() {
         /* --------------------------
         *    NOTICE: you must copy Pitaya.png in "Supporting Files" directory to /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents
@@ -130,30 +50,7 @@ class PitayaTests: XCTestCase {
         waitForExpectationsWithTimeout(10, handler: nil)
         XCTAssertEqual(res?.statusCode ?? 0, 200, "Basic Auth should get HTTP status 200")
     }
-    
-    func testAddParamsFunction() {
-        let param1 = randomStringWithLength(200)
-        let param2 = randomStringWithLength(200)
-        
-        var pitaya = PitayaManager.build(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-        pitaya.addParams(["get": param1, "get2": param2])
-        pitaya.fire({ (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
-        }
-        
-        pitaya = PitayaManager.build(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
-        pitaya.addParams(["post": param1, "post2": param2])
-        pitaya.fire({ (error) -> Void in
-            XCTAssert(false, error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                XCTAssert(string == param1 + param2, "POST should success and return the strings together")
-        }
-    }
-    
+
     func testAddFilesFunction() {
         let pitaya = PitayaManager.build(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
         let file = File(name: "file", url: NSBundle(forClass: PitayaTests.self).URLForResource("Pitaya", withExtension: "png")!)
@@ -167,28 +64,6 @@ class PitayaTests: XCTestCase {
     }
     
     func testWait() {
-        sleep(10) // wait Network for 5 seconds
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    func randomStringWithLength(len : Int) -> String {
-        
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789我就测试一下UTF-8"
-        
-        let randomString : NSMutableString = NSMutableString(capacity: len)
-        
-        for (var i=0; i < len; i++){
-            let length = UInt32 (letters.length)
-            let rand = arc4random_uniform(length)
-            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
-        }
-        
-        return randomString as String
-    }
-    
+        sleep(10) // wait Network for 10 seconds
+    }    
 }

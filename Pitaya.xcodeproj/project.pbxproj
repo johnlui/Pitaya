@@ -15,6 +15,8 @@
 		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
 		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; settings = {ASSET_TAGS = (); }; };
 		C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithParams.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; settings = {ASSET_TAGS = (); }; };
 		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +48,8 @@
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitayaSSLPinningTests.swift; sourceTree = "<group>"; };
+		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
+		C8ABB7281BC6A89600C4C897 /* WithParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithParams.swift; sourceTree = "<group>"; };
 		C8CF0E541BC55671002E2D0A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pitaya.swift; path = Source/Pitaya.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E561BC5568E002E2D0A /* String+NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+NSData.swift"; path = "Source/String+NSData.swift"; sourceTree = SOURCE_ROOT; };
 		C8CF0E581BC556AC002E2D0A /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Base64.swift"; path = "Source/String+Base64.swift"; sourceTree = SOURCE_ROOT; };
@@ -119,9 +123,11 @@
 		463712141B04C2050019E1AB /* PitayaTests */ = {
 			isa = PBXGroup;
 			children = (
+				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
+				C8ABB7261BC6A11600C4C897 /* BasicTests.swift */,
+				C8ABB7281BC6A89600C4C897 /* WithParams.swift */,
 				463712171B04C2050019E1AB /* PitayaTests.swift */,
 				C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift */,
-				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
 				C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */,
 				8EDD226C1B623BB000FAD39F /* Core */,
@@ -274,7 +280,9 @@
 				8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */,
 				8EDD226E1B623BD500FAD39F /* BasicAuthenticationTestCase.swift in Sources */,
 				C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinningTests.swift in Sources */,
+				C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */,
 				463712181B04C2050019E1AB /* PitayaTests.swift in Sources */,
+				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
