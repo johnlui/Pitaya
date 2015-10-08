@@ -42,12 +42,17 @@ class PitayaTests: XCTestCase {
         let param1 = randomStringWithLength(200)
         let param2 = randomStringWithLength(200)
         
-        Pita.request(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
+        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addParams(["get": param1, "get2": param2])
-            .response { (data, response) -> Void in
+            .responseData({ (data, response) -> Void in
                 let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                 XCTAssert(string == param1 + param2, "GET should success and return the strings together")
-        }
+            })
+        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
+            .addParams(["get": param1, "get2": param2])
+            .responseString({ (string, response) -> Void in
+                XCTAssert(string == param1 + param2, "GET should success and return the strings together")
+            })
         return;
         
         Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["get": param1, "get2": param2], errorCallback: { (error) -> Void in

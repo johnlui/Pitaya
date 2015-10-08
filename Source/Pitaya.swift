@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// make your code looks tidier
 public typealias Pita = Pitaya
 
 public class Pitaya {
@@ -47,17 +48,35 @@ public class Pitaya {
     }
     
     /**
-    async response
+    async response the http body in NSData type
     
     - parameter callback: callback Closure
     - parameter response: void
     */
-    public func response(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
+    public func responseData(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
         let pm = PitayaManager(url: self.url, method: self.method, params: self.params, files: self.files, errorCallback: self.errorCallback, callback: callback)
         pm.fire()
     }
     
-    public static func request(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
+    /**
+    async response the http body in String type
+    
+    - parameter callback: callback Closure
+    - parameter response: void
+    */
+    public func responseString(callback: ((string: String?, response: NSHTTPURLResponse?) -> Void)?) {
+        let pm = PitayaManager(url: self.url, method: self.method, params: self.params, files: self.files, errorCallback: self.errorCallback, callback: { (data, response) -> Void in
+            var string = ""
+            if let d = data,
+                   s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
+                    string = s
+            }
+            callback?(string: string, response: response)
+        })
+        pm.fire()
+    }
+    
+    public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.method = method
         p.url = url
