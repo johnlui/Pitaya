@@ -44,6 +44,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     let url: String!
     var request: NSMutableURLRequest!
     var task: NSURLSessionTask!
+    var basicAuth: (String, String)!
     
     var localCertData: NSData!
     var sSLValidateErrorCallBack: (() -> Void)?
@@ -90,19 +91,11 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     func sethttpBodyRaw(rawString: String) {
         self.HTTPBodyRaw = rawString
     }
-    func fireWithBasicAuth(auth: (String, String), callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
-        self.callback = callback
-        
-        buildRequest()
-        let authString = "Basic " + (auth.0 + ":" + auth.1).base64
-        self.request.addValue(authString, forHTTPHeaderField: "Authorization")
-        buildBody()
-        fireTask()
+    func setBasicAuth(auth: (String, String)) {
+        self.basicAuth = auth
     }
     func fire(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
-        if let _ = callback {
-            self.callback = callback
-        }
+        self.callback = callback
         
         buildRequest()
         buildBody()
@@ -175,5 +168,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         }
         request.addValue(self.userAgent, forHTTPHeaderField: "User-Agent")
+        if let auth = self.basicAuth {
+            let authString = "Basic " + (auth.0 + ":" + auth.1).base64
+            request.addValue(authString, forHTTPHeaderField: "Authorization")
+        }
     }
 }

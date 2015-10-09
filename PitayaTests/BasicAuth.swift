@@ -14,10 +14,11 @@ class BasicAuth: BaseTestCase {
     func testValidBasicAuth() {
         let expectation = expectationWithDescription("testBasicAuth")
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
+            .setBasicAuth("user", password: "passwd")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
-            .responseDataWithBasicAuth(username: "user", password: "passwd") { (data, response) -> Void in
+            .responseData { (data, response) -> Void in
                 XCTAssertEqual(response?.statusCode ?? 0, 200, "Basic Auth should get HTTP status 200")
                 
                 expectation.fulfill()
@@ -29,10 +30,11 @@ class BasicAuth: BaseTestCase {
     func testInValidBasicAuth() {
         let expectation = expectationWithDescription("testInValidBasicAuth")
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
+            .setBasicAuth("foo", password: "bar")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
-            .responseDataWithBasicAuth(username: "foo", password: "bar") { (data, response) -> Void in
+            .responseData { (data, response) -> Void in
                 XCTAssertNotEqual(response?.statusCode, 200, "Basic Auth should get HTTP status 200")
                 
                 expectation.fulfill()

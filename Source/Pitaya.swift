@@ -78,6 +78,11 @@ public class Pitaya {
         return self
     }
     
+    public func setBasicAuth(username: String, password: String) -> Pitaya {
+        self.pitayaManager.setBasicAuth((username, password))
+        return self
+    }
+    
     /**
     add error callback to self (Pitaya object).
     this will called only when network error, if we can receive any data from server, responseData() will be fired.
@@ -131,21 +136,6 @@ public class Pitaya {
                 json = JSONND.initWithData(d)
             }
             callback?(json: json, response: response)
-        }
-    }
-    
-    public func responseDataWithBasicAuth(username username: String, password: String, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
-        self.pitayaManager?.fireWithBasicAuth((username, password), callback: callback)
-    }
-    
-    public func responseStringWithBasicAuth(username username: String, password: String, callback: ((string: String?, response: NSHTTPURLResponse?) -> Void)?) {
-        self.responseDataWithBasicAuth(username: username, password: password) { (data, response) -> Void in
-            var string = ""
-            if let d = data,
-                s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
-                    string = s
-            }
-            callback?(string: string, response: response)
         }
     }
 }

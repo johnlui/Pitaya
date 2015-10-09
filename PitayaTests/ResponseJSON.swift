@@ -28,4 +28,43 @@ class ResponseJSON: WithParams {
         
         waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
     }
+    
+    func testResponseJSONWithValidBasicAuth() {
+        let expectation = expectationWithDescription("testResponseJSONWithBasicAuth")
+        
+        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
+            .addParams([param1: param2, param2: param1])
+            .setBasicAuth("user", password: "passwd")
+            .onNetworkError({ (error) -> Void in
+                XCTAssert(false, error.localizedDescription)
+            })
+            .responseJSON { (json, response) -> Void in
+                XCTAssert(json["authenticated"].boolValue)
+                XCTAssert(json["user"].stringValue == "user")
+                
+                expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+    }
+    
+    func testResponseJSONWithInValidBasicAuth() {
+        let expectation = expectationWithDescription("testResponseJSONWithBasicAuth")
+        
+        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
+            .addParams([param1: param2, param2: param1])
+        .setBasicAuth("foo", password: "bar")
+            .onNetworkError({ (error) -> Void in
+                XCTAssert(false, error.localizedDescription)
+            })
+            .responseJSON { (json, response) -> Void in
+                XCTAssertNotEqual(response?.statusCode, 200, "Basic Auth should get HTTP status 200")
+                XCTAssert(json["authenticated"].boolValue == false)
+                
+                expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+    }
+
 }
