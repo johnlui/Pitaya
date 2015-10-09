@@ -8,22 +8,32 @@ Pitaya
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 
-[Read the documentation](https://github.com/johnlui/Pitaya/wiki).
+## Example
+
+```swift
+Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get")
+    .responseString { (string, response) -> Void in
+        print(string!)
+}
+```
+
+##### [More Request documentation](https://github.com/johnlui/Pitaya/wiki/Request)
+
+###They are all Asynchronous.
 
 ##Features
 
 - [x] Fast file upload through "Content-Type: multipart/form-data"
 - [x] HTTP Basic Authorization supported
 - [x] Asynchronous & Blocking ( blocked in thread II )
-- [x] Multi-level API to keep your code clean
 - [x] Well tested
-- [ ] Fully JSON support
+- [x] Internal JSON support with [JSONNeverDie](https://github.com/johnlui/JSONNeverDie)
 
 ##Requirements
 
 * iOS 7.0+
 * Xcode 6.4 (Swift 1.2) before [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
-* Xcode 7 (Swift 2.0) in current master branch.
+* Xcode 7 (Swift 2) in current master branch.
 
 ##Installation
 
@@ -66,48 +76,6 @@ If you want to run your project on device with Pitaya, just go to PROJECT->TARGE
 ###Source File
 
 Clone all files in the `Source` directory into your project.
-
-##Use
-
-###Import
-If you drag Pitaya project into your project, you may need to import it before use it:
-
-```swift
-import Pitaya
-```
-
-###GET
-
-Just give Google a hit:
-
-```swift
-Pitaya.request(.GET, url: "https://www.google.com", errorCallback: nil, callback: nil)
-```
-
-###GET with callback
-
-```swift
-Pitaya.request(.GET, url: "http://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
-    print("Got it!")
-}
-```
-##### [More Request documentation](https://github.com/johnlui/Pitaya/wiki/Request)
-
-###They are all Asynchronous.
-
-##Play with JSON
-
-You can use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse string to JSON:
-
-
-```swift
-Pitaya.request(.GET, "http://pitayaswift.sinaapp.com/pitaya.php", { (error) -> Void in
-    NSLog(error.localizedDescription)
-    }) { (data, response) -> Void in
-        let json = JSON(data: data)
-        print(json["title"])
-}
-```
 
 
 ##Contribution
