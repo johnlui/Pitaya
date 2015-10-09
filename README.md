@@ -19,7 +19,7 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 }
 ```
 
-##### [Read the documentation](https://github.com/johnlui/Pitaya/wiki/Request).
+##### [Read the documentation](https://github.com/johnlui/Pitaya/wiki).
 
 ###They are all Asynchronous.
 
