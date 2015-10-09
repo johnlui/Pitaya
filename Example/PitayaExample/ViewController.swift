@@ -22,56 +22,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
-        let request = PitayaManager.build(.GET, url: "https://lvwenhan.com/")
-        request.addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!, SSLValidateErrorCallBack: { () -> Void in
-            print("遭受中间人攻击！")
-        })
-        request.fire({ (error) -> Void in
-            print(error)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                print("HTTP body: " + string, terminator: "\n")
-                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
+        // basic GET
+        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get")
+            .responseString { (string, response) -> Void in
+                print(string!)
         }
-        return;
-        Pitaya.DEBUG = false
-        Pitaya.request(.GET, url: "https://httpbin.org/get", errorCallback: nil) { (data, response) -> Void in
-            for (i,j) in response!.allHeaderFields {
-                print("\(i): \(j)")
+        
+        // SSL pinning success
+        Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
+            .addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!) { () -> Void in
+                print("Under Man-in-the-middle attack!")
             }
+            .responseString { (string, response) -> Void in
+                print("HTTP status: " + response!.statusCode.description)
         }
-        Pitaya.request(.GET, url: "http://staticonsae.sinaapp.com/pitaya.php", errorCallback: { (error) -> Void in
-            NSLog(error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                print("HTTP body: " + string, terminator: "\n")
-                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
+        
+        // SSL pinning error
+        Pita.build(HTTPMethod: .GET, url: "https://www.baidu.com/")
+            .addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!) { () -> Void in
+                print("Under Man-in-the-middle attack!")
+            }
+            .responseString { (string, response) -> Void in
+                print("HTTP status: " + response!.statusCode.description)
         }
-        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", params: ["post": "pitaya"], errorCallback: { (error) -> Void in
-            NSLog(error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                print("HTTP body: " + string, string, terminator: "\n")
-                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
-        }
-        let file = File(name: "file", url: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Pitaya", ofType: "png")!))
-        Pitaya.request(.POST, url: "http://staticonsae.sinaapp.com/pitaya.php", files: [file], errorCallback: { (error) -> Void in
-            NSLog(error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                print("HTTP body: " + string, string, terminator: "\n")
-                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
-        }
-        let pitaya = PitayaManager.build(.POST, url: "http://httpbin.org/post")
-        pitaya.addHTTPBodyRaw("{\"fuck\":\"you\"}")
-        pitaya.fire({ (error) -> Void in
-            NSLog(error.localizedDescription)
-            }) { (data, response) -> Void in
-                let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                print("HTTP body: " + string, string, terminator: "\n")
-                print("HTTP status: " + response!.statusCode.description, string, terminator: "\n")
-        }
-
     }
 
 }
