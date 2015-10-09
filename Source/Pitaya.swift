@@ -118,6 +118,22 @@ public class Pitaya {
         }
     }
     
+    /**
+    async response the http body in JSON type use JSONNeverDie(https://github.com/johnlui/JSONNeverDie).
+    
+    - parameter callback: callback Closure
+    - parameter response: void
+    */
+    public func responseJSON(callback: ((json: JSONND, response: NSHTTPURLResponse?) -> Void)?) {
+        self.responseData { (data, response) -> Void in
+            var json = JSONND()
+            if let d = data {
+                json = JSONND.initWithData(d)
+            }
+            callback?(json: json, response: response)
+        }
+    }
+    
     public func responseDataWithBasicAuth(username username: String, password: String, callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
         self.pitayaManager?.fireWithBasicAuth((username, password), callback: callback)
     }

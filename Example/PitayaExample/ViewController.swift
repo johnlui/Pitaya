@@ -23,9 +23,9 @@ class ViewController: UIViewController {
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
         // basic GET
-        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get")
-            .responseString { (string, response) -> Void in
-                print(string!)
+        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
+            .responseJSON { (json, response) -> Void in
+                print(json["args"]["hello"].stringValue)
         }
         
         // SSL pinning success
@@ -36,16 +36,6 @@ class ViewController: UIViewController {
             .responseString { (string, response) -> Void in
                 print("HTTP status: " + response!.statusCode.description)
         }
-        
-        // SSL pinning error
-        Pita.build(HTTPMethod: .GET, url: "https://www.baidu.com/")
-            .addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!) { () -> Void in
-                print("Under Man-in-the-middle attack!")
-            }
-            .responseString { (string, response) -> Void in
-                print("HTTP status: " + response!.statusCode.description)
-        }
     }
-
 }
 

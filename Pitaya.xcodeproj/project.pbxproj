@@ -12,6 +12,11 @@
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
 		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
 		C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */; settings = {ASSET_TAGS = (); }; };
+		C855F36D1BC8239800170211 /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3691BC8239800170211 /* JSONND.swift */; settings = {ASSET_TAGS = (); }; };
+		C855F36E1BC8239800170211 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F36A1BC8239800170211 /* JSONND+ArrayLiteralConvertible.swift */; settings = {ASSET_TAGS = (); }; };
+		C855F36F1BC8239800170211 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F36B1BC8239800170211 /* JSONND+DictionaryLiteralConvertible.swift */; settings = {ASSET_TAGS = (); }; };
+		C855F3701BC8239800170211 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F36C1BC8239800170211 /* JSONNDModel.swift */; settings = {ASSET_TAGS = (); }; };
+		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; settings = {ASSET_TAGS = (); }; };
 		C88EE1681BC3A6F10033D3B0 /* PitayaSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */; settings = {ASSET_TAGS = (); }; };
 		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +53,11 @@
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBodyRaw.swift; sourceTree = "<group>"; };
+		C855F3691BC8239800170211 /* JSONND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONND.swift; path = JSONNeverDie/JSONND.swift; sourceTree = SOURCE_ROOT; };
+		C855F36A1BC8239800170211 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "JSONNeverDie/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C855F36B1BC8239800170211 /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "JSONNeverDie/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C855F36C1BC8239800170211 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = JSONNeverDie/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
+		C855F3711BC8247B00170211 /* ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJSON.swift; sourceTree = "<group>"; };
 		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitayaSSLPinning.swift; sourceTree = "<group>"; };
 		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 		463712081B04C2050019E1AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C855F3681BC8235C00170211 /* JSONNeverDie */,
 				463712091B04C2050019E1AB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -134,6 +145,7 @@
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C8ABB7261BC6A11600C4C897 /* BasicTests.swift */,
 				C8ABB7281BC6A89600C4C897 /* WithParams.swift */,
+				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
 				C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */,
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
 				C88EE1671BC3A6F10033D3B0 /* PitayaSSLPinning.swift */,
@@ -151,6 +163,17 @@
 				463712161B04C2050019E1AB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C855F3681BC8235C00170211 /* JSONNeverDie */ = {
+			isa = PBXGroup;
+			children = (
+				C855F3691BC8239800170211 /* JSONND.swift */,
+				C855F36A1BC8239800170211 /* JSONND+ArrayLiteralConvertible.swift */,
+				C855F36B1BC8239800170211 /* JSONND+DictionaryLiteralConvertible.swift */,
+				C855F36C1BC8239800170211 /* JSONNDModel.swift */,
+			);
+			name = JSONNeverDie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,11 +290,15 @@
 				C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */,
 				C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */,
 				C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */,
+				C855F36D1BC8239800170211 /* JSONND.swift in Sources */,
 				C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */,
 				C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */,
 				C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */,
+				C855F36F1BC8239800170211 /* JSONND+DictionaryLiteralConvertible.swift in Sources */,
 				C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */,
 				C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */,
+				C855F36E1BC8239800170211 /* JSONND+ArrayLiteralConvertible.swift in Sources */,
+				C855F3701BC8239800170211 /* JSONNDModel.swift in Sources */,
 				C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +313,7 @@
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
 				C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */,
 				C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */,
+				C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */,
 				C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
