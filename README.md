@@ -13,7 +13,7 @@ Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamo
 ```swift
 Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
     .responseJSON { (json, response) -> Void in
-        print(json["args"]["hello"].stringValue)
+        print(json["args"]["hello"].stringValue) // get "Hello Pitaya!"
 }
 ```
 
