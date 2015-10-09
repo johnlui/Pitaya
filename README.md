@@ -23,11 +23,14 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 
 ##Features
 
-- [x] Fast file upload through "Content-Type: multipart/form-data"
-- [x] HTTP Basic Authorization supported
-- [x] Asynchronous & Blocking ( blocked in thread II )
-- [x] Well tested
-- [x] Internal JSON support with [JSONNeverDie](https://github.com/johnlui/JSONNeverDie)
+- [x] APIs for people
+- [x] Support HTTP Basic Authorization
+- [x] Support setting SSL pinning
+- [x] Support setting HTTP raw body (include [JSON body](https://github.com/johnlui/Pitaya/wiki#http-raw-body))
+- [x] Asynchronous & Queue
+- [x] Upload files fast
+- [x] Internal fully JSON support with [JSONNeverDie](https://github.com/johnlui/JSONNeverDie)
+- [x] 100% tested
 
 ##Requirements
 
