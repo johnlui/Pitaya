@@ -23,7 +23,7 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 
 ##Features
 
-- [x] APIs for people
+- [x] Elegant APIs for people
 - [x] Support HTTP Basic Authorization
 - [x] Support setting SSL pinning
 - [x] Support setting HTTP raw body (include [JSON body](https://github.com/johnlui/Pitaya/wiki#http-raw-body))
