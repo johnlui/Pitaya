@@ -28,9 +28,19 @@ class ViewController: UIViewController {
                 print(json["args"]["hello"].stringValue)
         }
         
-        // SSL pinning success
+        // A request with Params, Files, Basic Auth, SSL pinning, HTTP Raw Body and NetworkError callback
+        let file = File(name: "file", url: NSBundle.mainBundle().URLForResource("Pitaya", withExtension: "png")!)
+        let certData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!
+        let json: JSONND = ["user": "JohnLui", "love": "you"]
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
-            .addSSLPinning(LocalCertData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!) { () -> Void in
+            .addParams(["hello": "params"])
+            .addFiles([file])
+            .setBasicAuth("user", password: "passwd")
+            .setHTTPBodyRaw(json.jsonStringValue)
+            .onNetworkError({ (error) -> Void in
+                print("network offline!")
+            })
+            .addSSLPinning(LocalCertData: certData) { () -> Void in
                 print("Under Man-in-the-middle attack!")
             }
             .responseString { (string, response) -> Void in
