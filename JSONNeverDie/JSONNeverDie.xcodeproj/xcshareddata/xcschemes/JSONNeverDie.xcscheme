@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "463712041B04C2050019E1AB"
-               BuildableName = "Pitaya.framework"
-               BlueprintName = "Pitaya"
-               ReferencedContainer = "container:Pitaya.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4637120F1B04C2050019E1AB"
-               BuildableName = "PitayaTests.xctest"
-               BlueprintName = "PitayaTests"
-               ReferencedContainer = "container:Pitaya.xcodeproj">
+               BlueprintIdentifier = "C88A50981BB683890054E3A4"
+               BuildableName = "JSONNeverDie.framework"
+               BlueprintName = "JSONNeverDie"
+               ReferencedContainer = "container:JSONNeverDie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,20 +33,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4637120F1B04C2050019E1AB"
-               BuildableName = "PitayaTests.xctest"
-               BlueprintName = "PitayaTests"
-               ReferencedContainer = "container:Pitaya.xcodeproj">
+               BlueprintIdentifier = "C81DD4301BB7DB35007CE97E"
+               BuildableName = "JSONNeverDieTests.xctest"
+               BlueprintName = "JSONNeverDieTests"
+               ReferencedContainer = "container:JSONNeverDie.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463712041B04C2050019E1AB"
-            BuildableName = "Pitaya.framework"
-            BlueprintName = "Pitaya"
-            ReferencedContainer = "container:Pitaya.xcodeproj">
+            BlueprintIdentifier = "C88A50981BB683890054E3A4"
+            BuildableName = "JSONNeverDie.framework"
+            BlueprintName = "JSONNeverDie"
+            ReferencedContainer = "container:JSONNeverDie.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463712041B04C2050019E1AB"
-            BuildableName = "Pitaya.framework"
-            BlueprintName = "Pitaya"
-            ReferencedContainer = "container:Pitaya.xcodeproj">
+            BlueprintIdentifier = "C88A50981BB683890054E3A4"
+            BuildableName = "JSONNeverDie.framework"
+            BlueprintName = "JSONNeverDie"
+            ReferencedContainer = "container:JSONNeverDie.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -97,10 +83,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "463712041B04C2050019E1AB"
-            BuildableName = "Pitaya.framework"
-            BlueprintName = "Pitaya"
-            ReferencedContainer = "container:Pitaya.xcodeproj">
+            BlueprintIdentifier = "C88A50981BB683890054E3A4"
+            BuildableName = "JSONNeverDie.framework"
+            BlueprintName = "JSONNeverDie"
+            ReferencedContainer = "container:JSONNeverDie.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

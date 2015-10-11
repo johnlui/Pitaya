@@ -45,6 +45,7 @@ extension URLSessionDelegate {
                         self.sSLValidateErrorCallBack?()
                     }
             } else {
+                // could not tested
                 NSLog("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
             }
         } else {

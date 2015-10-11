@@ -40,4 +40,18 @@ class BasicTests: BaseTestCase {
         }
         waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
     }
+    
+    func testOneMoreThing() {
+        // code here will not be used in reality forever, just for increasing testing coverage
+        
+        let expectation = expectationWithDescription("testOneMoreThing")
+        Pitaya.DEBUG = true
+        Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
+            .responseString { (string, response) -> Void in
+                XCTAssert(string == "", "GET should success and return empty string with no params")
+                
+                expectation.fulfill()
+        }
+        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+    }
 }

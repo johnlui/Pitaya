@@ -24,7 +24,7 @@ class WithParams: BaseTestCase {
     func testGETWithParams() {
         let expectation = expectationWithDescription("testGETWithParams")
         
-        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
+        Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addParams(["get": param1, "get2": param2])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -41,8 +41,8 @@ class WithParams: BaseTestCase {
     func testPOSTWithParams() {
         let expectation = expectationWithDescription("testPOSTWithParams")
         
-        Pita.build(HTTPMethod: HTTPMethod.GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["get": param1, "get2": param2])
+        Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
+            .addParams(["post": param1, "post2": param2])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })

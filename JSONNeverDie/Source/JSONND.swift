@@ -36,10 +36,9 @@ public struct JSONND {
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
             NSLog(e.localizedDescription)
-            return JSONND()
+            return JSONND(data: nil)
         }
     }
-    public init() {}
     public init(data: AnyObject!) {
         self.data = data
     }
@@ -57,94 +56,60 @@ public struct JSONND {
         get {
             do {
                 if let _ = self.data {
-                    return NSString(data: try NSJSONSerialization.dataWithJSONObject(self.data, options: .PrettyPrinted), encoding: NSUTF8StringEncoding) as? String
-                } else {
-                    return nil
+                    let d = try NSJSONSerialization.dataWithJSONObject(self.data, options: .PrettyPrinted)
+                    return NSString(data: d, encoding: NSUTF8StringEncoding) as? String
                 }
+                return nil
             } catch {
+                // can not test Errors here.
+                // It seems that NSJSONSerialization.dataWithJSONObject() method dose not support do-try-catch in Swift 2 now.
                 return nil
             }
         }
     }
     public var jsonStringValue: String {
         get {
-            if let i = self.jsonString {
-                return i
-            } else {
-                return ""
-            }
+            return self.jsonString ?? ""
         }
     }
     public var int: Int? {
         get {
-            if let _ = self.data {
-                return self.data.integerValue
-            } else {
-                return nil
-            }
+            return self.data?.integerValue
         }
     }
     public var intValue: Int {
         get {
-            if let i = self.int {
-                return i
-            } else {
-                return 0
-            }
+            return self.int ?? 0
         }
     }
     public var float: Float? {
         get {
-            if let _ = self.data {
-                return self.data.floatValue
-            } else {
-                return nil
-            }
+            return self.data?.floatValue
         }
     }
     public var floatValue: Float {
         get {
-            if let i = self.float {
-                return i
-            } else {
-                return 0
-            }
+            return self.float ?? 0.0
         }
     }
     public var string: String? {
         get {
-            if let _ = self.data {
-                return self.data as? String
-            } else {
-                return nil
-            }
+            return self.data as? String
         }
     }
     public var stringValue: String {
         get {
-            if let i = self.string {
-                return i
-            } else {
-                return ""
-            }
+            return self.string ?? ""
         }
     }
     public var bool: Bool? {
         get {
-            if let _ = self.data {
-                return self.data as? Bool
-            } else {
-                return nil
-            }
+            return self.data as? Bool
         }
     }
     public var boolValue: Bool {
         get {
-            if let i = self.bool {
-                return i
-            } else {
-                return false
-            }
+            return self.bool ?? false
         }
     }
     public var array: [JSONND]? {
@@ -156,21 +121,15 @@ public struct JSONND {
                         result.append(JSONND(data: i))
                     }
                     return result
-                } else {
-                    return nil
                 }
-            } else {
                 return nil
             }
+            return nil
         }
     }
     public var arrayValue: [JSONND] {
         get {
-            if let i = self.array {
-                return i
-            } else {
-                return []
-            }
+            return self.array ?? [] 
         }
     }
 }

@@ -26,7 +26,7 @@
 //  Created by JohnLui on 15/5/14.
 //
 
-import Foundation
+import JSONNeverDie
 
 /// make your code looks tidier
 public typealias Pita = Pitaya
@@ -131,7 +131,7 @@ public class Pitaya {
     */
     public func responseJSON(callback: ((json: JSONND, response: NSHTTPURLResponse?) -> Void)?) {
         self.responseData { (data, response) -> Void in
-            var json = JSONND()
+            var json = JSONND(data: nil)
             if let d = data {
                 json = JSONND.initWithData(d)
             }

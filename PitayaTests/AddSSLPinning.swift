@@ -1,5 +1,5 @@
 //
-//  PitayaSSLPinningTests.swift
+//  AddSSLPinningTests.swift
 //  Pitaya
 //
 //  Created by 吕文翰 on 15/10/6.
@@ -9,7 +9,7 @@
 import XCTest
 import Pitaya
 
-class PitayaSSLPinning: BaseTestCase {
+class AddSSLPinning: BaseTestCase {
     
     var certData: NSData!
     
@@ -55,6 +55,21 @@ class PitayaSSLPinning: BaseTestCase {
                 XCTFail("shoud not run callback() after a Man-in-the-middle attack.")
         }
         
+        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+    }
+    
+    func testSSLPiningNil() {
+        let expectation = expectationWithDescription("testSSLPiningPassed")
+        
+        Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
+            .onNetworkError({ (error) -> Void in
+                XCTAssert(false, error.localizedDescription)
+            })
+            .responseString { (string, response) -> Void in
+                XCTAssert(string?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+                
+                expectation.fulfill()
+        }
         waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
     }
     

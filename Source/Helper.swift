@@ -42,18 +42,7 @@ class Helper {
     // stolen from Alamofire
     static func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
-        if let dictionary = value as? [String: AnyObject] {
-            for (nestedKey, value) in dictionary {
-                components += Helper.queryComponents("\(key)[\(nestedKey)]", value)
-            }
-        } else if let array = value as? [AnyObject] {
-            for value in array {
-                components += Helper.queryComponents("\(key)", value)
-            }
-        } else {
-            components.appendContentsOf([(Helper.escape(key), Helper.escape("\(value)"))])
-        }
-        
+        components.appendContentsOf([(Helper.escape(key), Helper.escape("\(value)"))])        
         return components
     }
     // stolen from Alamofire

@@ -55,6 +55,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
             let executable: AnyObject = info[kCFBundleExecutableKey as String] ?? "Unknown"
             let bundle: AnyObject = info[kCFBundleIdentifierKey as String] ?? "Unknown"
             let version: AnyObject = info[kCFBundleVersionKey as String] ?? "Unknown"
+            // could not tested
             let os: AnyObject = NSProcessInfo.processInfo().operatingSystemVersionString ?? "Unknown"
             
             var mutableUserAgent = NSMutableString(string: "\(executable)/\(bundle) (\(version); OS \(os))") as CFMutableString
@@ -64,6 +65,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
             }
         }
         
+        // could not tested
         return "Pitaya"
         }()
 
@@ -102,9 +104,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         fireTask()
     }
     private func fireTask() {
-        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description) } }
+        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description); }; }
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description) } }
+            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description); }; }
             if error != nil {
                 let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
                 NSLog("Pitaya Error: " + e.localizedDescription)
@@ -125,26 +127,27 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
             data.appendData(self.HTTPBodyRaw.nsdata)
         } else if self.files?.count > 0 {
             if self.method == "GET" {
-                NSLog("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\n------------------------\n\n")
-            }
-            if let ps = self.params {
-                for (key, value) in ps {
-                    data.appendData("--\(self.boundary)\r\n".nsdata)
-                    data.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".nsdata)
-                    data.appendData("\(value.description)\r\n".nsdata)
-                }
-            }
-            if let fs = self.files {
-                for file in fs {
-                    data.appendData("--\(self.boundary)\r\n".nsdata)
-                    data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata)
-                    if let a = NSData(contentsOfURL: file.url) {
-                        data.appendData(a)
-                        data.appendData("\r\n".nsdata)
+                NSLog("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\nBut it looks like iOS 9 SDK has prevented sending http body in GET method.\n------------------------\n\n")
+            } else {
+                if let ps = self.params {
+                    for (key, value) in ps {
+                        data.appendData("--\(self.boundary)\r\n".nsdata)
+                        data.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".nsdata)
+                        data.appendData("\(value.description)\r\n".nsdata)
                     }
                 }
+                if let fs = self.files {
+                    for file in fs {
+                        data.appendData("--\(self.boundary)\r\n".nsdata)
+                        data.appendData("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata)
+                        if let a = NSData(contentsOfURL: file.url) {
+                            data.appendData(a)
+                            data.appendData("\r\n".nsdata)
+                        }
+                    }
+                }
+                data.appendData("--\(self.boundary)--\r\n".nsdata)
             }
-            data.appendData("--\(self.boundary)--\r\n".nsdata)
         } else if self.params?.count > 0 && self.method != "GET" {
             data.appendData(Helper.buildParams(self.params!).nsdata)
         }
@@ -159,10 +162,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         request.HTTPMethod = self.method
         
         // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
-//        if self.HTTPBodyRaw != "" {
-//            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        } else
-        if self.files?.count > 0 {
+        if self.HTTPBodyRaw != "" {
+            request.addValue("text/plain;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        } else if self.files?.count > 0 && self.method != "GET" {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
         } else if self.params?.count > 0 {
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
