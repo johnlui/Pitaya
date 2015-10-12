@@ -29,8 +29,8 @@
 import Foundation
 
 public struct File {
-    let name: String!
-    let url: NSURL!
+    public let name: String!
+    public let url: NSURL!
     public init(name: String, url: NSURL) {
         self.name = name
         self.url = url
