@@ -96,8 +96,8 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func setHTTPBodyRaw(string: String) -> Pitaya {
-        self.pitayaManager.sethttpBodyRaw(string)
+    public func setHTTPBodyRaw(string: String, isJSON: Bool = false) -> Pitaya {
+        self.pitayaManager.sethttpBodyRaw(string, isJSON: isJSON)
         return self
     }
     

@@ -35,7 +35,7 @@ class SetHTTPBodyRawTests: BaseTestCase {
         let j: JSONND = ["string1": string1, "string2": string2]
 
         Pita.build(HTTPMethod: .POST, url: "http://httpbin.org/post")
-            .setHTTPBodyRaw(j.jsonStringValue)
+            .setHTTPBodyRaw(j.jsonStringValue, isJSON: true)
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })

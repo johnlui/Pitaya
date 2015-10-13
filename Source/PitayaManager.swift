@@ -26,13 +26,14 @@
 //  Created by 吕文翰 on 15/10/7.
 //
 
-import Foundation
+import JSONNeverDie
 
 class PitayaManager: NSObject, NSURLSessionDelegate {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"
     
     var HTTPBodyRaw = ""
+    var HTTPBodyRawIsJSON = false
     
     let method: String!
     var params: [String: AnyObject]?
@@ -90,8 +91,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     func addErrorCallback(errorCallback: ((error: NSError) -> Void)?) {
         self.errorCallback = errorCallback
     }
-    func sethttpBodyRaw(rawString: String) {
+    func sethttpBodyRaw(rawString: String, isJSON: Bool = false) {
         self.HTTPBodyRaw = rawString
+        self.HTTPBodyRawIsJSON = isJSON
     }
     func setBasicAuth(auth: (String, String)) {
         self.basicAuth = auth
@@ -163,7 +165,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         
         // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
         if self.HTTPBodyRaw != "" {
-            request.addValue("text/plain;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+            request.addValue(self.HTTPBodyRawIsJSON ? "application/json" : "text/plain;charset=UTF-8", forHTTPHeaderField: "Content-Type")
         } else if self.files?.count > 0 && self.method != "GET" {
             request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
         } else if self.params?.count > 0 {
