@@ -106,12 +106,12 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         fireTask()
     }
     private func fireTask() {
-        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: " + a.description); }; }
+        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: ", a.description); }; }
         task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: " + a.description); }; }
+            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
             if error != nil {
                 let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
-                NSLog("Pitaya Error: " + e.localizedDescription)
+                NSLog("Pitaya Error: ", e.localizedDescription)
                 dispatch_async(dispatch_get_main_queue()) {
                     self.errorCallback?(error: e)
                 }
