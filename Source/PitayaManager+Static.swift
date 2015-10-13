@@ -27,6 +27,14 @@
 //
 
 extension PitayaManager {
+    /**
+    the only init method of PitayaManager
+    
+    - parameter method: HTTP request method
+    - parameter url:    HTTP request url
+    
+    - returns: self (PitayaManager object)
+    */
     static func build(method: HTTPMethod, url: String) -> PitayaManager {
         return PitayaManager(url: url, method: method)
     }

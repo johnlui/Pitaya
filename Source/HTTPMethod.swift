@@ -28,6 +28,9 @@
 
 import Foundation
 
+/**
+*  HTTP method enum for Pitaya
+*/
 public enum HTTPMethod: String {
     case DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
 }

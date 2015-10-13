@@ -38,6 +38,14 @@ public class Pitaya {
     
     var pitayaManager: PitayaManager!
 
+    /**
+    the only init method to fire a HTTP / HTTPS request
+    
+    - parameter method: the HTTP method you want
+    - parameter url:    the url you want
+    
+    - returns: a Pitaya object
+    */
     public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url)
@@ -68,16 +76,39 @@ public class Pitaya {
         return self
     }
     
+    /**
+    add a SSL pinning to check whether undering the Man-in-the-middle attack
+    
+    - parameter data:                     data of certification file, .cer format
+    - parameter SSLValidateErrorCallBack: error callback closure
+    
+    - returns: self (Pitaya object)
+    */
     public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
         self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
     
+    /**
+    set HTTP body to what you want. This method will discard any other HTTP body you have built.
+    
+    - parameter string: HTTP body string you want
+    
+    - returns: self (Pitaya object)
+    */
     public func setHTTPBodyRaw(string: String) -> Pitaya {
         self.pitayaManager.sethttpBodyRaw(string)
         return self
     }
     
+    /**
+    set username and password of HTTP Basic Auth to the HTTP request header
+    
+    - parameter username: username
+    - parameter password: password
+    
+    - returns: self (Pitaya object)
+    */
     public func setBasicAuth(username: String, password: String) -> Pitaya {
         self.pitayaManager.setBasicAuth((username, password))
         return self

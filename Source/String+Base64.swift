@@ -29,6 +29,7 @@
 import Foundation
 
 extension String {
+    /// return base64 string of self String
     var base64: String! {
         let utf8EncodeData: NSData! = self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         let base64EncodingData = utf8EncodeData.base64EncodedStringWithOptions([])

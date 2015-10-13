@@ -29,7 +29,13 @@
 private typealias URLSessionDelegate = PitayaManager
 
 extension URLSessionDelegate {
+    /**
+    a delegate method to check whether the remote cartification is the same with given certification.
     
+    - parameter session:           NSURLSession
+    - parameter challenge:         NSURLAuthenticationChallenge
+    - parameter completionHandler: the completionHandler closure
+    */
     @objc func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         if let localCertificateData = self.localCertData {
             if let serverTrust = challenge.protectionSpace.serverTrust,

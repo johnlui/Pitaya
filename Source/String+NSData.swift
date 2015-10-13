@@ -29,6 +29,7 @@
 import Foundation
 
 extension String {
+    /// return NSData of self String
     var nsdata: NSData {
         return self.dataUsingEncoding(NSUTF8StringEncoding)!
     }

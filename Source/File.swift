@@ -28,6 +28,9 @@
 
 import Foundation
 
+/**
+*  the file struct for Pitaya to upload
+*/
 public struct File {
     public let name: String!
     public let url: NSURL!
