@@ -36,7 +36,7 @@ public struct JSONND {
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
             NSLog(e.localizedDescription)
-            return JSONND(data: nil)
+            return JSONND()
         }
     }
     private init(any: AnyObject) {
@@ -45,6 +45,9 @@ public struct JSONND {
     }
     init(data: AnyObject!) {
         self.data = data
+    }
+    public init() {
+        self.init(data: nil)
     }
     public init(dictionary: [String: AnyObject]) {
         self.init(any: dictionary)
@@ -60,7 +63,7 @@ public struct JSONND {
                 NSLog("JSONNeverDie: No such key '\(index)'")
             }
         }
-        return JSONND(data: nil)
+        return JSONND()
     }
     public var jsonString: String? {
         get {
