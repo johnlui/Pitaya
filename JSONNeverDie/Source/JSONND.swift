@@ -39,8 +39,18 @@ public struct JSONND {
             return JSONND(data: nil)
         }
     }
-    public init(data: AnyObject!) {
+    private init(any: AnyObject) {
+        let j: JSONND = [any]
+        self.data = j.arrayValue.first != nil ? j.arrayValue.first!.data : nil
+    }
+    init(data: AnyObject!) {
         self.data = data
+    }
+    public init(dictionary: [String: AnyObject]) {
+        self.init(any: dictionary)
+    }
+    public init(array: [AnyObject]) {
+        self.init(any: array)
     }
     public subscript (index: String) -> JSONND {
         if let jsonDictionary = self.data as? Dictionary<String, AnyObject> {
