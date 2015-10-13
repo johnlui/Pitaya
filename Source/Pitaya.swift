@@ -88,11 +88,12 @@ public class Pitaya {
         self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
-    
+
     /**
     set HTTP body to what you want. This method will discard any other HTTP body you have built.
     
     - parameter string: HTTP body string you want
+    - parameter isJSON: is JSON or not: will set "Content-Type" of HTTP request to "application/json" or "text/plain;charset=UTF-8"
     
     - returns: self (Pitaya object)
     */
