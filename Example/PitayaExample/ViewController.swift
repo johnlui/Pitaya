@@ -8,6 +8,7 @@
 
 import UIKit
 import Pitaya
+import JSONNeverDie
 
 class ViewController: UIViewController {
 
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
             .addParams(["hello": "params"])
             .addFiles([file])
+            .setHTTPHeader(Name: "Accept", Value: "application/json")
             .setBasicAuth("user", password: "passwd")
             .setHTTPBodyRaw(json.jsonStringValue)
             .onNetworkError({ (error) -> Void in
