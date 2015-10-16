@@ -50,6 +50,8 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     var localCertData: NSData!
     var sSLValidateErrorCallBack: (() -> Void)?
     
+    var extraHTTPHeaders = [(String, String)]()
+    
     // User-Agent Header; see http://tools.ietf.org/html/rfc7231#section-5.5.3
     let userAgent: String = {
         if let info = NSBundle.mainBundle().infoDictionary {
@@ -76,6 +78,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         self.method = method.rawValue
         
         super.init()
+        // setup a session with delegate to self
         self.session = NSURLSession(configuration: NSURLSession.sharedSession().configuration, delegate: self, delegateQueue: NSURLSession.sharedSession().delegateQueue)
     }
     func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) {
@@ -91,6 +94,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     func addErrorCallback(errorCallback: ((error: NSError) -> Void)?) {
         self.errorCallback = errorCallback
     }
+    func setHTTPHeader(Name key: String, Value value: String) {
+        self.extraHTTPHeaders.append((key, value))
+    }
     func sethttpBodyRaw(rawString: String, isJSON: Bool = false) {
         self.HTTPBodyRaw = rawString
         self.HTTPBodyRawIsJSON = isJSON
@@ -101,27 +107,37 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     func fire(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)? = nil) {
         self.callback = callback
         
-        buildRequest()
-        buildBody()
-        fireTask()
+        self.buildRequest()
+        self.buildHeader()
+        self.buildBody()
+        self.fireTask()
     }
-    private func fireTask() {
-        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: ", a.description); }; }
-        task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
-            if error != nil {
-                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
-                NSLog("Pitaya Error: ", e.localizedDescription)
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.errorCallback?(error: e)
-                }
-            } else {
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.callback?(data: data, response: response as? NSHTTPURLResponse)
-                }
-            }
-        })
-        task.resume()
+    private func buildRequest() {
+        if self.method == "GET" && self.params?.count > 0 {
+            self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + Helper.buildParams(self.params!))!)
+        }
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
+        request.HTTPMethod = self.method
+    }
+    private func buildHeader() {
+        // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
+        if self.params?.count > 0 {
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        }
+        if self.files?.count > 0 && self.method != "GET" {
+            request.setValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
+        }
+        if self.HTTPBodyRaw != "" {
+            request.setValue(self.HTTPBodyRawIsJSON ? "application/json" : "text/plain;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        }
+        request.addValue(self.userAgent, forHTTPHeaderField: "User-Agent")
+        if let auth = self.basicAuth {
+            let authString = "Basic " + (auth.0 + ":" + auth.1).base64
+            request.addValue(authString, forHTTPHeaderField: "Authorization")
+        }
+        for i in self.extraHTTPHeaders {
+            request.setValue(i.1, forHTTPHeaderField: i.0)
+        }
     }
     private func buildBody() {
         let data = NSMutableData()
@@ -155,26 +171,22 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         }
         request.HTTPBody = data
     }
-    private func buildRequest() {
-        if self.method == "GET" && self.params?.count > 0 {
-            self.request = NSMutableURLRequest(URL: NSURL(string: url + "?" + Helper.buildParams(self.params!))!)
-        }
-        
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData
-        request.HTTPMethod = self.method
-        
-        // multipart Content-Type; see http://www.rfc-editor.org/rfc/rfc2046.txt
-        if self.HTTPBodyRaw != "" {
-            request.addValue(self.HTTPBodyRawIsJSON ? "application/json" : "text/plain;charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        } else if self.files?.count > 0 && self.method != "GET" {
-            request.addValue("multipart/form-data; boundary=" + self.boundary, forHTTPHeaderField: "Content-Type")
-        } else if self.params?.count > 0 {
-            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        }
-        request.addValue(self.userAgent, forHTTPHeaderField: "User-Agent")
-        if let auth = self.basicAuth {
-            let authString = "Basic " + (auth.0 + ":" + auth.1).base64
-            request.addValue(authString, forHTTPHeaderField: "Authorization")
-        }
+    private func fireTask() {
+        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: ", a.description); }; }
+        task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
+            if error != nil {
+                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
+                NSLog("Pitaya Error: ", e.localizedDescription)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.errorCallback?(error: e)
+                }
+            } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.callback?(data: data, response: response as? NSHTTPURLResponse)
+                }
+            }
+        })
+        task.resume()
     }
 }

@@ -88,6 +88,19 @@ public class Pitaya {
         self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
+    
+    /**
+    set a custom HTTP header
+    
+    - parameter key:   HTTP header key
+    - parameter value: HTTP header value
+    
+    - returns: self (Pitaya object)
+    */
+    public func setHTTPHeader(Name key: String, Value value: String) -> Pitaya {
+        self.pitayaManager.setHTTPHeader(Name: key, Value: value)
+        return self
+    }
 
     /**
     set HTTP body to what you want. This method will discard any other HTTP body you have built.

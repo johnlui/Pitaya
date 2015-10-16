@@ -18,9 +18,9 @@ class BaseTestCase: XCTestCase {
         return bundle.URLForResource(fileName, withExtension: withExtension)!
     }
     
-    func randomStringWithLength(len : Int) -> String {
+    func randomStringWithLength(len : Int, onlyASCII: Bool = false) -> String {
         
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789我就测试一下UTF-8"
+        let letters : NSString = onlyASCII ? "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789我就测试一下UTF-8"
         
         let randomString : NSMutableString = NSMutableString(capacity: len)
         

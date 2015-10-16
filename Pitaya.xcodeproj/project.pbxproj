@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		4637120B1B04C2050019E1AB /* Pitaya.h in Headers */ = {isa = PBXBuildFile; fileRef = 4637120A1B04C2050019E1AB /* Pitaya.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
+		8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */; settings = {ASSET_TAGS = (); }; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
 		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
-		C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */; settings = {ASSET_TAGS = (); }; };
 		C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */; settings = {ASSET_TAGS = (); }; };
 		C84B228A1BCA258700594876 /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84B22871BCA258100594876 /* JSONNeverDie.framework */; };
 		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; settings = {ASSET_TAGS = (); }; };
@@ -62,9 +62,9 @@
 		4637120A1B04C2050019E1AB /* Pitaya.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pitaya.h; sourceTree = "<group>"; };
 		463712101B04C2050019E1AB /* PitayaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitayaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463712161B04C2050019E1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHTTPHeader.swift; sourceTree = "<group>"; };
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
-		C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBodyRaw.swift; sourceTree = "<group>"; };
 		C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHTTPBodyRaw.swift; sourceTree = "<group>"; };
 		C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONNeverDie.xcodeproj; path = JSONNeverDie/JSONNeverDie.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C855F3711BC8247B00170211 /* ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJSON.swift; sourceTree = "<group>"; };
@@ -156,12 +156,12 @@
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C8ABB7261BC6A11600C4C897 /* BasicTests.swift */,
 				C8ABB7281BC6A89600C4C897 /* WithParams.swift */,
-				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
 				C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */,
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
+				8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */,
 				C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */,
 				C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */,
-				C8455DC61BC6CF0500F26130 /* HTTPBodyRaw.swift */,
+				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
 				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
 				C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */,
 				463712151B04C2050019E1AB /* Supporting Files */,
@@ -339,8 +339,8 @@
 				8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */,
 				C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */,
 				C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */,
+				8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */,
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
-				C8455DC71BC6CF0500F26130 /* HTTPBodyRaw.swift in Sources */,
 				C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */,
 				C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */,
 				C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */,
