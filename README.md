@@ -32,7 +32,7 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 - [x] Asynchronous & Queue
 - [x] Upload files fast
 - [x] Internal fully JSON support with [JSONNeverDie](https://github.com/johnlui/JSONNeverDie)
-- [x] Aupport setting custom HTTP headers
+- [x] Support setting custom HTTP headers
 - [x] almost 100% tested
 
 ##Requirements
