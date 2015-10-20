@@ -12,21 +12,7 @@
 		C80546C21BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C11BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift */; settings = {ASSET_TAGS = (); }; };
 		C80546C41BC55DB600BB6226 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C31BC55DB600BB6226 /* JSONNDModel.swift */; settings = {ASSET_TAGS = (); }; };
 		C81DD4361BB7DB35007CE97E /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88A50991BB683890054E3A4 /* JSONNeverDie.framework */; settings = {ASSET_TAGS = (); }; };
-		C81DD43D1BB7DCA7007CE97E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = C81DD43C1BB7DCA7007CE97E /* test.json */; settings = {ASSET_TAGS = (); }; };
-		C8271AB91BC9873500F69FC2 /* ParseJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AB81BC9873500F69FC2 /* ParseJSONTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271ABB1BC987C800F69FC2 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271ABA1BC987C800F69FC2 /* StringTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271ABD1BC9881000F69FC2 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271ABC1BC9881000F69FC2 /* IntTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271ABF1BC9885700F69FC2 /* FloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271ABE1BC9885700F69FC2 /* FloatTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271AC11BC988D400F69FC2 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AC01BC988D400F69FC2 /* BoolTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271AC31BC9894400F69FC2 /* JSONValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AC21BC9894400F69FC2 /* JSONValueTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271AC51BC98A8B00F69FC2 /* ArrayWithObjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AC41BC98A8B00F69FC2 /* ArrayWithObjectsTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271AC71BC98B9D00F69FC2 /* ArrayWithValuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AC61BC98B9D00F69FC2 /* ArrayWithValuesTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271AC91BC98C4200F69FC2 /* JSONInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271AC81BC98C4200F69FC2 /* JSONInitTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8271ACC1BC9961B00F69FC2 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271ACB1BC9961B00F69FC2 /* ArrayTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C86D3D2D1BBFBA63007FBA24 /* JSONNDModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C86D3D2F1BBFBB9B007FBA24 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */; settings = {ASSET_TAGS = (); }; };
 		C88A509D1BB683890054E3A4 /* JSONNeverDie.h in Headers */ = {isa = PBXBuildFile; fileRef = C88A509C1BB683890054E3A4 /* JSONNeverDie.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8BF46741BC9864E00786057 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF46731BC9864E00786057 /* BaseTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,24 +31,9 @@
 		C80546C11BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "Source/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
 		C80546C31BC55DB600BB6226 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = Source/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
 		C81DD4311BB7DB35007CE97E /* JSONNeverDieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONNeverDieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C81DD4351BB7DB35007CE97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C81DD43C1BB7DCA7007CE97E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		C8271AB81BC9873500F69FC2 /* ParseJSONTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJSONTests.swift; sourceTree = "<group>"; };
-		C8271ABA1BC987C800F69FC2 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
-		C8271ABC1BC9881000F69FC2 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
-		C8271ABE1BC9885700F69FC2 /* FloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatTests.swift; sourceTree = "<group>"; };
-		C8271AC01BC988D400F69FC2 /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
-		C8271AC21BC9894400F69FC2 /* JSONValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValueTests.swift; sourceTree = "<group>"; };
-		C8271AC41BC98A8B00F69FC2 /* ArrayWithObjectsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayWithObjectsTests.swift; sourceTree = "<group>"; };
-		C8271AC61BC98B9D00F69FC2 /* ArrayWithValuesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayWithValuesTests.swift; sourceTree = "<group>"; };
-		C8271AC81BC98C4200F69FC2 /* JSONInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInitTests.swift; sourceTree = "<group>"; };
-		C8271ACB1BC9961B00F69FC2 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
-		C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONNDModelTests.swift; sourceTree = "<group>"; };
-		C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		C88A50991BB683890054E3A4 /* JSONNeverDie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONNeverDie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88A509C1BB683890054E3A4 /* JSONNeverDie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONNeverDie.h; sourceTree = "<group>"; };
 		C88A509E1BB683890054E3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8BF46731BC9864E00786057 /* BaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,33 +55,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C81DD4321BB7DB35007CE97E /* JSONNeverDieTests */ = {
-			isa = PBXGroup;
-			children = (
-				C8BF46731BC9864E00786057 /* BaseTests.swift */,
-				C8271AB81BC9873500F69FC2 /* ParseJSONTests.swift */,
-				C8271ABA1BC987C800F69FC2 /* StringTests.swift */,
-				C8271ABC1BC9881000F69FC2 /* IntTests.swift */,
-				C8271ABE1BC9885700F69FC2 /* FloatTests.swift */,
-				C8271AC01BC988D400F69FC2 /* BoolTests.swift */,
-				C8271AC21BC9894400F69FC2 /* JSONValueTests.swift */,
-				C8271ACB1BC9961B00F69FC2 /* ArrayTests.swift */,
-				C8271AC41BC98A8B00F69FC2 /* ArrayWithObjectsTests.swift */,
-				C8271AC61BC98B9D00F69FC2 /* ArrayWithValuesTests.swift */,
-				C8271AC81BC98C4200F69FC2 /* JSONInitTests.swift */,
-				C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */,
-				C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */,
-				C81DD43C1BB7DCA7007CE97E /* test.json */,
-				C81DD4351BB7DB35007CE97E /* Info.plist */,
-			);
-			path = JSONNeverDieTests;
-			sourceTree = "<group>";
-		};
 		C88A508F1BB683890054E3A4 = {
 			isa = PBXGroup;
 			children = (
 				C88A509B1BB683890054E3A4 /* JSONNeverDie */,
-				C81DD4321BB7DB35007CE97E /* JSONNeverDieTests */,
 				C88A509A1BB683890054E3A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -203,7 +151,6 @@
 					};
 					C88A50981BB683890054E3A4 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FPBUD52ZYH;
 					};
 				};
 			};
@@ -230,7 +177,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C81DD43D1BB7DCA7007CE97E /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,19 +194,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8BF46741BC9864E00786057 /* BaseTests.swift in Sources */,
-				C8271AB91BC9873500F69FC2 /* ParseJSONTests.swift in Sources */,
-				C8271ABD1BC9881000F69FC2 /* IntTests.swift in Sources */,
-				C8271AC91BC98C4200F69FC2 /* JSONInitTests.swift in Sources */,
-				C86D3D2F1BBFBB9B007FBA24 /* TestModel.swift in Sources */,
-				C8271AC51BC98A8B00F69FC2 /* ArrayWithObjectsTests.swift in Sources */,
-				C8271ABF1BC9885700F69FC2 /* FloatTests.swift in Sources */,
-				C8271AC31BC9894400F69FC2 /* JSONValueTests.swift in Sources */,
-				C8271ABB1BC987C800F69FC2 /* StringTests.swift in Sources */,
-				C86D3D2D1BBFBA63007FBA24 /* JSONNDModelTests.swift in Sources */,
-				C8271AC11BC988D400F69FC2 /* BoolTests.swift in Sources */,
-				C8271ACC1BC9961B00F69FC2 /* ArrayTests.swift in Sources */,
-				C8271AC71BC98B9D00F69FC2 /* ArrayWithValuesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

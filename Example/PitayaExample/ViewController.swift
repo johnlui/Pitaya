@@ -38,7 +38,7 @@ class ViewController: UIViewController {
             .addFiles([file])
             .setHTTPHeader(Name: "Accept", Value: "application/json")
             .setBasicAuth("user", password: "passwd")
-            .setHTTPBodyRaw(json.jsonStringValue)
+            //.setHTTPBodyRaw(json.jsonStringValue) // just a example, this method call will fire onNetworkError()
             .onNetworkError({ (error) -> Void in
                 print("network offline!")
             })
