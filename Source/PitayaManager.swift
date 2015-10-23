@@ -173,17 +173,19 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     }
     private func fireTask() {
         if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: ", a.description); }; }
-        task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+        task = session.dataTaskWithRequest(request, completionHandler: { [weak self] (data, response, error) -> Void in
             if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
             if error != nil {
-                let e = NSError(domain: self.errorDomain, code: error!.code, userInfo: error!.userInfo)
+                let e = NSError(domain: self?.errorDomain ?? "Pitaya", code: error!.code, userInfo: error!.userInfo)
                 NSLog("Pitaya Error: ", e.localizedDescription)
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.errorCallback?(error: e)
+                    self?.errorCallback?(error: e)
+                    self?.session.finishTasksAndInvalidate()
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.callback?(data: data, response: response as? NSHTTPURLResponse)
+                    self?.callback?(data: data, response: response as? NSHTTPURLResponse)
+                    self?.session.finishTasksAndInvalidate()
                 }
             }
         })
