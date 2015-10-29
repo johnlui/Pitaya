@@ -58,14 +58,22 @@ public class JSONNDModel: NSObject {
         }
     }
     
+    @available (*, unavailable, renamed="RAW")
     public var jsonString: String? {
+        return ""
+    }
+    public var RAW: String? {
         get {
-            return self.JSONNDObject?.jsonString
+            return self.JSONNDObject?.RAW
         }
     }
+    @available (*, unavailable, renamed="RAWValue")
     public var jsonStringValue: String {
+        return ""
+    }
+    public var RAWValue: String {
         get {
-            return self.jsonString ?? ""
+            return self.RAW ?? ""
         }
     }
 }

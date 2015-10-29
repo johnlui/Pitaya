@@ -35,12 +35,12 @@ class SetHTTPBodyRawTests: BaseTestCase {
         let j: JSONND = ["string1": string1, "string2": string2]
 
         Pita.build(HTTPMethod: .POST, url: "http://httpbin.org/post")
-            .setHTTPBodyRaw(j.jsonStringValue, isJSON: true)
+            .setHTTPBodyRaw(j.RAWValue, isJSON: true)
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
             .responseJSON { (json, response) -> Void in
-                XCTAssertEqual(json["data"].stringValue, j.jsonStringValue)
+                XCTAssertEqual(json["data"].stringValue, j.RAWValue)
                 XCTAssertEqual(json["json"]["string1"].stringValue, string1)
                 XCTAssertEqual(json["json"]["string2"].stringValue, string2)
                 expectation.fulfill()

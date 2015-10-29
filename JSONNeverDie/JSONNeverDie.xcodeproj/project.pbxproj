@@ -7,44 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C80546BE1BC55C9600BB6226 /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546BD1BC55C9600BB6226 /* JSONND.swift */; settings = {ASSET_TAGS = (); }; };
-		C80546C01BC55CD200BB6226 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546BF1BC55CD200BB6226 /* JSONND+DictionaryLiteralConvertible.swift */; settings = {ASSET_TAGS = (); }; };
-		C80546C21BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C11BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift */; settings = {ASSET_TAGS = (); }; };
-		C80546C41BC55DB600BB6226 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C31BC55DB600BB6226 /* JSONNDModel.swift */; settings = {ASSET_TAGS = (); }; };
-		C81DD4361BB7DB35007CE97E /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88A50991BB683890054E3A4 /* JSONNeverDie.framework */; settings = {ASSET_TAGS = (); }; };
+		C80546BE1BC55C9600BB6226 /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546BD1BC55C9600BB6226 /* JSONND.swift */; };
+		C80546C01BC55CD200BB6226 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546BF1BC55CD200BB6226 /* JSONND+DictionaryLiteralConvertible.swift */; };
+		C80546C21BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C11BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift */; };
+		C80546C41BC55DB600BB6226 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80546C31BC55DB600BB6226 /* JSONNDModel.swift */; };
 		C88A509D1BB683890054E3A4 /* JSONNeverDie.h in Headers */ = {isa = PBXBuildFile; fileRef = C88A509C1BB683890054E3A4 /* JSONNeverDie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C81DD4371BB7DB35007CE97E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C88A50901BB683890054E3A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C88A50981BB683890054E3A4;
-			remoteInfo = JSONNeverDie;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C80546BD1BC55C9600BB6226 /* JSONND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONND.swift; path = Source/JSONND.swift; sourceTree = SOURCE_ROOT; };
 		C80546BF1BC55CD200BB6226 /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "Source/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
 		C80546C11BC55CF400BB6226 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "Source/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
 		C80546C31BC55DB600BB6226 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = Source/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
-		C81DD4311BB7DB35007CE97E /* JSONNeverDieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONNeverDieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88A50991BB683890054E3A4 /* JSONNeverDie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONNeverDie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88A509C1BB683890054E3A4 /* JSONNeverDie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONNeverDie.h; sourceTree = "<group>"; };
 		C88A509E1BB683890054E3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C81DD42E1BB7DB35007CE97E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C81DD4361BB7DB35007CE97E /* JSONNeverDie.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C88A50951BB683890054E3A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				C88A50991BB683890054E3A4 /* JSONNeverDie.framework */,
-				C81DD4311BB7DB35007CE97E /* JSONNeverDieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,24 +78,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C81DD4301BB7DB35007CE97E /* JSONNeverDieTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C81DD43B1BB7DB35007CE97E /* Build configuration list for PBXNativeTarget "JSONNeverDieTests" */;
-			buildPhases = (
-				C81DD42D1BB7DB35007CE97E /* Sources */,
-				C81DD42E1BB7DB35007CE97E /* Frameworks */,
-				C81DD42F1BB7DB35007CE97E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C81DD4381BB7DB35007CE97E /* PBXTargetDependency */,
-			);
-			name = JSONNeverDieTests;
-			productName = JSONNeverDieTests;
-			productReference = C81DD4311BB7DB35007CE97E /* JSONNeverDieTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		C88A50981BB683890054E3A4 /* JSONNeverDie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C88A50A11BB683890054E3A4 /* Build configuration list for PBXNativeTarget "JSONNeverDie" */;
@@ -145,10 +106,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = JohnLui;
 				TargetAttributes = {
-					C81DD4301BB7DB35007CE97E = {
-						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = FPBUD52ZYH;
-					};
 					C88A50981BB683890054E3A4 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -167,19 +124,11 @@
 			projectRoot = "";
 			targets = (
 				C88A50981BB683890054E3A4 /* JSONNeverDie */,
-				C81DD4301BB7DB35007CE97E /* JSONNeverDieTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C81DD42F1BB7DB35007CE97E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C88A50971BB683890054E3A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,13 +139,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C81DD42D1BB7DB35007CE97E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C88A50941BB683890054E3A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,37 +152,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C81DD4381BB7DB35007CE97E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C88A50981BB683890054E3A4 /* JSONNeverDie */;
-			targetProxy = C81DD4371BB7DB35007CE97E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		C81DD4391BB7DB35007CE97E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JSONNeverDieTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lvwenhan.JSONNeverDieTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C81DD43A1BB7DB35007CE97E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JSONNeverDieTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lvwenhan.JSONNeverDieTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		C88A509F1BB683890054E3A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,15 +282,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C81DD43B1BB7DB35007CE97E /* Build configuration list for PBXNativeTarget "JSONNeverDieTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C81DD4391BB7DB35007CE97E /* Debug */,
-				C81DD43A1BB7DB35007CE97E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C88A50931BB683890054E3A4 /* Build configuration list for PBXProject "JSONNeverDie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
