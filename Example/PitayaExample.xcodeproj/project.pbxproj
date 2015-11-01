@@ -12,8 +12,6 @@
 		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
 		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
-		8EBBA69F1BDA3A3000811E75 /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBA69E1BDA3A3000811E75 /* JSONNeverDie.framework */; };
-		8EBBA6A01BDA3A3000811E75 /* JSONNeverDie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBBA69E1BDA3A3000811E75 /* JSONNeverDie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; };
 		C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C892C3DF1BC24CA300406ED5 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C892C3DE1BC24CA300406ED5 /* Pitaya.png */; };
@@ -51,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8EBBA6A01BDA3A3000811E75 /* JSONNeverDie.framework in Embed Frameworks */,
 				C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -67,7 +64,6 @@
 		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8EBBA69E1BDA3A3000811E75 /* JSONNeverDie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = JSONNeverDie.framework; path = "/Users/leqicheng/Library/Developer/Xcode/DerivedData/PitayaExample-gjpcptcggwuubwfvresdgcgryyic/Build/Products/Debug-iphoneos/JSONNeverDie.framework"; sourceTree = "<absolute>"; };
 		C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../lvwenhancom.cer; sourceTree = "<group>"; };
 		C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = ../Pitaya.xcodeproj; sourceTree = "<group>"; };
 		C892C3DE1BC24CA300406ED5 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pitaya.png; path = ../../Pitaya.png; sourceTree = "<group>"; };
@@ -78,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EBBA69F1BDA3A3000811E75 /* JSONNeverDie.framework in Frameworks */,
 				C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,7 +84,6 @@
 		46C7CAB31B04AA4000CC3B70 = {
 			isa = PBXGroup;
 			children = (
-				8EBBA69E1BDA3A3000811E75 /* JSONNeverDie.framework */,
 				C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */,
 				C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,

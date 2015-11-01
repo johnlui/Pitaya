@@ -8,7 +8,6 @@
 
 import UIKit
 import Pitaya
-import JSONNeverDie
 
 class ViewController: UIViewController {
 
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
 
     @IBAction func mainButtonBeTapped(sender: AnyObject) {
         // basic GET
-        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
+        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/get?hello=Hello%20Pitaya!")
             .responseJSON { (json, response) -> Void in
                 print(json["args"]["hello"].stringValue)
         }
