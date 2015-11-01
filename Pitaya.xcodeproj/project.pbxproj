@@ -9,27 +9,30 @@
 /* Begin PBXBuildFile section */
 		4637120B1B04C2050019E1AB /* Pitaya.h in Headers */ = {isa = PBXBuildFile; fileRef = 4637120A1B04C2050019E1AB /* Pitaya.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
-		8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */; settings = {ASSET_TAGS = (); }; };
+		8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
-		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; settings = {ASSET_TAGS = (); }; };
-		C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */; settings = {ASSET_TAGS = (); }; };
-		C84B228A1BCA258700594876 /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84B22871BCA258100594876 /* JSONNeverDie.framework */; };
-		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; settings = {ASSET_TAGS = (); }; };
-		C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithParams.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5A1BC556D0002E2D0A /* PitayaManager.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5C1BC556F8002E2D0A /* File.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */; settings = {ASSET_TAGS = (); }; };
-		C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E621BC55B3C002E2D0A /* Helper.swift */; settings = {ASSET_TAGS = (); }; };
+		C81EC6061BC18C9F008E9348 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; };
+		C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */; };
+		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; };
+		C88AA8D81BE67E4D008C3B47 /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88AA8D41BE67E4D008C3B47 /* JSONND.swift */; };
+		C88AA8D91BE67E4D008C3B47 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88AA8D51BE67E4D008C3B47 /* JSONND+ArrayLiteralConvertible.swift */; };
+		C88AA8DA1BE67E4D008C3B47 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88AA8D61BE67E4D008C3B47 /* JSONND+DictionaryLiteralConvertible.swift */; };
+		C88AA8DB1BE67E4D008C3B47 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88AA8D71BE67E4D008C3B47 /* JSONNDModel.swift */; };
+		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; };
+		C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */; };
+		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; };
+		C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithParams.swift */; };
+		C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */; };
+		C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */; };
+		C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */; };
+		C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */; };
+		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; };
+		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; };
+		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; };
+		C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5A1BC556D0002E2D0A /* PitayaManager.swift */; };
+		C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5C1BC556F8002E2D0A /* File.swift */; };
+		C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */; };
+		C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E621BC55B3C002E2D0A /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,20 +42,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 463712041B04C2050019E1AB;
 			remoteInfo = Pitaya;
-		};
-		C84B22861BCA258100594876 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C88A50991BB683890054E3A4;
-			remoteInfo = JSONNeverDie;
-		};
-		C84B22881BCA258100594876 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C81DD4311BB7DB35007CE97E;
-			remoteInfo = JSONNeverDieTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -66,8 +55,11 @@
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
 		C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHTTPBodyRaw.swift; sourceTree = "<group>"; };
-		C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONNeverDie.xcodeproj; path = JSONNeverDie/JSONNeverDie.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C855F3711BC8247B00170211 /* ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJSON.swift; sourceTree = "<group>"; };
+		C88AA8D41BE67E4D008C3B47 /* JSONND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONND.swift; path = JSONNeverDie/JSONND.swift; sourceTree = SOURCE_ROOT; };
+		C88AA8D51BE67E4D008C3B47 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "JSONNeverDie/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C88AA8D61BE67E4D008C3B47 /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "JSONNeverDie/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C88AA8D71BE67E4D008C3B47 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = JSONNeverDie/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
 		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSSLPinning.swift; sourceTree = "<group>"; };
 		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
@@ -90,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84B228A1BCA258700594876 /* JSONNeverDie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +135,7 @@
 		463712081B04C2050019E1AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */,
+				C88AA8D21BE67E1A008C3B47 /* JSONNeverDie */,
 				463712091B04C2050019E1AB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -177,13 +168,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C84B22821BCA258100594876 /* Products */ = {
+		C88AA8D21BE67E1A008C3B47 /* JSONNeverDie */ = {
 			isa = PBXGroup;
 			children = (
-				C84B22871BCA258100594876 /* JSONNeverDie.framework */,
-				C84B22891BCA258100594876 /* JSONNeverDieTests.xctest */,
+				C88AA8D41BE67E4D008C3B47 /* JSONND.swift */,
+				C88AA8D51BE67E4D008C3B47 /* JSONND+ArrayLiteralConvertible.swift */,
+				C88AA8D61BE67E4D008C3B47 /* JSONND+DictionaryLiteralConvertible.swift */,
+				C88AA8D71BE67E4D008C3B47 /* JSONNDModel.swift */,
 			);
-			name = Products;
+			name = JSONNeverDie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,12 +258,6 @@
 			mainGroup = 463711FB1B04C2050019E1AB;
 			productRefGroup = 463712061B04C2050019E1AB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C84B22821BCA258100594876 /* Products */;
-					ProjectRef = C84B22811BCA258100594876 /* JSONNeverDie.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				463712041B04C2050019E1AB /* Pitaya */,
@@ -278,23 +265,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C84B22871BCA258100594876 /* JSONNeverDie.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = JSONNeverDie.framework;
-			remoteRef = C84B22861BCA258100594876 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C84B22891BCA258100594876 /* JSONNeverDieTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = JSONNeverDieTests.xctest;
-			remoteRef = C84B22881BCA258100594876 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		463712031B04C2050019E1AB /* Resources */ = {
@@ -323,11 +293,15 @@
 				C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */,
 				C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */,
 				C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */,
+				C88AA8D81BE67E4D008C3B47 /* JSONND.swift in Sources */,
 				C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */,
 				C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */,
 				C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */,
+				C88AA8DA1BE67E4D008C3B47 /* JSONND+DictionaryLiteralConvertible.swift in Sources */,
 				C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */,
 				C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */,
+				C88AA8D91BE67E4D008C3B47 /* JSONND+ArrayLiteralConvertible.swift in Sources */,
+				C88AA8DB1BE67E4D008C3B47 /* JSONNDModel.swift in Sources */,
 				C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

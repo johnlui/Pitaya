@@ -8,7 +8,6 @@
 
 import XCTest
 import Pitaya
-import JSONNeverDie
 
 class SetHTTPBodyRawTests: BaseTestCase {
     
