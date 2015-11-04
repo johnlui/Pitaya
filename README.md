@@ -19,8 +19,8 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 }
 ```
 
-### [Read the documentation](https://github.com/johnlui/Pitaya/wiki).
-### [阅读中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3).
+### [Read the documentation](https://github.com/johnlui/Pitaya/wiki)
+### [阅读中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
 ##Features
 
