@@ -10,6 +10,8 @@ Pitaya [中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 
+[中文介绍](#%E4%B8%AD%E6%96%87%E4%BB%8B%E7%BB%8D)
+
 ## Example
 
 ```swift
@@ -89,3 +91,5 @@ You are welcome to fork and submit pull requests.
 ##License
 
 Pitaya is open-sourced software licensed under the MIT license.
+
+# 中文介绍
