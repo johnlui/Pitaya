@@ -93,3 +93,9 @@ You are welcome to fork and submit pull requests.
 Pitaya is open-sourced software licensed under the MIT license.
 
 # 中文介绍
+
+> Thus, programs must be written for people to read, and only incidentally for machines to execute.（代码是写给人看的，只是切好能运行。）
+> 
+> Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
+
+Pitaya(火龙果) 是一个写给人看的纯 Swift 写成的 HTTP / HTTPS 网络库。从 [Alamofire](https://github.com/Alamofire/Alamofire) 和 [JustHTTP](https://github.com/JustHTTP/Just) 偷了一些创意和代码。
