@@ -99,3 +99,14 @@ Pitaya is open-sourced software licensed under the MIT license.
 > Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
 
 Pitaya(火龙果) 是一个写给人看的纯 Swift 写成的 HTTP / HTTPS 网络库。从 [Alamofire](https://github.com/Alamofire/Alamofire) 和 [JustHTTP](https://github.com/JustHTTP/Just) 偷了一些创意和代码。
+
+## 使用示例
+
+```swift
+Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
+    .responseJSON { (json, response) -> Void in
+        print(json["args"]["hello"].stringValue) // get "Hello Pitaya!"
+}
+```
+
+### [中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
