@@ -110,3 +110,21 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 ```
 
 ### [中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
+
+## 功能
+
+- [x] 写给人用的优雅 API
+- [x] 支持 HTTP Basic Authorization
+- [x] 支持设置 SSL 钢钉，防“中间人攻击”
+- [x] 支持设置 HTTP raw body (支持 [JSON body](https://github.com/johnlui/Pitaya/wiki#http-raw-body))
+- [x] 异步、队列
+- [x] 快速文件上传
+- [x] 内置 [JSONNeverDie](https://github.com/johnlui/JSONNeverDie)，完全支持 JSON 数据
+- [x] 支持设定 HTTP headers
+- [x] 几乎 100% 测试率
+
+## 环境要求
+
+* iOS 7.0+
+* Xcode 6.4 (Swift 1.2) 版： [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
+* Xcode 7 (Swift 2) 版：当前默认版本
