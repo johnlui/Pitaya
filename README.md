@@ -142,16 +142,16 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Pitaya into your Xcode project using Carthage, specify it in your Cartfile:
+安装好 Carthage 后，将下列内容加入你项目的 Cartfile:
 
 ```json
 github "JohnLui/Pitaya"
 ```
 
-Then fetch and build Pitaya:
+自动下载、编译 Pitaya:
 
 ```bash
 carthage update
 ```
 
-At last, add it to "Embedded Binaries" in the general panel use the "Add Other..." button. The Pitaya.framework binary file is lying in `./Carthage/Build/iOS` directory.
+最后，在 general panel 里 的 "Embedded Binaries" 项下点击 "Add Other..." 按钮，Pitaya.framework 已经躺在了 `./Carthage/Build/iOS` 目录里。
