@@ -128,3 +128,30 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 * iOS 7.0+
 * Xcode 6.4 (Swift 1.2) 版： [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
 * Xcode 7 (Swift 2) 版：当前默认版本
+
+## 安装
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) 是一个去中心化的 Cocoa 应用程序自动依赖添加工具。
+
+使用以下命令安装 Carthage
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Pitaya into your Xcode project using Carthage, specify it in your Cartfile:
+
+```json
+github "JohnLui/Pitaya"
+```
+
+Then fetch and build Pitaya:
+
+```bash
+carthage update
+```
+
+At last, add it to "Embedded Binaries" in the general panel use the "Add Other..." button. The Pitaya.framework binary file is lying in `./Carthage/Build/iOS` directory.
