@@ -155,3 +155,17 @@ carthage update
 ```
 
 最后，在 general panel 里 的 "Embedded Binaries" 项下点击 "Add Other..." 按钮，Pitaya.framework 已经躺在了 `./Carthage/Build/iOS` 目录里。
+
+### 手动安装
+
+```bash
+git clone https://github.com/johnlui/Pitaya.git
+open Pitaya
+```
+在打开的 Finder 窗口中把 Pitaya.xcodeproj 拖到 Xcode 你的文件树里。
+
+真机调试还需要额外的一步：打开 PROJECT->TARGETS->[your project name]->General，找到 Embedded Binaries, 点击 ＋, 选中 Pitaya.framework，点击“Add”即可。
+
+### 源代码安装
+
+把 `Source` 文件夹下的文件拖进你的文件树里即可。
