@@ -29,13 +29,16 @@
 import Foundation
 
 public struct JSONND {
+    
+    public static var debug = false
+    
     public var data: AnyObject!
     public static func initWithData(data: NSData) -> JSONND! {
         do {
             return JSONND(data: try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments))
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
-            NSLog(e.localizedDescription)
+            if JSONND.debug { NSLog(e.localizedDescription); }
             return JSONND(data: nil)
         }
     }
@@ -60,7 +63,7 @@ public struct JSONND {
             if let value = jsonDictionary[index] {
                 return JSONND(data: value)
             } else {
-                NSLog("JSONNeverDie: No such key '\(index)'")
+                if JSONND.debug { NSLog("JSONNeverDie: No such key '\(index)'"); }
             }
         }
         return JSONND(data: nil)
