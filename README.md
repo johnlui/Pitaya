@@ -154,6 +154,7 @@ carthage update
 ```
 
 最后，在 general panel 里 的 "Embedded Binaries" 项下点击 "Add Other..." 按钮，Pitaya.framework 已经躺在了 `./Carthage/Build/iOS` 目录里。
+> 这种方法目前还不支持 BITCODE，如果需要支持，请直接将 Pitaya.xcodeproj 拖入你的工程。
 
 ### 手动安装
 
