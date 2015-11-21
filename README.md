@@ -93,7 +93,7 @@ Pitaya is open-sourced software licensed under the MIT license.
 
 # 中文介绍
 
-> Thus, programs must be written for people to read, and only incidentally for machines to execute.（代码是写给人看的，只是切好能运行。）
+> Thus, programs must be written for people to read, and only incidentally for machines to execute.（代码是写给人看的，只是恰好能运行。）
 > 
 > Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
 
