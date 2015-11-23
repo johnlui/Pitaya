@@ -26,6 +26,8 @@
 //  Created by 吕文翰 on 15/10/7.
 //
 
+import Foundation
+
 class PitayaManager: NSObject, NSURLSessionDelegate {
     let boundary = "PitayaUGl0YXlh"
     let errorDomain = "com.lvwenhan.Pitaya"

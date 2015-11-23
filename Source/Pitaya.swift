@@ -26,6 +26,8 @@
 //  Created by JohnLui on 15/5/14.
 //
 
+import Foundation
+
 /// make your code looks tidier
 public typealias Pita = Pitaya
 

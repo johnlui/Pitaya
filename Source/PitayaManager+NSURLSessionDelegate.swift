@@ -26,6 +26,8 @@
 //  Created by 吕文翰 on 15/10/8.
 //
 
+import Foundation
+
 private typealias URLSessionDelegate = PitayaManager
 
 extension URLSessionDelegate {
