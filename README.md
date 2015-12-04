@@ -19,10 +19,12 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 }
 ```
 
+## Documentation
+
 ### [Read the documentation](https://github.com/johnlui/Pitaya/wiki)
 ### [中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
-##Features
+## Features
 
 - [x] Elegant APIs for people
 - [x] Support HTTP Basic Authorization
@@ -34,15 +36,32 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 - [x] Support setting custom HTTP headers
 - [x] almost 100% tested
 
-##Requirements
+## Requirements
 
 * iOS 7.0+
 * Xcode 6.4 (Swift 1.2) before [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
 * Xcode 7 (Swift 2) in current master branch.
 
-##Installation
+## Installation
 
-###Carthage
+### Swift Package Manager
+You can use [The Swift Package Manager](https://swift.org/package-manager) to install `Pitaya` by adding the proper description to your `Package.swift` file:
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    targets: [],
+    dependencies: [
+        .Package(url: "https://github.com/johnlui/Pitaya.git", versions: "1.3.4" ..< Version.max)
+    ]
+)
+```
+
+Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more infomation checkout it's [GitHub Page](https://github.com/apple/swift-package-manager)
+
+
+### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -68,7 +87,7 @@ carthage update
 At last, add it to "Embedded Binaries" in the general panel use the "Add Other..." button. The Pitaya.framework binary file is lying in `./Carthage/Build/iOS` directory.
 
 
-###Manually
+### Manually
 
 ```bash
 git submodule add https://github.com/johnlui/Pitaya.git
@@ -78,16 +97,16 @@ then drag Pitaya.xcodeproj into your Project, that's it!
 
 If you want to run your project on devices with Pitaya, just go to PROJECT->TARGETS->[your project name]->General->Embedded Binaries, click ＋, select Pitaya.frameWork and click "Add".
 
-###Source File
+### Source File
 
 Clone all files in the `Source` directory into your project.
 
 
-##Contribution
+## Contribution
 
 You are welcome to fork and submit pull requests.
 
-##License
+## License
 
 Pitaya is open-sourced software licensed under the MIT license.
 
@@ -129,6 +148,26 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 * Xcode 7 (Swift 2) 版：当前默认版本
 
 ## 安装
+
+### Swift Package Manager
+
+[The Swift Package Manager](https://swift.org/package-manager) 是苹果伴随 Swift 开源而推出的 Swift 语言包管理工具。
+
+编辑你项目的 `Package.swift`：
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    targets: [],
+    dependencies: [
+        .Package(url: "https://github.com/johnlui/Pitaya.git", versions: "1.3.4" ..< Version.max)
+    ]
+)
+```
+
+[Swift Package Manager](https://swift.org/package-manager) 依然在开发中，功能不太稳定，建议关注它的 [GitHub Page](https://github.com/apple/swift-package-manager)。
 
 ### Carthage
 
