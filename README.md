@@ -26,6 +26,7 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 
 ## Features
 
+- [x] Support Swift Package Manager
 - [x] Elegant APIs for people
 - [x] Support HTTP Basic Authorization
 - [x] Support setting SSL pinning
@@ -131,6 +132,7 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 
 ## 功能
 
+- [x] 支持 Swift Package Manager
 - [x] 写给人用的优雅 API
 - [x] 支持 HTTP Basic Authorization
 - [x] 支持设置 SSL 钢钉，防“中间人攻击”
