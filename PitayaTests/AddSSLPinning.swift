@@ -40,16 +40,15 @@ class AddSSLPinning: BaseTestCase {
         let expectation = expectationWithDescription("testSSLPiningNotPassed")
         var errorPinning = 0
         
-        Pita.build(HTTPMethod: .GET, url: "https://www.baidu.com/")
+        Pita.build(HTTPMethod: .GET, url: "https://autolayout.club/")
             .addSSLPinning(LocalCertData: self.certData, SSLValidateErrorCallBack: { () -> Void in
                 print("Under the Man-in-the-middle attack!")
                 errorPinning = 1
+                expectation.fulfill()
             })
             .onNetworkError({ (error) -> Void in
                 XCTAssertNotNil(error)
                 XCTAssert(errorPinning == 1, "Under the Man-in-the-middle attack")
-
-                expectation.fulfill()
             })
             .responseString { (string, response) -> Void in
                 XCTFail("shoud not run callback() after a Man-in-the-middle attack.")
