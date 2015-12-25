@@ -27,6 +27,15 @@ class ViewController: UIViewController {
             .responseJSON { (json, response) -> Void in
                 print(json["args"]["hello"].stringValue)
         }
+
+        // cancel request
+        let pita = Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/")
+        pita.responseString { (string, response) -> Void in
+            print(string)
+        }
+        pita.cancel { () -> Void in
+            print("Request Cancelled!")
+        }
         
         // A request with Params, Files, Basic Auth, SSL pinning, HTTP Raw Body and NetworkError callback
         let file = File(name: "file", url: NSBundle.mainBundle().URLForResource("Pitaya", withExtension: "png")!)
