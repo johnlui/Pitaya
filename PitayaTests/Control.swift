@@ -1,5 +1,5 @@
 //
-//  Cancel.swift
+//  Control.swift
 //  Pitaya
 //
 //  Created by 吕文翰 on 15/12/25.
@@ -9,7 +9,7 @@
 import XCTest
 import Pitaya
 
-class Cancel: BaseTestCase {
+class Control: BaseTestCase {
     
     func testCancel() {
         let expectation = expectationWithDescription("testCancel")
