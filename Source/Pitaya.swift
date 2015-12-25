@@ -183,4 +183,14 @@ public class Pitaya {
             callback?(json: json, response: response)
         }
     }
+    
+    /**
+    cancel the request.
+     
+     - parameter callback: callback Closure
+     */
+    public func cancel(callback: (() -> Void)?) {
+        self.pitayaManager.cancelCallback = callback
+        self.pitayaManager.task.cancel()
+    }
 }

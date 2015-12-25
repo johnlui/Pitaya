@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         // A request with Params, Files, Basic Auth, SSL pinning, HTTP Raw Body and NetworkError callback
         let file = File(name: "file", url: NSBundle.mainBundle().URLForResource("Pitaya", withExtension: "png")!)
         let certData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!
-        let json: JSONND = ["user": "JohnLui", "love": "you"]
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
             .addParams(["hello": "params"])
             .addFiles([file])

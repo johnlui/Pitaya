@@ -38,6 +38,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
     let method: String!
     var params: [String: AnyObject]?
     var files: [File]?
+    var cancelCallback: (() -> Void)?
     var errorCallback: ((error: NSError) -> Void)?
     var callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?
     
@@ -176,11 +177,17 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         task = session.dataTaskWithRequest(request, completionHandler: { [weak self] (data, response, error) -> Void in
             if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
             if error != nil {
-                let e = NSError(domain: self?.errorDomain ?? "Pitaya", code: error!.code, userInfo: error!.userInfo)
-                NSLog("Pitaya Error: ", e.localizedDescription)
-                dispatch_async(dispatch_get_main_queue()) {
-                    self?.errorCallback?(error: e)
-                    self?.session.finishTasksAndInvalidate()
+                if error?.code == -999 {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self?.cancelCallback?()
+                    }
+                } else {
+                    let e = NSError(domain: self?.errorDomain ?? "Pitaya", code: error!.code, userInfo: error!.userInfo)
+                    NSLog("Pitaya Error: ", e.localizedDescription)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self?.errorCallback?(error: e)
+                        self?.session.finishTasksAndInvalidate()
+                    }
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue()) {
