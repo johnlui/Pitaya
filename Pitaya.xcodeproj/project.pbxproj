@@ -22,7 +22,7 @@
 		C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */; };
 		C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */; };
 		C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */; };
-		C8B35A061C2D1DBF0016A222 /* Cancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B35A051C2D1DBF0016A222 /* Cancel.swift */; };
+		C8B35A061C2D1DBF0016A222 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B35A051C2D1DBF0016A222 /* Control.swift */; };
 		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; };
 		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; };
 		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; };
@@ -65,7 +65,7 @@
 		C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+NSURLSessionDelegate.swift"; path = "Source/PitayaManager+NSURLSessionDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+Static.swift"; path = "Source/PitayaManager+Static.swift"; sourceTree = SOURCE_ROOT; };
-		C8B35A051C2D1DBF0016A222 /* Cancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancel.swift; sourceTree = "<group>"; };
+		C8B35A051C2D1DBF0016A222 /* Control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		C8CF0E541BC55671002E2D0A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pitaya.swift; path = Source/Pitaya.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E561BC5568E002E2D0A /* String+NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+NSData.swift"; path = "Source/String+NSData.swift"; sourceTree = SOURCE_ROOT; };
 		C8CF0E581BC556AC002E2D0A /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Base64.swift"; path = "Source/String+Base64.swift"; sourceTree = SOURCE_ROOT; };
@@ -148,7 +148,7 @@
 			children = (
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C8ABB7261BC6A11600C4C897 /* BasicTests.swift */,
-				C8B35A051C2D1DBF0016A222 /* Cancel.swift */,
+				C8B35A051C2D1DBF0016A222 /* Control.swift */,
 				C8ABB7281BC6A89600C4C897 /* WithParams.swift */,
 				C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */,
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
@@ -320,7 +320,7 @@
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
 				C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */,
 				C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */,
-				C8B35A061C2D1DBF0016A222 /* Cancel.swift in Sources */,
+				C8B35A061C2D1DBF0016A222 /* Control.swift in Sources */,
 				C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */,
 				C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */,
 			);
