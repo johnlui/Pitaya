@@ -54,7 +54,7 @@ extension URLSessionDelegate {
                     }
             } else {
                 // could not tested
-                NSLog("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
+                print("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
             }
         } else {
             completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, nil)

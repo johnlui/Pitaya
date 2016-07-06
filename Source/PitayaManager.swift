@@ -146,7 +146,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
             data.appendData(self.HTTPBodyRaw.nsdata)
         } else if self.files?.count > 0 {
             if self.method == "GET" {
-                NSLog("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\nBut it looks like iOS 9 SDK has prevented sending http body in GET method.\n------------------------\n\n")
+                print("\n\n------------------------\nThe remote server may not accept GET method with HTTP body. But Pitaya will send it anyway.\nBut it looks like iOS 9 SDK has prevented sending http body in GET method.\n------------------------\n\n")
             } else {
                 if let ps = self.params {
                     for (key, value) in ps {
@@ -173,9 +173,9 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
         request.HTTPBody = data
     }
     private func fireTask() {
-        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { NSLog("Pitaya Request HEADERS: ", a.description); }; }
+        if Pitaya.DEBUG { if let a = request.allHTTPHeaderFields { print("Pitaya Request HEADERS: ", a.description); }; }
         task = session.dataTaskWithRequest(request, completionHandler: { [weak self] (data, response, error) -> Void in
-            if Pitaya.DEBUG { if let a = response { NSLog("Pitaya Response: ", a.description); }}
+            if Pitaya.DEBUG { if let a = response { print("Pitaya Response: ", a.description); }}
             if error != nil {
                 if error?.code == -999 {
                     dispatch_async(dispatch_get_main_queue()) {
@@ -183,7 +183,7 @@ class PitayaManager: NSObject, NSURLSessionDelegate {
                     }
                 } else {
                     let e = NSError(domain: self?.errorDomain ?? "Pitaya", code: error!.code, userInfo: error!.userInfo)
-                    NSLog("Pitaya Error: ", e.localizedDescription)
+                    print("Pitaya Error: ", e.localizedDescription)
                     dispatch_async(dispatch_get_main_queue()) {
                         self?.errorCallback?(error: e)
                         self?.session.finishTasksAndInvalidate()
