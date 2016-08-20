@@ -30,24 +30,36 @@ import Foundation
 
 public class JSONNDModel: NSObject {
     
-    public var JSONNDObject: JSONND!
+    public var JSONNDObject: JSONND?
     
-    public required init(JSONNDObject json: JSONND) {
+    public override init() {
+        super.init()
+    }
+    public init(fromJSONString string: String, encoding: NSStringEncoding = NSUTF8StringEncoding) {
+        let jsonnd = JSONND(string: string, encoding: encoding)
+        self.JSONNDObject = jsonnd
+        super.init()
+        self.mapValues()
+    }
+    public init(JSONNDObject json: JSONND) {
         self.JSONNDObject = json
         super.init()
-        
+        self.mapValues()
+    }
+    
+    internal func mapValues() {
         let mirror = Mirror(reflecting: self)
         for (k, v) in AnyRandomAccessCollection(mirror.children)! {
-            if let key = k {
-                let json = self.JSONNDObject[key]
+            if let key = k, jSONNDObject = self.JSONNDObject {
+                let json = jSONNDObject[key]
                 var valueWillBeSet: AnyObject?
                 switch v {
                 case _ as String:
                     valueWillBeSet = json.stringValue
                 case _ as Int:
                     valueWillBeSet = json.intValue
-                case _ as Float:
-                    valueWillBeSet = json.floatValue
+                case _ as Double:
+                    valueWillBeSet = json.doubleValue
                 case _ as Bool:
                     valueWillBeSet = json.boolValue
                 default:
@@ -58,19 +70,12 @@ public class JSONNDModel: NSObject {
         }
     }
     
-    @available (*, unavailable, renamed="RAW")
-    public var jsonString: String? {
-        return ""
-    }
     public var RAW: String? {
         get {
             return self.JSONNDObject?.RAW
         }
     }
-    @available (*, unavailable, renamed="RAWValue")
-    public var jsonStringValue: String {
-        return ""
-    }
+
     public var RAWValue: String {
         get {
             return self.RAW ?? ""

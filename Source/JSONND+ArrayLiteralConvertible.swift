@@ -31,6 +31,6 @@ import Foundation
 // stolen from SwiftyJSON
 extension JSONND: ArrayLiteralConvertible {
     public init(arrayLiteral elements: AnyObject...) {
-        self.init(data: elements)
+        self.init(JSONdata: elements)
     }
 }

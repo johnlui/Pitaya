@@ -175,10 +175,10 @@ public class Pitaya {
     - parameter response: void
     */
     public func responseJSON(callback: ((json: JSONND, response: NSHTTPURLResponse?) -> Void)?) {
-        self.responseData { (data, response) -> Void in
+        self.responseString { (string, response) in
             var json = JSONND()
-            if let d = data {
-                json = JSONND.initWithData(d)
+            if let s = string {
+                json = JSONND(string: s)
             }
             callback?(json: json, response: response)
         }

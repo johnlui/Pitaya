@@ -31,7 +31,7 @@ import Foundation
 // stolen from SwiftyJSON
 extension JSONND: DictionaryLiteralConvertible {
     public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        self.init(data: elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
+        self.init(JSONdata: elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
             var d = dictionary
             d[element.0] = element.1
             return d
