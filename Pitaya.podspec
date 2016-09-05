@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
                         Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by Alamofire and JustHTTP.
                         DESC
 
-  s.homepage         = "https://github.com/BrikerMan/BMPlayer"
+  s.homepage         = "https://github.com/johnlui/Pitaya"
 
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
