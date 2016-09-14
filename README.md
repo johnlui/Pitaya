@@ -147,8 +147,9 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 ## 环境要求
 
 * iOS 7.0+
+* Xcode 8 (Swift 3) v2.x 版，位于 swift3 分支（当前默认版本）
+* Xcode 7 (Swift 2) v1.x 版，位于 master 分支
 * Xcode 6.4 (Swift 1.2) 版： [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
-* Xcode 7 (Swift 2) 版：当前默认版本
 
 ## 安装
 
