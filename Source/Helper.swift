@@ -30,24 +30,24 @@ import Foundation
 
 class Helper {
     // stolen from Alamofire
-    static func buildParams(parameters: [String: AnyObject]) -> String {
+    static func buildParams(_ parameters: [String: AnyObject]) -> String {
         var components: [(String, String)] = []
-        for key in Array(parameters.keys).sort(<) {
+        for key in Array(parameters.keys).sorted(by: <) {
             let value: AnyObject! = parameters[key]
             components += Helper.queryComponents(key, value)
         }
         
-        return components.map{"\($0)=\($1)"}.joinWithSeparator("&")
+        return components.map{"\($0)=\($1)"}.joined(separator: "&")
     }
     // stolen from Alamofire
-    static func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
+    static func queryComponents(_ key: String, _ value: AnyObject) -> [(String, String)] {
         var components: [(String, String)] = []
-        components.appendContentsOf([(Helper.escape(key), Helper.escape("\(value)"))])        
+        components.append(contentsOf: [(Helper.escape(key), Helper.escape("\(value)"))])        
         return components
     }
     // stolen from Alamofire
-    static func escape(string: String) -> String {
-        let legalURLCharactersToBeEscaped: CFStringRef = ":&=;+!@#$()',*"
-        return CFURLCreateStringByAddingPercentEscapes(nil, string, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
+    static func escape(_ string: String) -> String {
+        let legalURLCharactersToBeEscaped: CFString = ":&=;+!@#$()',*" as CFString
+        return CFURLCreateStringByAddingPercentEscapes(nil, string as CFString!, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
     }
 }

@@ -22,10 +22,10 @@ class WithParams: BaseTestCase {
     }
     
     func testGETWithParams() {
-        let expectation = expectationWithDescription("testGETWithParams")
+        let expectation = self.expectation(description: "testGETWithParams")
         
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["get": param1, "get2": param2])
+            .addParams(["get": param1 as AnyObject, "get2": param2 as AnyObject])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -35,14 +35,14 @@ class WithParams: BaseTestCase {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testPOSTWithParams() {
-        let expectation = expectationWithDescription("testPOSTWithParams")
+        let expectation = self.expectation(description: "testPOSTWithParams")
         
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["post": param1, "post2": param2])
+            .addParams(["post": param1 as AnyObject, "post2": param2 as AnyObject])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -52,6 +52,6 @@ class WithParams: BaseTestCase {
                 expectation.fulfill()
             })
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 }

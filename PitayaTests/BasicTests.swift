@@ -12,7 +12,7 @@ import Pitaya
 class BasicTests: BaseTestCase {
 
     func testGET() {
-        let expectation = expectationWithDescription("testGET")
+        let expectation = self.expectation(description: "testGET")
         
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .onNetworkError({ (error) -> Void in
@@ -23,11 +23,11 @@ class BasicTests: BaseTestCase {
                 
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testPOST() {
-        let expectation = expectationWithDescription("testPOST")
+        let expectation = self.expectation(description: "testPOST")
         
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .onNetworkError({ (error) -> Void in
@@ -38,13 +38,13 @@ class BasicTests: BaseTestCase {
                 
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testOneMoreThing() {
         // code here will not be used in reality forever, just for increasing testing coverage
         
-        let expectation = expectationWithDescription("testOneMoreThing")
+        let expectation = self.expectation(description: "testOneMoreThing")
         Pitaya.DEBUG = true
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .responseString { (string, response) -> Void in
@@ -52,6 +52,6 @@ class BasicTests: BaseTestCase {
                 
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 }

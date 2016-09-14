@@ -12,10 +12,10 @@ import Pitaya
 class ResponseJSON: WithParams {
     
     func testResponseJSON() {
-        let expectation = expectationWithDescription("testResponseJSON")
+        let expectation = self.expectation(description: "testResponseJSON")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/get")
-            .addParams([param1: param2, param2: param1])
+            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -26,14 +26,14 @@ class ResponseJSON: WithParams {
                 expectation.fulfill()
             })
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testResponseJSONWithValidBasicAuth() {
-        let expectation = expectationWithDescription("testResponseJSONWithBasicAuth")
+        let expectation = self.expectation(description: "testResponseJSONWithBasicAuth")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
-            .addParams([param1: param2, param2: param1])
+            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
             .setBasicAuth("user", password: "passwd")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -45,14 +45,14 @@ class ResponseJSON: WithParams {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testResponseJSONWithInValidBasicAuth() {
-        let expectation = expectationWithDescription("testResponseJSONWithBasicAuth")
+        let expectation = self.expectation(description: "testResponseJSONWithBasicAuth")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
-            .addParams([param1: param2, param2: param1])
+            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
         .setBasicAuth("foo", password: "bar")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -64,7 +64,7 @@ class ResponseJSON: WithParams {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 
 }

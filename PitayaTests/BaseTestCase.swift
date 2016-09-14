@@ -10,15 +10,15 @@ import XCTest
 import Pitaya
 
 class BaseTestCase: XCTestCase {
-    let defaultTimeout: NSTimeInterval = 60
-    let defaultFileUploadTimeout: NSTimeInterval = 600
+    let defaultTimeout: TimeInterval = 60
+    let defaultFileUploadTimeout: TimeInterval = 600
     
-    func URLForResource(fileName: String, withExtension: String) -> NSURL {
-        let bundle = NSBundle(forClass: BaseTestCase.self)
-        return bundle.URLForResource(fileName, withExtension: withExtension)!
+    func URLForResource(_ fileName: String, withExtension: String) -> URL {
+        let bundle = Bundle(for: BaseTestCase.self)
+        return bundle.url(forResource: fileName, withExtension: withExtension)!
     }
     
-    func randomStringWithLength(len : Int, onlyASCII: Bool = false) -> String {
+    func randomStringWithLength(_ len : Int, onlyASCII: Bool = false) -> String {
         
         let letters : NSString = onlyASCII ? "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789我就测试一下UTF-8"
         
@@ -27,7 +27,7 @@ class BaseTestCase: XCTestCase {
         for _ in 0..<len {
             let length = UInt32 (letters.length)
             let rand = arc4random_uniform(length)
-            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+            randomString.appendFormat("%C", letters.character(at: Int(rand)))
         }
         
         return randomString as String

@@ -12,7 +12,7 @@ import Pitaya
 class SetHTTPBodyRawTests: BaseTestCase {
     
     func testSetHTTPBodyRawString() {
-        let expectation = expectationWithDescription("testSetHTTPBodyRawString")
+        let expectation = self.expectation(description: "testSetHTTPBodyRawString")
         let rawString = self.randomStringWithLength(20)
         Pita.build(HTTPMethod: .POST, url: "http://httpbin.org/post")
             .setHTTPBodyRaw(rawString)
@@ -23,15 +23,15 @@ class SetHTTPBodyRawTests: BaseTestCase {
                 XCTAssertEqual(json["data"].stringValue, rawString)
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testSetHTTPBodyRawJSON() {
-        let expectation = expectationWithDescription("testSetHTTPBodyRawString")
+        let expectation = self.expectation(description: "testSetHTTPBodyRawString")
         
         let string1 = self.randomStringWithLength(20)
         let string2 = self.randomStringWithLength(20)
-        let j: JSONND = ["string1": string1, "string2": string2]
+        let j = JSONND(dictionary: ["string1": string1 as AnyObject, "string2": string2 as AnyObject])
 
         Pita.build(HTTPMethod: .POST, url: "http://httpbin.org/post")
             .setHTTPBodyRaw(j.RAWValue, isJSON: true)
@@ -44,6 +44,6 @@ class SetHTTPBodyRawTests: BaseTestCase {
                 XCTAssertEqual(json["json"]["string2"].stringValue, string2)
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 }

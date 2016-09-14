@@ -14,9 +14,9 @@ class AddFiles: BaseTestCase {
     func testAddOneFile() {
         let file = File(name: "file", url: self.URLForResource("Pitaya", withExtension: "png"))
         
-        let expectation = expectationWithDescription("testAddOneFile")
+        let expectation = self.expectation(description: "testAddOneFile")
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["param": "test"])
+            .addParams(["param": "test" as AnyObject])
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -27,7 +27,7 @@ class AddFiles: BaseTestCase {
                 expectation.fulfill()
             })
         
-        waitForExpectationsWithTimeout(self.defaultFileUploadTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultFileUploadTimeout, handler: nil)
     }
     
     func testOneMoreThing() {
@@ -35,7 +35,7 @@ class AddFiles: BaseTestCase {
         
         let file = File(name: "file", url: self.URLForResource("Pitaya", withExtension: "png"))
         
-        let expectation = expectationWithDescription("testOneMoreThing")
+        let expectation = self.expectation(description: "testOneMoreThing")
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
@@ -45,6 +45,6 @@ class AddFiles: BaseTestCase {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultFileUploadTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultFileUploadTimeout, handler: nil)
     }
 }

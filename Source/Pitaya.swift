@@ -31,10 +31,10 @@ import Foundation
 /// make your code looks tidier
 public typealias Pita = Pitaya
 
-public class Pitaya {
+open class Pitaya {
     
     /// if set to true, Pitaya will log all information in a NSURLSession lifecycle
-    public static var DEBUG = false
+    open static var DEBUG = false
     
     var pitayaManager: PitayaManager!
 
@@ -46,7 +46,7 @@ public class Pitaya {
     
     - returns: a Pitaya object
     */
-    public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
+    open static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url)
         return p
@@ -59,7 +59,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func addParams(params: [String: AnyObject]) -> Pitaya {
+    open func addParams(_ params: [String: AnyObject]) -> Pitaya {
         self.pitayaManager.addParams(params)
         return self
     }
@@ -71,7 +71,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func addFiles(files: [File]) -> Pitaya {
+    open func addFiles(_ files: [File]) -> Pitaya {
         self.pitayaManager.addFiles(files)
         return self
     }
@@ -84,7 +84,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func addSSLPinning(LocalCertData data: NSData, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
+    open func addSSLPinning(LocalCertData data: Data, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
         self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
@@ -97,7 +97,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func setHTTPHeader(Name key: String, Value value: String) -> Pitaya {
+    open func setHTTPHeader(Name key: String, Value value: String) -> Pitaya {
         self.pitayaManager.setHTTPHeader(Name: key, Value: value)
         return self
     }
@@ -110,7 +110,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func setHTTPBodyRaw(string: String, isJSON: Bool = false) -> Pitaya {
+    open func setHTTPBodyRaw(_ string: String, isJSON: Bool = false) -> Pitaya {
         self.pitayaManager.sethttpBodyRaw(string, isJSON: isJSON)
         return self
     }
@@ -123,7 +123,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func setBasicAuth(username: String, password: String) -> Pitaya {
+    open func setBasicAuth(_ username: String, password: String) -> Pitaya {
         self.pitayaManager.setBasicAuth((username, password))
         return self
     }
@@ -136,7 +136,7 @@ public class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    public func onNetworkError(errorCallback: ((error: NSError) -> Void)) -> Pitaya {
+    open func onNetworkError(_ errorCallback: @escaping ((_ error: NSError) -> Void)) -> Pitaya {
         self.pitayaManager.addErrorCallback(errorCallback)
         return self
     }
@@ -147,7 +147,7 @@ public class Pitaya {
     - parameter callback: callback Closure
     - parameter response: void
     */
-    public func responseData(callback: ((data: NSData?, response: NSHTTPURLResponse?) -> Void)?) {
+    open func responseData(_ callback: ((_ data: Data?, _ response: HTTPURLResponse?) -> Void)?) {
         self.pitayaManager?.fire(callback)
     }
     
@@ -157,14 +157,14 @@ public class Pitaya {
     - parameter callback: callback Closure
     - parameter response: void
     */
-    public func responseString(callback: ((string: String?, response: NSHTTPURLResponse?) -> Void)?) {
+    open func responseString(_ callback: ((_ string: String?, _ response: HTTPURLResponse?) -> Void)?) {
         self.responseData { (data, response) -> Void in
             var string = ""
             if let d = data,
-                s = NSString(data: d, encoding: NSUTF8StringEncoding) as? String {
+                let s = NSString(data: d, encoding: String.Encoding.utf8.rawValue) as? String {
                     string = s
             }
-            callback?(string: string, response: response)
+            callback?(string, response)
         }
     }
     
@@ -174,13 +174,13 @@ public class Pitaya {
     - parameter callback: callback Closure
     - parameter response: void
     */
-    public func responseJSON(callback: ((json: JSONND, response: NSHTTPURLResponse?) -> Void)?) {
+    open func responseJSON(_ callback: ((_ json: JSONND, _ response: HTTPURLResponse?) -> Void)?) {
         self.responseString { (string, response) in
             var json = JSONND()
             if let s = string {
                 json = JSONND(string: s)
             }
-            callback?(json: json, response: response)
+            callback?(json, response)
         }
     }
     
@@ -189,7 +189,7 @@ public class Pitaya {
      
      - parameter callback: callback Closure
      */
-    public func cancel(callback: (() -> Void)?) {
+    open func cancel(_ callback: (() -> Void)?) {
         self.pitayaManager.cancelCallback = callback
         self.pitayaManager.task.cancel()
     }

@@ -11,15 +11,15 @@ import Pitaya
 
 class AddSSLPinning: BaseTestCase {
     
-    var certData: NSData!
+    var certData: Data!
     
     override func setUp() {
         super.setUp()
-        self.certData = NSData(contentsOfURL: self.URLForResource("lvwenhancom", withExtension: "cer"))!
+        self.certData = try! Data(contentsOf: self.URLForResource("lvwenhancom", withExtension: "cer"))
     }
     
     func testSSLPiningPassed() {
-        let expectation = expectationWithDescription("testSSLPiningPassed")
+        let expectation = self.expectation(description: "testSSLPiningPassed")
         
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
             .addSSLPinning(LocalCertData: self.certData, SSLValidateErrorCallBack: { () -> Void in
@@ -29,15 +29,15 @@ class AddSSLPinning: BaseTestCase {
                 XCTAssert(false, error.localizedDescription)
             })
             .responseString { (string, response) -> Void in
-                XCTAssert(string?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+                XCTAssert((string?.lengthOfBytes(using: String.Encoding.utf8))! > 0)
                 
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testSSLPiningNotPassed() {
-        let expectation = expectationWithDescription("testSSLPiningNotPassed")
+        let expectation = self.expectation(description: "testSSLPiningNotPassed")
         var errorPinning = 0
         
         Pita.build(HTTPMethod: .GET, url: "https://autolayout.club/")
@@ -54,22 +54,22 @@ class AddSSLPinning: BaseTestCase {
                 XCTFail("shoud not run callback() after a Man-in-the-middle attack.")
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testSSLPiningNil() {
-        let expectation = expectationWithDescription("testSSLPiningPassed")
+        let expectation = self.expectation(description: "testSSLPiningPassed")
         
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
             .responseString { (string, response) -> Void in
-                XCTAssert(string?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
+                XCTAssert((string?.lengthOfBytes(using: String.Encoding.utf8))! > 0)
                 
                 expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
 }

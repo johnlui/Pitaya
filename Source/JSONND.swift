@@ -34,11 +34,11 @@ public struct JSONND {
     
     public var data: AnyObject!
     
-    public init(string: String, encoding: NSStringEncoding = NSUTF8StringEncoding) {
+    public init(string: String, encoding: String.Encoding = String.Encoding.utf8) {
         do {
-            if let data = string.dataUsingEncoding(encoding) {
-                let d = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                self.data = d
+            if let data = string.data(using: encoding) {
+                let d = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+                self.data = d as AnyObject!
             }
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
@@ -46,7 +46,7 @@ public struct JSONND {
         }
     }
 
-    private init(any: AnyObject) {
+    fileprivate init(any: AnyObject) {
         let j: JSONND = [any]
         self.data = j.arrayValue.first?.data
     }
@@ -59,10 +59,10 @@ public struct JSONND {
         self.init(JSONdata: nil)
     }
     public init(dictionary: [String: AnyObject]) {
-        self.init(any: dictionary)
+        self.init(any: dictionary as AnyObject)
     }
     public init(array: [AnyObject]) {
-        self.init(any: array)
+        self.init(any: array as AnyObject)
     }
     public subscript (index: String) -> JSONND {
         if let jsonDictionary = self.data as? Dictionary<String, AnyObject> {
@@ -79,8 +79,8 @@ public struct JSONND {
         get {
             if let _ = self.data {
                 do {
-                    let d = try NSJSONSerialization.dataWithJSONObject(self.data, options: .PrettyPrinted)
-                    return NSString(data: d, encoding: NSUTF8StringEncoding) as? String
+                    let d = try JSONSerialization.data(withJSONObject: self.data, options: .prettyPrinted)
+                    return NSString(data: d, encoding: String.Encoding.utf8.rawValue) as? String
                 } catch { return nil }
                 // can not test Errors here.
                 // It seems that NSJSONSerialization.dataWithJSONObject() method dose not support do-try-catch in Swift 2 now.
@@ -96,7 +96,7 @@ public struct JSONND {
     }
     public var int: Int? {
         get {
-            return self.data?.integerValue
+            return self.data?.intValue
         }
     }
     public var intValue: Int {

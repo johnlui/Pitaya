@@ -12,7 +12,7 @@ import Pitaya
 class AddHTTPHeader: BaseTestCase {
     
     func testAddHTTPHeader() {
-        let expectation = expectationWithDescription("testAddHTTPHeader")
+        let expectation = self.expectation(description: "testAddHTTPHeader")
         
         let name = "Accept"
         let value = "application/json"
@@ -27,6 +27,6 @@ class AddHTTPHeader: BaseTestCase {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 }

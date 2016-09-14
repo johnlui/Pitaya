@@ -32,9 +32,9 @@ import Foundation
 *  the file struct for Pitaya to upload
 */
 public struct File {
-    public let name: String!
-    public let url: NSURL!
-    public init(name: String, url: NSURL) {
+    public let name: String
+    public let url: URL
+    public init(name: String, url: URL) {
         self.name = name
         self.url = url
     }

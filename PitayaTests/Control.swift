@@ -12,7 +12,7 @@ import Pitaya
 class Control: BaseTestCase {
     
     func testCancel() {
-        let expectation = expectationWithDescription("testCancel")
+        let expectation = self.expectation(description: "testCancel")
         
         let pita = Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/")
             .onNetworkError({ (error) -> Void in
@@ -26,7 +26,7 @@ class Control: BaseTestCase {
         pita.cancel { () -> Void in
             expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
 }

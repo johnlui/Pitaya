@@ -37,7 +37,7 @@ extension PitayaManager {
     
     - returns: self (PitayaManager object)
     */
-    static func build(method: HTTPMethod, url: String) -> PitayaManager {
+    static func build(_ method: HTTPMethod, url: String) -> PitayaManager {
         return PitayaManager(url: url, method: method)
     }
 }

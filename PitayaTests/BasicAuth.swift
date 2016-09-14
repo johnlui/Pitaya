@@ -12,7 +12,7 @@ import Pitaya
 class BasicAuth: BaseTestCase {
     
     func testValidBasicAuth() {
-        let expectation = expectationWithDescription("testBasicAuth")
+        let expectation = self.expectation(description: "testBasicAuth")
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
             .setBasicAuth("user", password: "passwd")
             .onNetworkError({ (error) -> Void in
@@ -24,11 +24,11 @@ class BasicAuth: BaseTestCase {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
     
     func testInValidBasicAuth() {
-        let expectation = expectationWithDescription("testInValidBasicAuth")
+        let expectation = self.expectation(description: "testInValidBasicAuth")
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
             .setBasicAuth("foo", password: "bar")
             .onNetworkError({ (error) -> Void in
@@ -40,6 +40,6 @@ class BasicAuth: BaseTestCase {
                 expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(self.defaultTimeout, handler: nil)
+        waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }
 }

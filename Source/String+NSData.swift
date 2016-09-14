@@ -30,7 +30,7 @@ import Foundation
 
 extension String {
     /// return NSData of self String
-    var nsdata: NSData {
-        return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    var nsdata: Data {
+        return self.data(using: String.Encoding.utf8)!
     }
 }

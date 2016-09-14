@@ -38,26 +38,26 @@ extension URLSessionDelegate {
     - parameter challenge:         NSURLAuthenticationChallenge
     - parameter completionHandler: the completionHandler closure
     */
-    @objc func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    @objc(URLSession:didReceiveChallenge:completionHandler:) func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         if let localCertificateData = self.localCertData {
             if let serverTrust = challenge.protectionSpace.serverTrust,
-                certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
-                remoteCertificateData: NSData = SecCertificateCopyData(certificate) {
-                    if localCertificateData.isEqualToData(remoteCertificateData) {
-                        let credential = NSURLCredential(forTrust: serverTrust)
-                        challenge.sender?.useCredential(credential, forAuthenticationChallenge: challenge)
-                        completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
-                    } else {
-                        challenge.sender?.cancelAuthenticationChallenge(challenge)
-                        completionHandler(NSURLSessionAuthChallengeDisposition.CancelAuthenticationChallenge, nil)
-                        self.sSLValidateErrorCallBack?()
-                    }
+                let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) {
+                let remoteCertificateData: Data = SecCertificateCopyData(certificate) as Data
+                if localCertificateData as Data == remoteCertificateData {
+                    let credential = URLCredential(trust: serverTrust)
+                    challenge.sender?.use(credential, for: challenge)
+                    completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, credential)
+                } else {
+                    challenge.sender?.cancel(challenge)
+                    completionHandler(Foundation.URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
+                    self.sSLValidateErrorCallBack?()
+                }
             } else {
                 // could not tested
                 print("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
             }
         } else {
-            completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, nil)
+            completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, nil)
         }
     }
 }
