@@ -40,8 +40,9 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 ## Requirements
 
 * iOS 7.0+
+* Xcode 8 (Swift 3) (v2.x) in current swift3 branch.
+* Xcode 7 (Swift 2) (v1.x) in master branch.
 * Xcode 6.4 (Swift 1.2) before [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
-* Xcode 7 (Swift 2) in current master branch.
 
 ## Installation
 
