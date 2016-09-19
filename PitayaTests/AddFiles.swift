@@ -12,7 +12,7 @@ import Pitaya
 class AddFiles: BaseTestCase {
     
     func testAddOneFile() {
-        let file = File(name: "file", url: self.URLForResource("Pitaya", withExtension: "png"))
+        let file = File(name: "file", url: self.URLForResource("logo", withExtension: "jpg"))
         
         let expectation = self.expectation(description: "testAddOneFile")
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
@@ -33,7 +33,7 @@ class AddFiles: BaseTestCase {
     func testOneMoreThing() {
         // code here will not be used in reality forever, just for increasing testing coverage
         
-        let file = File(name: "file", url: self.URLForResource("Pitaya", withExtension: "png"))
+        let file = File(name: "file", url: self.URLForResource("logo", withExtension: "jpg"))
         
         let expectation = self.expectation(description: "testOneMoreThing")
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")

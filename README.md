@@ -10,10 +10,15 @@
     <a href="https://travis-ci.org/johnlui/Pitaya"><img src="https://img.shields.io/travis/johnlui/Pitaya.svg"></a>
 </p>
 
+<br>
 
+<p align="center">
 > Thus, programs must be written for people to read, and only incidentally for machines to execute.
 > 
 > Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
+</p>
+
+<br><br>
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 

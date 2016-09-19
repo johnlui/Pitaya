@@ -11,10 +11,10 @@
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
 		8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
-		C81C781B1D893BF00029915D /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C81EC6051BC18C9F008E9348 /* Pitaya.png */; };
+		C83BDDBB1D8FA00D0051D3D6 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C83BDDB91D8FA00D0051D3D6 /* logo.jpg */; };
+		C83BDDBC1D8FA00D0051D3D6 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C83BDDBA1D8FA00D0051D3D6 /* lvwenhancom.cer */; };
 		C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */; };
 		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; };
-		C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */; };
 		C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */; };
 		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; };
 		C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithParams.swift */; };
@@ -54,10 +54,10 @@
 		463712161B04C2050019E1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHTTPHeader.swift; sourceTree = "<group>"; };
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
-		C81EC6051BC18C9F008E9348 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pitaya.png; sourceTree = SOURCE_ROOT; };
+		C83BDDB91D8FA00D0051D3D6 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = assets/logo.jpg; sourceTree = SOURCE_ROOT; };
+		C83BDDBA1D8FA00D0051D3D6 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = assets/lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHTTPBodyRaw.swift; sourceTree = "<group>"; };
 		C855F3711BC8247B00170211 /* ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJSON.swift; sourceTree = "<group>"; };
-		C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSSLPinning.swift; sourceTree = "<group>"; };
 		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
 		C8ABB7281BC6A89600C4C897 /* WithParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithParams.swift; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */,
 				C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */,
 				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
-				C81EC6051BC18C9F008E9348 /* Pitaya.png */,
-				C88EE1651BC3A6D60033D3B0 /* lvwenhancom.cer */,
+				C83BDDB91D8FA00D0051D3D6 /* logo.jpg */,
+				C83BDDBA1D8FA00D0051D3D6 /* lvwenhancom.cer */,
 				463712151B04C2050019E1AB /* Supporting Files */,
 			);
 			path = PitayaTests;
@@ -284,8 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C81C781B1D893BF00029915D /* Pitaya.png in Resources */,
-				C88EE1661BC3A6D60033D3B0 /* lvwenhancom.cer in Resources */,
+				C83BDDBC1D8FA00D0051D3D6 /* lvwenhancom.cer in Resources */,
+				C83BDDBB1D8FA00D0051D3D6 /* logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
