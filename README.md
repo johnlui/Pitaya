@@ -17,7 +17,7 @@
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
 
-### [中文介绍](#中文介绍)
+### [中文简介](#中文介绍)
 
 ## Example
 
