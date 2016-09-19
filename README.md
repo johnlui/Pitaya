@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/johnlui/Pitaya"><img src="https://raw.githubusercontent.com/johnlui/Pitaya/master/assets/logo.jpg"></a>
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://github.com/johnlui/Pitaya/blob/swift3/assets/logo.jpg?raw=true"></a>
 </p>
 
 <p align="center">
