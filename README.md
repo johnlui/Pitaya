@@ -13,9 +13,8 @@
 <br>
 
 <p align="center">
-> Thus, programs must be written for people to read, and only incidentally for machines to execute.
-> 
-> Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
+    <div>Thus, programs must be written for people to read, and only incidentally for machines to execute.</div>
+    <div>Harold Abelson, "<a href="https://mitpress.mit.edu/sicp/front/node3.html">Structure and Interpretation of Computer Programs</a>" ( S.I.C.P )</div>
 </p>
 
 <br><br>
