@@ -1,14 +1,23 @@
-Pitaya [中文介绍](#%E4%B8%AD%E6%96%87%E4%BB%8B%E7%BB%8D)
-----------
-![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg) ![License](https://img.shields.io/github/license/johnlui/Pitaya.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/Pitaya.svg)](https://travis-ci.org/johnlui/Pitaya)
+<p align="center">
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://raw.githubusercontent.com/johnlui/Pitaya/master/assets/logo.jpg"></a>
+</p>
 
-![Pitaya logo](https://raw.githubusercontent.com/johnlui/Pitaya/master/Pitaya.png?re=new)
+<p align="center">
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg"></a>
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://img.shields.io/github/license/johnlui/Pitaya.svg?style=flat"></a>
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://img.shields.io/badge/language-Swift%203-orange.svg"></a>
+    <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+    <a href="https://travis-ci.org/johnlui/Pitaya"><img src="https://img.shields.io/travis/johnlui/Pitaya.svg"></a>
+</p>
+
 
 > Thus, programs must be written for people to read, and only incidentally for machines to execute.
 > 
 > Harold Abelson, "[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/front/node3.html)" ( S.I.C.P )
 
 Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamofire](https://github.com/Alamofire/Alamofire) and [JustHTTP](https://github.com/JustHTTP/Just).
+
+### [中文介绍](#中文介绍)
 
 ## Example
 
@@ -220,3 +229,4 @@ open Pitaya
 ## 开源协议
 
 本项目遵循 MIT 协议开源，具体请查看根目录下的 LICENSE 文件。
+
