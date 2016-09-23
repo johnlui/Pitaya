@@ -30,11 +30,12 @@ import Foundation
 
 // stolen from SwiftyJSON
 extension JSONND: ExpressibleByDictionaryLiteral {
-    public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        self.init(JSONdata: elements.reduce([String : AnyObject]() as AnyObject!){(dictionary: AnyObject!, element:(String, AnyObject)) -> AnyObject! in
-            var d = dictionary as? Dictionary<String, AnyObject>
-            d?[element.0] = element.1
-            return d as AnyObject
-            })
+    public init(dictionaryLiteral elements: (String, Any)...) {
+        let data = elements.reduce([String: Any]()){(dictionary: [String: Any], element:(String, Any)) -> [String: Any] in
+            var d = dictionary
+            d[element.0] = element.1
+            return d
+        }
+        self.init(JSONdata: data as AnyObject)
     }
 }

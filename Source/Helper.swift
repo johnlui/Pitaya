@@ -30,19 +30,21 @@ import Foundation
 
 class Helper {
     // stolen from Alamofire
-    static func buildParams(_ parameters: [String: AnyObject]) -> String {
+    static func buildParams(_ parameters: [String: Any]) -> String {
         var components: [(String, String)] = []
         for key in Array(parameters.keys).sorted(by: <) {
-            let value: AnyObject! = parameters[key]
+            let value = parameters[key]
             components += Helper.queryComponents(key, value)
         }
         
         return components.map{"\($0)=\($1)"}.joined(separator: "&")
     }
     // stolen from Alamofire
-    static func queryComponents(_ key: String, _ value: AnyObject) -> [(String, String)] {
+    static func queryComponents(_ key: String, _ value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
-        components.append(contentsOf: [(Helper.escape(key), Helper.escape("\(value)"))])        
+        if let valueString = value as? String {
+            components.append(contentsOf: [(Helper.escape(key), Helper.escape(valueString))])
+        }
         return components
     }
     // stolen from Alamofire

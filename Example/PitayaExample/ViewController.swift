@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func mainButtonBeTapped(sender: AnyObject) {
+    @IBAction func mainButtonBeTapped(_ sender: AnyObject) {
         // basic GET
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/get?hello=Hello%20Pitaya!")
             .responseJSON { (json, response) -> Void in
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
         }
         
         // A request with Params, Files, Basic Auth, SSL pinning, HTTP Raw Body and NetworkError callback
-        let file = File(name: "file", url: NSBundle.mainBundle().URLForResource("Pitaya", withExtension: "png")!)
-        let certData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lvwenhancom", ofType: "cer")!)!
+        let file = File(name: "file", url: Bundle.main.url(forResource: "logo", withExtension: "jpg")!)
+        let certData = try! Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "lvwenhancom", ofType: "cer")!))
         Pita.build(HTTPMethod: .GET, url: "https://lvwenhan.com/")
             .addParams(["hello": "params"])
             .addFiles([file])

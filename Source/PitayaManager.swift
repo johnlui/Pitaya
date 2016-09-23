@@ -56,7 +56,7 @@ class PitayaManager: NSObject, URLSessionDelegate {
     var HTTPBodyRawIsJSON = false
     
     let method: String!
-    var params: [String: AnyObject]?
+    var params: [String: Any]?
     var files: [File]?
     var cancelCallback: (() -> Void)?
     var errorCallback: ((_ error: NSError) -> Void)?
@@ -76,11 +76,11 @@ class PitayaManager: NSObject, URLSessionDelegate {
     // User-Agent Header; see http://tools.ietf.org/html/rfc7231#section-5.5.3
     let userAgent: String = {
         if let info = Bundle.main.infoDictionary {
-            let executable: AnyObject = info[kCFBundleExecutableKey as String] as AnyObject? ?? "Unknown" as AnyObject
-            let bundle: AnyObject = info[kCFBundleIdentifierKey as String] as AnyObject? ?? "Unknown" as AnyObject
-            let version: AnyObject = info[kCFBundleVersionKey as String] as AnyObject? ?? "Unknown" as AnyObject
+            let executable: Any = info[kCFBundleExecutableKey as String] ?? "Unknown"
+            let bundle: Any = info[kCFBundleIdentifierKey as String] ?? "Unknown"
+            let version: Any = info[kCFBundleVersionKey as String] ?? "Unknown"
             // could not tested
-            let os: AnyObject = ProcessInfo.processInfo.operatingSystemVersionString as AnyObject? ?? "Unknown" as AnyObject
+            let os = ProcessInfo.processInfo.operatingSystemVersionString
             
             var mutableUserAgent = NSMutableString(string: "\(executable)/\(bundle) (\(version); OS \(os))") as CFMutableString
             let transform = NSString(string: "Any-Latin; Latin-ASCII; [:^ASCII:] Remove") as CFString
@@ -106,7 +106,7 @@ class PitayaManager: NSObject, URLSessionDelegate {
         self.localCertData = data
         self.sSLValidateErrorCallBack = SSLValidateErrorCallBack
     }
-    func addParams(_ params: [String: AnyObject]?) {
+    func addParams(_ params: [String: Any]?) {
         self.params = params
     }
     func addFiles(_ files: [File]?) {

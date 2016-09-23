@@ -32,7 +32,7 @@ public struct JSONND {
     
     public static var debug = false
     
-    public var data: AnyObject!
+    public var data: Any!
     
     public init(string: String, encoding: String.Encoding = String.Encoding.utf8) {
         do {
@@ -58,10 +58,10 @@ public struct JSONND {
     public init() {
         self.init(JSONdata: nil)
     }
-    public init(dictionary: [String: AnyObject]) {
+    public init(dictionary: [String: Any]) {
         self.init(any: dictionary as AnyObject)
     }
-    public init(array: [AnyObject]) {
+    public init(array: [Any]) {
         self.init(any: array as AnyObject)
     }
     public subscript (index: String) -> JSONND {
@@ -96,7 +96,10 @@ public struct JSONND {
     }
     public var int: Int? {
         get {
-            return self.data?.intValue
+            if let number = self.data as? NSNumber {
+                return number.intValue
+            }
+            return nil
         }
     }
     public var intValue: Int {
@@ -106,7 +109,10 @@ public struct JSONND {
     }
     public var double: Double? {
         get {
-            return self.data?.doubleValue
+            if let number = self.data as? NSNumber {
+                return number.doubleValue
+            }
+            return nil
         }
     }
     public var doubleValue: Double {

@@ -15,7 +15,7 @@ class ResponseJSON: WithParams {
         let expectation = self.expectation(description: "testResponseJSON")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/get")
-            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
+            .addParams([param1: param2, param2: param1])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -33,7 +33,7 @@ class ResponseJSON: WithParams {
         let expectation = self.expectation(description: "testResponseJSONWithBasicAuth")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
-            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
+            .addParams([param1: param2, param2: param1])
             .setBasicAuth("user", password: "passwd")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -52,7 +52,7 @@ class ResponseJSON: WithParams {
         let expectation = self.expectation(description: "testResponseJSONWithBasicAuth")
         
         Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/basic-auth/user/passwd")
-            .addParams([param1: param2 as AnyObject, param2: param1 as AnyObject])
+            .addParams([param1: param2, param2: param1])
         .setBasicAuth("foo", password: "bar")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)

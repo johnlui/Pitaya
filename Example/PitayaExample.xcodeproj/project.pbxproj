@@ -14,8 +14,8 @@
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
 		C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; };
 		C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C892C3DF1BC24CA300406ED5 /* Pitaya.png in Resources */ = {isa = PBXBuildFile; fileRef = C892C3DE1BC24CA300406ED5 /* Pitaya.png */; };
-		C892C3E01BC24CC300406ED5 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */; };
+		C8E781F91D9506D20083A9F7 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */; };
+		C8E781FB1D9507490083A9F7 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8E781FA1D9507490083A9F7 /* logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +64,9 @@
 		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../lvwenhancom.cer; sourceTree = "<group>"; };
 		C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = ../Pitaya.xcodeproj; sourceTree = "<group>"; };
-		C892C3DE1BC24CA300406ED5 /* Pitaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pitaya.png; path = ../../Pitaya.png; sourceTree = "<group>"; };
+		C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../assets/lvwenhancom.cer; sourceTree = "<group>"; };
+		C8E781FA1D9507490083A9F7 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../assets/logo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		46C7CAB31B04AA4000CC3B70 = {
 			isa = PBXGroup;
 			children = (
-				C892C3D01BC24C7C00406ED5 /* lvwenhancom.cer */,
+				C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */,
 				C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
 				46C7CABD1B04AA4000CC3B70 /* Products */,
@@ -115,7 +115,7 @@
 		46C7CABF1B04AA4000CC3B70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C892C3DE1BC24CA300406ED5 /* Pitaya.png */,
+				C8E781FA1D9507490083A9F7 /* logo.jpg */,
 				46C7CAC01B04AA4000CC3B70 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -165,6 +165,8 @@
 				TargetAttributes = {
 					46C7CABB1B04AA4000CC3B70 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = B7PY5JUP9A;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -214,11 +216,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C892C3E01BC24CC300406ED5 /* lvwenhancom.cer in Resources */,
 				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
-				C892C3DF1BC24CA300406ED5 /* Pitaya.png in Resources */,
+				C8E781FB1D9507490083A9F7 /* logo.jpg in Resources */,
 				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
 				46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */,
+				C8E781F91D9506D20083A9F7 /* lvwenhancom.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -338,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -349,10 +351,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7PY5JUP9A;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PitayaExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -360,10 +364,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7PY5JUP9A;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PitayaExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

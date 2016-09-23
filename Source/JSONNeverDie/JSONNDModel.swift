@@ -52,16 +52,16 @@ open class JSONNDModel: NSObject {
         for (k, v) in AnyRandomAccessCollection(mirror.children)! {
             if let key = k, let jSONNDObject = self.JSONNDObject {
                 let json = jSONNDObject[key]
-                var valueWillBeSet: AnyObject?
+                var valueWillBeSet: Any?
                 switch v {
                 case _ as String:
-                    valueWillBeSet = json.stringValue as AnyObject?
+                    valueWillBeSet = json.stringValue
                 case _ as Int:
-                    valueWillBeSet = json.intValue as AnyObject?
+                    valueWillBeSet = json.intValue
                 case _ as Double:
-                    valueWillBeSet = json.doubleValue as AnyObject?
+                    valueWillBeSet = json.doubleValue
                 case _ as Bool:
-                    valueWillBeSet = json.boolValue as AnyObject?
+                    valueWillBeSet = json.boolValue
                 default:
                     break
                 }

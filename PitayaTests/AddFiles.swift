@@ -16,7 +16,7 @@ class AddFiles: BaseTestCase {
         
         let expectation = self.expectation(description: "testAddOneFile")
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
-            .addParams(["param": "test" as AnyObject])
+            .addParams(["param": "test"])
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)

@@ -31,7 +31,7 @@ class SetHTTPBodyRawTests: BaseTestCase {
         
         let string1 = self.randomStringWithLength(20)
         let string2 = self.randomStringWithLength(20)
-        let j = JSONND(dictionary: ["string1": string1 as AnyObject, "string2": string2 as AnyObject])
+        let j = JSONND(dictionary: ["string1": string1, "string2": string2])
 
         Pita.build(HTTPMethod: .POST, url: "http://httpbin.org/post")
             .setHTTPBodyRaw(j.RAWValue, isJSON: true)

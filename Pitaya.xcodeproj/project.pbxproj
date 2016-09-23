@@ -30,10 +30,10 @@
 		C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5C1BC556F8002E2D0A /* File.swift */; };
 		C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */; };
 		C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E621BC55B3C002E2D0A /* Helper.swift */; };
-		C8F77F381C12078B00EA083A /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F77F341C12078B00EA083A /* JSONND.swift */; };
-		C8F77F391C12078B00EA083A /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F77F351C12078B00EA083A /* JSONND+ArrayLiteralConvertible.swift */; };
-		C8F77F3A1C12078B00EA083A /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F77F361C12078B00EA083A /* JSONND+DictionaryLiteralConvertible.swift */; };
-		C8F77F3B1C12078B00EA083A /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F77F371C12078B00EA083A /* JSONNDModel.swift */; };
+		C8E781F11D94D8DF0083A9F7 /* JSONND.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781ED1D94D8DF0083A9F7 /* JSONND.swift */; };
+		C8E781F21D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781EE1D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift */; };
+		C8E781F31D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781EF1D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift */; };
+		C8E781F41D94D8DF0083A9F7 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781F01D94D8DF0083A9F7 /* JSONNDModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +73,10 @@
 		C8CF0E5C1BC556F8002E2D0A /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = Source/File.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E621BC55B3C002E2D0A /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Source/Helper.swift; sourceTree = SOURCE_ROOT; };
-		C8F77F341C12078B00EA083A /* JSONND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONND.swift; path = Source/JSONND.swift; sourceTree = SOURCE_ROOT; };
-		C8F77F351C12078B00EA083A /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "Source/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
-		C8F77F361C12078B00EA083A /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "Source/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
-		C8F77F371C12078B00EA083A /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = Source/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
+		C8E781ED1D94D8DF0083A9F7 /* JSONND.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONND.swift; path = Source/JSONNeverDie/JSONND.swift; sourceTree = SOURCE_ROOT; };
+		C8E781EE1D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "Source/JSONNeverDie/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C8E781EF1D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "Source/JSONNeverDie/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
+		C8E781F01D94D8DF0083A9F7 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = Source/JSONNeverDie/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +174,10 @@
 		C88AA8D21BE67E1A008C3B47 /* JSONNeverDie */ = {
 			isa = PBXGroup;
 			children = (
-				C8F77F341C12078B00EA083A /* JSONND.swift */,
-				C8F77F351C12078B00EA083A /* JSONND+ArrayLiteralConvertible.swift */,
-				C8F77F361C12078B00EA083A /* JSONND+DictionaryLiteralConvertible.swift */,
-				C8F77F371C12078B00EA083A /* JSONNDModel.swift */,
+				C8E781ED1D94D8DF0083A9F7 /* JSONND.swift */,
+				C8E781EE1D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift */,
+				C8E781EF1D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift */,
+				C8E781F01D94D8DF0083A9F7 /* JSONNDModel.swift */,
 			);
 			name = JSONNeverDie;
 			sourceTree = "<group>";
@@ -299,15 +299,15 @@
 				C8CF0E5D1BC556F8002E2D0A /* File.swift in Sources */,
 				C8CF0E631BC55B3C002E2D0A /* Helper.swift in Sources */,
 				C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */,
-				C8F77F381C12078B00EA083A /* JSONND.swift in Sources */,
+				C8E781F11D94D8DF0083A9F7 /* JSONND.swift in Sources */,
 				C8CF0E5F1BC55724002E2D0A /* HTTPMethod.swift in Sources */,
 				C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */,
 				C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */,
-				C8F77F3A1C12078B00EA083A /* JSONND+DictionaryLiteralConvertible.swift in Sources */,
+				C8E781F31D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift in Sources */,
 				C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */,
 				C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */,
-				C8F77F391C12078B00EA083A /* JSONND+ArrayLiteralConvertible.swift in Sources */,
-				C8F77F3B1C12078B00EA083A /* JSONNDModel.swift in Sources */,
+				C8E781F21D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift in Sources */,
+				C8E781F41D94D8DF0083A9F7 /* JSONNDModel.swift in Sources */,
 				C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

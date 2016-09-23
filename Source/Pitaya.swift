@@ -59,7 +59,7 @@ open class Pitaya {
     
     - returns: self (Pitaya object)
     */
-    open func addParams(_ params: [String: AnyObject]) -> Pitaya {
+    open func addParams(_ params: [String: Any]) -> Pitaya {
         self.pitayaManager.addParams(params)
         return self
     }
