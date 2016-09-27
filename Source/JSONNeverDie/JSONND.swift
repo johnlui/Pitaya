@@ -99,6 +99,9 @@ public struct JSONND {
             if let number = self.data as? NSNumber {
                 return number.intValue
             }
+            if let number = self.data as? NSString {
+                return number.integerValue
+            }
             return nil
         }
     }
@@ -110,6 +113,9 @@ public struct JSONND {
     public var double: Double? {
         get {
             if let number = self.data as? NSNumber {
+                return number.doubleValue
+            }
+            if let number = self.data as? NSString {
                 return number.doubleValue
             }
             return nil
