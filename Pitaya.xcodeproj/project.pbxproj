@@ -17,12 +17,13 @@
 		C855F3721BC8247B00170211 /* ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855F3711BC8247B00170211 /* ResponseJSON.swift */; };
 		C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */; };
 		C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7261BC6A11600C4C897 /* BasicTests.swift */; };
-		C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithParams.swift */; };
+		C8ABB7291BC6A89600C4C897 /* WithStringParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7281BC6A89600C4C897 /* WithStringParams.swift */; };
 		C8ABB72B1BC6AD2E00C4C897 /* AddFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */; };
 		C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */; };
 		C8ABB72F1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */; };
 		C8ABB7351BC6C97100C4C897 /* PitayaManager+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */; };
 		C8B35A061C2D1DBF0016A222 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B35A051C2D1DBF0016A222 /* Control.swift */; };
+		C8C2A2281DA223F500EF0B59 /* WithOtherTypeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2A2271DA223F500EF0B59 /* WithOtherTypeParams.swift */; };
 		C8CF0E551BC55671002E2D0A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E541BC55671002E2D0A /* Pitaya.swift */; };
 		C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E561BC5568E002E2D0A /* String+NSData.swift */; };
 		C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF0E581BC556AC002E2D0A /* String+Base64.swift */; };
@@ -60,12 +61,13 @@
 		C855F3711BC8247B00170211 /* ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJSON.swift; sourceTree = "<group>"; };
 		C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSSLPinning.swift; sourceTree = "<group>"; };
 		C8ABB7261BC6A11600C4C897 /* BasicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
-		C8ABB7281BC6A89600C4C897 /* WithParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithParams.swift; sourceTree = "<group>"; };
+		C8ABB7281BC6A89600C4C897 /* WithStringParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithStringParams.swift; sourceTree = "<group>"; };
 		C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFiles.swift; sourceTree = "<group>"; };
 		C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+NSURLSessionDelegate.swift"; path = "Source/PitayaManager+NSURLSessionDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitayaManager+Static.swift"; path = "Source/PitayaManager+Static.swift"; sourceTree = SOURCE_ROOT; };
 		C8B35A051C2D1DBF0016A222 /* Control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		C8C2A2271DA223F500EF0B59 /* WithOtherTypeParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithOtherTypeParams.swift; sourceTree = "<group>"; };
 		C8CF0E541BC55671002E2D0A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pitaya.swift; path = Source/Pitaya.swift; sourceTree = SOURCE_ROOT; };
 		C8CF0E561BC5568E002E2D0A /* String+NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+NSData.swift"; path = "Source/String+NSData.swift"; sourceTree = SOURCE_ROOT; };
 		C8CF0E581BC556AC002E2D0A /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Base64.swift"; path = "Source/String+Base64.swift"; sourceTree = SOURCE_ROOT; };
@@ -149,7 +151,8 @@
 				8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */,
 				C8ABB7261BC6A11600C4C897 /* BasicTests.swift */,
 				C8B35A051C2D1DBF0016A222 /* Control.swift */,
-				C8ABB7281BC6A89600C4C897 /* WithParams.swift */,
+				C8ABB7281BC6A89600C4C897 /* WithStringParams.swift */,
+				C8C2A2271DA223F500EF0B59 /* WithOtherTypeParams.swift */,
 				C8ABB72A1BC6AD2E00C4C897 /* AddFiles.swift */,
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
 				8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */,
@@ -316,9 +319,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C2A2281DA223F500EF0B59 /* WithOtherTypeParams.swift in Sources */,
 				8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */,
 				C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */,
-				C8ABB7291BC6A89600C4C897 /* WithParams.swift in Sources */,
+				C8ABB7291BC6A89600C4C897 /* WithStringParams.swift in Sources */,
 				8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */,
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
 				C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */,

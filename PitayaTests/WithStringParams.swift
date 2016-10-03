@@ -9,7 +9,7 @@
 import XCTest
 import Pitaya
 
-class WithParams: BaseTestCase {
+class WithStringParams: BaseTestCase {
     
     var param1: String!
     var param2: String!

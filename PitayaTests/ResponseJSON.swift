@@ -9,7 +9,7 @@
 import XCTest
 import Pitaya
 
-class ResponseJSON: WithParams {
+class ResponseJSON: WithStringParams {
     
     func testResponseJSON() {
         let expectation = self.expectation(description: "testResponseJSON")

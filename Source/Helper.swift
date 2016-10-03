@@ -42,9 +42,22 @@ class Helper {
     // stolen from Alamofire
     static func queryComponents(_ key: String, _ value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
-        if let valueString = value as? String {
-            components.append(contentsOf: [(Helper.escape(key), Helper.escape(valueString))])
+        var valueString = ""
+        
+        switch value {
+        case _ as String:
+            valueString = value as! String
+        case _ as Bool:
+            valueString = (value as! Bool).description
+        case _ as Double:
+            valueString = (value as! Double).description
+        case _ as Int:
+            valueString = (value as! Int).description
+        default:
+            break
         }
+        
+        components.append(contentsOf: [(Helper.escape(key), Helper.escape(valueString))])
         return components
     }
     // stolen from Alamofire
