@@ -178,9 +178,16 @@ class PitayaManager: NSObject, URLSessionDelegate {
                 if let fs = self.files {
                     for file in fs {
                         data.append("--\(self.boundary)\r\n".nsdata as Data)
-                        data.append("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(NSString(string: file.url.description).lastPathComponent)\"\r\n\r\n".nsdata as Data)
-                        if let a = try? Data(contentsOf: file.url as URL) {
-                            data.append(a)
+                        data.append("Content-Disposition: form-data; name=\"\(file.name)\"; filename=\"\(file.nameWithType)\"\r\n\r\n".nsdata as Data)
+                        if let fileurl = file.url {
+                            if let a = try? Data(contentsOf: fileurl as URL) {
+                                data.append(a)
+                                data.append("\r\n".nsdata as Data)
+                            }
+                        }
+                        
+                        if let filedata = file.data {
+                            data.append(filedata)
                             data.append("\r\n".nsdata as Data)
                         }
                     }
