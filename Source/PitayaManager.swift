@@ -184,9 +184,7 @@ class PitayaManager: NSObject, URLSessionDelegate {
                                 data.append(a)
                                 data.append("\r\n".nsdata as Data)
                             }
-                        }
-                        
-                        if let filedata = file.data {
+                        } else if let filedata = file.data {
                             data.append(filedata)
                             data.append("\r\n".nsdata as Data)
                         }
