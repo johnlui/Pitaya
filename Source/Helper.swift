@@ -34,7 +34,7 @@ class Helper {
         var components: [(String, String)] = []
         for key in Array(parameters.keys).sorted(by: <) {
             let value = parameters[key]
-            components += Helper.queryComponents(key, value)
+            components += Helper.queryComponents(key, value ?? "value_is_nil")
         }
         
         return components.map{"\($0)=\($1)"}.joined(separator: "&")

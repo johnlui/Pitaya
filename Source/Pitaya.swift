@@ -85,7 +85,20 @@ open class Pitaya {
     - returns: self (Pitaya object)
     */
     open func addSSLPinning(LocalCertData data: Data, SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
-        self.pitayaManager.addSSLPinning(LocalCertData: data, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
+        self.pitayaManager.addSSLPinning(LocalCertData: [data], SSLValidateErrorCallBack: SSLValidateErrorCallBack)
+        return self
+    }
+    
+    /**
+     add a SSL pinning to check whether undering the Man-in-the-middle attack
+     
+     - parameter LocalCertDataArray:       data array of certification file, .cer format
+     - parameter SSLValidateErrorCallBack: error callback closure
+     
+     - returns: self (Pitaya object)
+     */
+    open func addSSLPinning(LocalCertDataArray dataArray: [Data], SSLValidateErrorCallBack: (()->Void)? = nil) -> Pitaya {
+        self.pitayaManager.addSSLPinning(LocalCertData: dataArray, SSLValidateErrorCallBack: SSLValidateErrorCallBack)
         return self
     }
     

@@ -68,7 +68,7 @@ class PitayaManager: NSObject, URLSessionDelegate {
     var task: URLSessionTask!
     var basicAuth: (String, String)!
     
-    var localCertData: Data!
+    var localCertDataArray = [Data]()
     var sSLValidateErrorCallBack: (() -> Void)?
     
     var extraHTTPHeaders = [(String, String)]()
@@ -102,8 +102,8 @@ class PitayaManager: NSObject, URLSessionDelegate {
         // setup a session with delegate to self
         self.session = Foundation.URLSession(configuration: Foundation.URLSession.shared.configuration, delegate: self, delegateQueue: Foundation.URLSession.shared.delegateQueue)
     }
-    func addSSLPinning(LocalCertData data: Data, SSLValidateErrorCallBack: (()->Void)? = nil) {
-        self.localCertData = data
+    func addSSLPinning(LocalCertData dataArray: [Data], SSLValidateErrorCallBack: (()->Void)? = nil) {
+        self.localCertDataArray = dataArray
         self.sSLValidateErrorCallBack = SSLValidateErrorCallBack
     }
     func addParams(_ params: [String: Any]?) {
