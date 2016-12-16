@@ -64,7 +64,9 @@ extension URLSessionDelegate {
             } else {
                 challenge.sender?.cancel(challenge)
                 completionHandler(Foundation.URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
-                self.sSLValidateErrorCallBack?()
+                DispatchQueue.main.async {
+                    self.sSLValidateErrorCallBack?()
+                }
                 return
             }
         } else {

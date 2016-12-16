@@ -16,6 +16,8 @@
 		C8CF50521E02CCC00059B9DE /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF50511E02CCC00059B9DE /* RootTableViewController.swift */; };
 		C8E781F91D9506D20083A9F7 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */; };
 		C8E781FB1D9507490083A9F7 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8E781FA1D9507490083A9F7 /* logo.jpg */; };
+		C8F84A061E03DCBF005A063C /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F84A051E03DCBF005A063C /* ExamplesViewController.swift */; };
+		C8F84A091E03E485005A063C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F84A081E03E485005A063C /* SwiftNotice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		C8CF50511E02CCC00059B9DE /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../assets/lvwenhancom.cer; sourceTree = "<group>"; };
 		C8E781FA1D9507490083A9F7 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../assets/logo.jpg; sourceTree = "<group>"; };
+		C8F84A051E03DCBF005A063C /* ExamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
+		C8F84A081E03E485005A063C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		46C7CAB31B04AA4000CC3B70 = {
 			isa = PBXGroup;
 			children = (
+				C8F84A081E03E485005A063C /* SwiftNotice.swift */,
 				C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */,
 				C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */,
 				46C7CABE1B04AA4000CC3B70 /* PitayaExample */,
@@ -104,6 +109,7 @@
 			children = (
 				46C7CAC11B04AA4000CC3B70 /* AppDelegate.swift */,
 				C8CF50511E02CCC00059B9DE /* RootTableViewController.swift */,
+				C8F84A051E03DCBF005A063C /* ExamplesViewController.swift */,
 				46C7CAC51B04AA4000CC3B70 /* Main.storyboard */,
 				46C7CAC81B04AA4000CC3B70 /* Images.xcassets */,
 				46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */,
@@ -232,7 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8CF50521E02CCC00059B9DE /* RootTableViewController.swift in Sources */,
+				C8F84A061E03DCBF005A063C /* ExamplesViewController.swift in Sources */,
 				46C7CAC21B04AA4000CC3B70 /* AppDelegate.swift in Sources */,
+				C8F84A091E03E485005A063C /* SwiftNotice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

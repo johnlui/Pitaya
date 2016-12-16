@@ -34,7 +34,7 @@ class AddFiles: BaseTestCase {
         let data = try! Data(contentsOf: self.URLForResource("logo", withExtension: "jpg"))
         let file = File(name: "file", data: data, type: "jpg")
         
-        let expectation = self.expectation(description: "testAddOneFile")
+        let expectation = self.expectation(description: "testAddOneFileInData")
         Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addParams(["param": "test"])
             .addFiles([file])
@@ -74,7 +74,7 @@ class AddFiles: BaseTestCase {
         let data = try! Data(contentsOf: self.URLForResource("logo", withExtension: "jpg"))
         let file = File(name: "file", data: data, type: "jpg")
         
-        let expectation = self.expectation(description: "testOneMoreThing")
+        let expectation = self.expectation(description: "testOneMoreThingInData")
         Pita.build(HTTPMethod: .GET, url: "http://staticonsae.sinaapp.com/pitaya.php")
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
