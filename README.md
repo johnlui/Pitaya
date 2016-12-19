@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/johnlui/Pitaya"><img src="https://github.com/johnlui/Pitaya/blob/swift3/assets/logo.jpg?raw=true"></a>
+    <a href="https://github.com/johnlui/Pitaya"><img src="https://github.com/johnlui/Pitaya/blob/swift3/assets/logo@2x.jpg"></a>
 </p>
 
 <p align="center">
@@ -28,12 +28,18 @@ Pitaya is a Swift HTTP / HTTPS networking library for people. Inspired by [Alamo
 
 ## Example
 
+### Simple
+
 ```swift
 Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
     .responseJSON { (json, response) -> Void in
         print(json["args"]["hello"].stringValue) // get "Hello Pitaya!"
 }
 ```
+
+### All examples
+
+![All Examples](https://github.com/johnlui/Pitaya/blob/swift3/assets/PitayaExample@2x.png)
 
 ## Documentation
 
@@ -138,12 +144,18 @@ Pitaya(火龙果) 是一个写给人看的纯 Swift 写成的 HTTP / HTTPS 网�
 
 ## 使用示例
 
+### 基本用法
+
 ```swift
 Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!")
     .responseJSON { (json, response) -> Void in
         print(json["args"]["hello"].stringValue) // get "Hello Pitaya!"
 }
 ```
+
+### 所有用法
+
+![All Examples](https://github.com/johnlui/Pitaya/blob/swift3/assets/PitayaExample@2x.png)
 
 ### [中文文档](https://github.com/johnlui/Pitaya/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
