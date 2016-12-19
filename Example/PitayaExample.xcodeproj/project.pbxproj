@@ -11,11 +11,11 @@
 		46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC51B04AA4000CC3B70 /* Main.storyboard */; };
 		46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CAC81B04AA4000CC3B70 /* Images.xcassets */; };
 		46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C7CACA1B04AA4000CC3B70 /* LaunchScreen.xib */; };
+		B884D1A61E07B7E70008F5AB /* logo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B884D1A51E07B7E70008F5AB /* logo@2x.jpg */; };
 		C892C3DA1BC24C8E00406ED5 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; };
 		C892C3DB1BC24C8E00406ED5 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C892C3D71BC24C8000406ED5 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8CF50521E02CCC00059B9DE /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CF50511E02CCC00059B9DE /* RootTableViewController.swift */; };
 		C8E781F91D9506D20083A9F7 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */; };
-		C8E781FB1D9507490083A9F7 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8E781FA1D9507490083A9F7 /* logo.jpg */; };
 		C8F84A061E03DCBF005A063C /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F84A051E03DCBF005A063C /* ExamplesViewController.swift */; };
 		C8F84A091E03E485005A063C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F84A081E03E485005A063C /* SwiftNotice.swift */; };
 /* End PBXBuildFile section */
@@ -65,10 +65,10 @@
 		46C7CAC61B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C7CAC81B04AA4000CC3B70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C7CACB1B04AA4000CC3B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B884D1A51E07B7E70008F5AB /* logo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "logo@2x.jpg"; path = "../../assets/logo@2x.jpg"; sourceTree = "<group>"; };
 		C892C3D11BC24C8000406ED5 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = ../Pitaya.xcodeproj; sourceTree = "<group>"; };
 		C8CF50511E02CCC00059B9DE /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		C8E781F81D9506D20083A9F7 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = ../assets/lvwenhancom.cer; sourceTree = "<group>"; };
-		C8E781FA1D9507490083A9F7 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../assets/logo.jpg; sourceTree = "<group>"; };
 		C8F84A051E03DCBF005A063C /* ExamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		C8F84A081E03E485005A063C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +121,7 @@
 		46C7CABF1B04AA4000CC3B70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8E781FA1D9507490083A9F7 /* logo.jpg */,
+				B884D1A51E07B7E70008F5AB /* logo@2x.jpg */,
 				46C7CAC01B04AA4000CC3B70 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -222,8 +222,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B884D1A61E07B7E70008F5AB /* logo@2x.jpg in Resources */,
 				46C7CAC71B04AA4000CC3B70 /* Main.storyboard in Resources */,
-				C8E781FB1D9507490083A9F7 /* logo.jpg in Resources */,
 				46C7CACC1B04AA4000CC3B70 /* LaunchScreen.xib in Resources */,
 				46C7CAC91B04AA4000CC3B70 /* Images.xcassets in Resources */,
 				C8E781F91D9506D20083A9F7 /* lvwenhancom.cer in Resources */,

@@ -74,7 +74,7 @@ class ExamplesViewController: UIViewController {
         }
     }
     func UploadFilesByURL() {
-        let fileURL = Bundle(for: ExamplesViewController.self).url(forResource: "logo", withExtension: "jpg")!
+        let fileURL = Bundle(for: ExamplesViewController.self).url(forResource: "logo@2x", withExtension: "jpg")!
         let file = File(name: "file", url: fileURL)
         
         self.pleaseWait()
@@ -86,7 +86,7 @@ class ExamplesViewController: UIViewController {
         })
     }
     func UploadFilesByData() {
-        let fileURL = Bundle(for: ExamplesViewController.self).url(forResource: "logo", withExtension: "jpg")!
+        let fileURL = Bundle(for: ExamplesViewController.self).url(forResource: "logo@2x", withExtension: "jpg")!
         let data = try! Data(contentsOf: fileURL)
         let file = File(name: "file", data: data, type: "jpg")
         
@@ -155,7 +155,7 @@ class ExamplesViewController: UIViewController {
         let certURL0 = Bundle(for: ExamplesViewController.self).url(forResource: "lvwenhancom", withExtension: "cer")!
         let certData0 = try! Data(contentsOf: certURL0)
         
-        let certURL1 = Bundle(for: ExamplesViewController.self).url(forResource: "logo", withExtension: "jpg")!
+        let certURL1 = Bundle(for: ExamplesViewController.self).url(forResource: "logo@2x", withExtension: "jpg")!
         let certData1 = try! Data(contentsOf: certURL1)
         
         self.pleaseWait()

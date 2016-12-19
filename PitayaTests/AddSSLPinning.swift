@@ -18,7 +18,7 @@ class AddSSLPinning: BaseTestCase {
     override func setUp() {
         super.setUp()
         self.certData = try! Data(contentsOf: self.URLForResource("lvwenhancom", withExtension: "cer"))
-        self.certData1 = try! Data(contentsOf: self.URLForResource("logo", withExtension: "jpg"))
+        self.certData1 = try! Data(contentsOf: self.URLForResource("logo@2x", withExtension: "jpg"))
         self.certData2 = "Pitaya".data(using: String.Encoding.utf8)
     }
     
