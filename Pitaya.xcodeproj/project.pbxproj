@@ -35,6 +35,7 @@
 		C8E781F21D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781EE1D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift */; };
 		C8E781F31D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781EF1D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift */; };
 		C8E781F41D94D8DF0083A9F7 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E781F01D94D8DF0083A9F7 /* JSONNDModel.swift */; };
+		C8F02A271E5AFE2F0019CD22 /* SetTimeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F02A261E5AFE2F0019CD22 /* SetTimeout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C8E781EE1D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+ArrayLiteralConvertible.swift"; path = "Source/JSONNeverDie/JSONND+ArrayLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
 		C8E781EF1D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSONND+DictionaryLiteralConvertible.swift"; path = "Source/JSONNeverDie/JSONND+DictionaryLiteralConvertible.swift"; sourceTree = SOURCE_ROOT; };
 		C8E781F01D94D8DF0083A9F7 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONNDModel.swift; path = Source/JSONNeverDie/JSONNDModel.swift; sourceTree = SOURCE_ROOT; };
+		C8F02A261E5AFE2F0019CD22 /* SetTimeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTimeout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				C8ABB72C1BC6AF1200C4C897 /* BasicAuth.swift */,
 				8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */,
 				C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */,
+				C8F02A261E5AFE2F0019CD22 /* SetTimeout.swift */,
 				C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */,
 				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
 				B884D1A71E07B8EB0008F5AB /* logo@2x.jpg */,
@@ -324,6 +327,7 @@
 				C8ABB7291BC6A89600C4C897 /* WithStringParams.swift in Sources */,
 				8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */,
 				C8ABB7271BC6A11600C4C897 /* BasicTests.swift in Sources */,
+				C8F02A271E5AFE2F0019CD22 /* SetTimeout.swift in Sources */,
 				C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */,
 				C8ABB72D1BC6AF1200C4C897 /* BasicAuth.swift in Sources */,
 				C8B35A061C2D1DBF0016A222 /* Control.swift in Sources */,

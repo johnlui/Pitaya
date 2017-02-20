@@ -41,14 +41,20 @@ open class Pitaya {
     /**
     the only init method to fire a HTTP / HTTPS request
     
-    - parameter method: the HTTP method you want
-    - parameter url:    the url you want
+    - parameter method:     the HTTP method you want
+    - parameter url:        the url you want
+    - parameter timeout:    time out setting
     
     - returns: a Pitaya object
     */
     open static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url)
+        return p
+    }
+    open static func build(HTTPMethod method: HTTPMethod, url: String, timeout: Double) -> Pitaya {
+        let p = Pitaya()
+        p.pitayaManager = PitayaManager.build(method, url: url, timeout: timeout)
         return p
     }
 

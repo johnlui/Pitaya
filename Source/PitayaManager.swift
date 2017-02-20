@@ -93,14 +93,16 @@ class PitayaManager: NSObject, URLSessionDelegate {
         return "Pitaya"
         }()
 
-    init(url: String, method: HTTPMethod!) {
+    init(url: String, method: HTTPMethod!, timeout: Double = 60.0) {
         self.url = url
         self.request = URLRequest(url: URL(string: url)!)
         self.method = method.rawValue
         
         super.init()
         // setup a session with delegate to self
-        self.session = Foundation.URLSession(configuration: Foundation.URLSession.shared.configuration, delegate: self, delegateQueue: Foundation.URLSession.shared.delegateQueue)
+        let sessionConfiguration = Foundation.URLSession.shared.configuration
+        sessionConfiguration.timeoutIntervalForRequest = timeout
+        self.session = Foundation.URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: Foundation.URLSession.shared.delegateQueue)
     }
     func addSSLPinning(LocalCertData dataArray: [Data], SSLValidateErrorCallBack: (()->Void)? = nil) {
         self.localCertDataArray = dataArray
