@@ -73,6 +73,8 @@ class PitayaManager: NSObject, URLSessionDelegate {
     
     var extraHTTPHeaders = [(String, String)]()
     
+    var execution: Execution = .async
+    
     // User-Agent Header; see http://tools.ietf.org/html/rfc7231#section-5.5.3
     let userAgent: String = {
         if let info = Bundle.main.infoDictionary {
@@ -93,10 +95,11 @@ class PitayaManager: NSObject, URLSessionDelegate {
         return "Pitaya"
         }()
 
-    init(url: String, method: HTTPMethod!, timeout: Double = 60.0) {
+    init(url: String, method: HTTPMethod!, timeout: Double = 60.0, execution: Execution = .async) {
         self.url = url
         self.request = URLRequest(url: URL(string: url)!)
         self.method = method.rawValue
+        self.execution = execution
         
         super.init()
         // setup a session with delegate to self
@@ -201,9 +204,11 @@ class PitayaManager: NSObject, URLSessionDelegate {
     }
     fileprivate func fireTask() {
         if Pitaya.DEBUG { if let a = self.request.allHTTPHeaderFields { print("Pitaya Request HEADERS: ", a.description); }; }
+        let semaphore = DispatchSemaphore(value: 0)
         self.task = self.session.dataTask(with: self.request) { [weak self] (data, response, error) -> Void in
             if Pitaya.DEBUG { if let a = response { print("Pitaya Response: ", a.description); }}
-            if let error = error as? NSError {
+            semaphore.signal()
+            if let error = error as NSError? {
                 if error.code == -999 {
                     DispatchQueue.main.async {
                         self?.cancelCallback?()
@@ -224,5 +229,8 @@ class PitayaManager: NSObject, URLSessionDelegate {
             }
         }
         self.task.resume()
+        if execution == .sync{
+            semaphore.wait()
+        }
     }
 }
