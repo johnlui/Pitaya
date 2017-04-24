@@ -37,7 +37,7 @@ extension PitayaManager {
     
     - returns: self (PitayaManager object)
     */
-    static func build(_ method: HTTPMethod, url: String, timeout: Double = 60.0) -> PitayaManager {
-        return PitayaManager(url: url, method: method, timeout: timeout)
+    static func build(_ method: HTTPMethod, url: String, timeout: Double = 60.0, execution: Execution = .async) -> PitayaManager {
+        return PitayaManager(url: url, method: method, timeout: timeout, execution: execution)
     }
 }

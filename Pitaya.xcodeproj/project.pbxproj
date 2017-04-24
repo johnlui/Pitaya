@@ -11,6 +11,8 @@
 		463712111B04C2050019E1AB /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463712051B04C2050019E1AB /* Pitaya.framework */; };
 		8E610C4E1BD0A95D00CF9982 /* AddHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */; };
 		8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */; };
+		B85B6F351EADB6770062892B /* SetSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B6F341EADB6770062892B /* SetSync.swift */; };
+		B85B6F371EADCD370062892B /* Execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B6F361EADCD370062892B /* Execution.swift */; };
 		B884D1A81E07B8EB0008F5AB /* logo@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B884D1A71E07B8EB0008F5AB /* logo@2x.jpg */; };
 		C83BDDBC1D8FA00D0051D3D6 /* lvwenhancom.cer in Resources */ = {isa = PBXBuildFile; fileRef = C83BDDBA1D8FA00D0051D3D6 /* lvwenhancom.cer */; };
 		C84B22801BCA1D0B00594876 /* SetHTTPBodyRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */; };
@@ -56,6 +58,8 @@
 		463712161B04C2050019E1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHTTPHeader.swift; sourceTree = "<group>"; };
 		8EDD226A1B623B4600FAD39F /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		B85B6F341EADB6770062892B /* SetSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSync.swift; sourceTree = "<group>"; };
+		B85B6F361EADCD370062892B /* Execution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Execution.swift; sourceTree = "<group>"; };
 		B884D1A71E07B8EB0008F5AB /* logo@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "logo@2x.jpg"; path = "assets/logo@2x.jpg"; sourceTree = SOURCE_ROOT; };
 		C83BDDBA1D8FA00D0051D3D6 /* lvwenhancom.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = lvwenhancom.cer; path = assets/lvwenhancom.cer; sourceTree = SOURCE_ROOT; };
 		C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHTTPBodyRaw.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				C8ABB7341BC6C97100C4C897 /* PitayaManager+Static.swift */,
 				C8ABB72E1BC6C75800C4C897 /* PitayaManager+NSURLSessionDelegate.swift */,
 				C8CF0E5E1BC55724002E2D0A /* HTTPMethod.swift */,
+				B85B6F361EADCD370062892B /* Execution.swift */,
 				C8CF0E5C1BC556F8002E2D0A /* File.swift */,
 				C8CF0E561BC5568E002E2D0A /* String+NSData.swift */,
 				C8CF0E581BC556AC002E2D0A /* String+Base64.swift */,
@@ -160,6 +165,7 @@
 				8E610C4D1BD0A95D00CF9982 /* AddHTTPHeader.swift */,
 				C84B227F1BCA1D0B00594876 /* SetHTTPBodyRaw.swift */,
 				C8F02A261E5AFE2F0019CD22 /* SetTimeout.swift */,
+				B85B6F341EADB6770062892B /* SetSync.swift */,
 				C88EE1671BC3A6F10033D3B0 /* AddSSLPinning.swift */,
 				C855F3711BC8247B00170211 /* ResponseJSON.swift */,
 				B884D1A71E07B8EB0008F5AB /* logo@2x.jpg */,
@@ -311,6 +317,7 @@
 				C8E781F31D94D8DF0083A9F7 /* JSONND+DictionaryLiteralConvertible.swift in Sources */,
 				C8CF0E5B1BC556D0002E2D0A /* PitayaManager.swift in Sources */,
 				C8CF0E591BC556AC002E2D0A /* String+Base64.swift in Sources */,
+				B85B6F371EADCD370062892B /* Execution.swift in Sources */,
 				C8E781F21D94D8DF0083A9F7 /* JSONND+ArrayLiteralConvertible.swift in Sources */,
 				C8E781F41D94D8DF0083A9F7 /* JSONNDModel.swift in Sources */,
 				C8CF0E571BC5568F002E2D0A /* String+NSData.swift in Sources */,
@@ -322,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C2A2281DA223F500EF0B59 /* WithOtherTypeParams.swift in Sources */,
+				B85B6F351EADB6770062892B /* SetSync.swift in Sources */,
 				8EDD226B1B623B4600FAD39F /* BaseTestCase.swift in Sources */,
 				C88EE1681BC3A6F10033D3B0 /* AddSSLPinning.swift in Sources */,
 				C8ABB7291BC6A89600C4C897 /* WithStringParams.swift in Sources */,

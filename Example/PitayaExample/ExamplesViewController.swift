@@ -10,7 +10,7 @@ import UIKit
 import Pitaya
 
 enum RequestType: String {
-    case SimpleGET, SimplePOST, GETWithStringOrNumberParams, POSTWithStringOrNumberParams, UploadFilesByURL, UploadFilesByData, SetHTTPHeaders, SetHTTPRawBody, HTTPBasicAuth, AddSSLPinning, AddManySSLPinning
+    case SimpleGET, SimplePOST, GETWithStringOrNumberParams, POSTWithStringOrNumberParams, UploadFilesByURL, UploadFilesByData, SetHTTPHeaders, SetHTTPRawBody, HTTPBasicAuth, AddSSLPinning, AddManySSLPinning, SyncRequest
 }
 
 class ExamplesViewController: UIViewController {
@@ -178,5 +178,10 @@ class ExamplesViewController: UIViewController {
                 self.resultLabel.text = "success"
         }
     }
-    
+
+    func SyncRequest(){
+        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/delay/3", timeout: 10, execution: .sync).responseString { (string, response) in
+            self.resultLabel.text = string
+        }
+    }
 }

@@ -25,7 +25,7 @@ class RootTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 12
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,7 +35,7 @@ class RootTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let a = segue.destination as? ExamplesViewController,
             let index = (self.tableView.indexPathForSelectedRow as NSIndexPath?)?.row {
-            let typeString = ["SimpleGET", "SimplePOST", "GETWithStringOrNumberParams", "POSTWithStringOrNumberParams", "UploadFilesByURL", "UploadFilesByData", "SetHTTPHeaders", "SetHTTPRawBody", "HTTPBasicAuth", "AddSSLPinning", "AddManySSLPinning"][index]
+            let typeString = ["SimpleGET", "SimplePOST", "GETWithStringOrNumberParams", "POSTWithStringOrNumberParams", "UploadFilesByURL", "UploadFilesByData", "SetHTTPHeaders", "SetHTTPRawBody", "HTTPBasicAuth", "AddSSLPinning", "AddManySSLPinning", "SyncRequest"][index]
             a.requestType = RequestType(rawValue: typeString)
         }
     }

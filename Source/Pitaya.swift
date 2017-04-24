@@ -52,12 +52,12 @@ open class Pitaya {
         p.pitayaManager = PitayaManager.build(method, url: url)
         return p
     }
-    open static func build(HTTPMethod method: HTTPMethod, url: String, timeout: Double) -> Pitaya {
+    open static func build(HTTPMethod method: HTTPMethod, url: String, timeout: Double, execution: Execution = .async) -> Pitaya {
         let p = Pitaya()
-        p.pitayaManager = PitayaManager.build(method, url: url, timeout: timeout)
+        p.pitayaManager = PitayaManager.build(method, url: url, timeout: timeout, execution: execution)
         return p
     }
-
+    
     /**
     add params to self (Pitaya object)
     
