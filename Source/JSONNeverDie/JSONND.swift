@@ -80,7 +80,7 @@ public struct JSONND {
             if let _ = self.data {
                 do {
                     let d = try JSONSerialization.data(withJSONObject: self.data, options: .prettyPrinted)
-                    return NSString(data: d, encoding: String.Encoding.utf8.rawValue) as? String
+                    return NSString(data: d, encoding: String.Encoding.utf8.rawValue) as String?
                 } catch { return nil }
                 // can not test Errors here.
                 // It seems that NSJSONSerialization.dataWithJSONObject() method dose not support do-try-catch in Swift 2 now.

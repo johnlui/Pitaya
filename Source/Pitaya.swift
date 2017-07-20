@@ -180,7 +180,7 @@ open class Pitaya {
         self.responseData { (data, response) -> Void in
             var string = ""
             if let d = data,
-                let s = NSString(data: d, encoding: String.Encoding.utf8.rawValue) as? String {
+                let s = NSString(data: d, encoding: String.Encoding.utf8.rawValue) as String? {
                     string = s
             }
             callback?(string, response)
