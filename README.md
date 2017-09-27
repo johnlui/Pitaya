@@ -62,7 +62,8 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 ## Requirements
 
 * iOS 7.0+
-* Xcode 8 (Swift 3) (v2.x) in current swift3 branch.
+* Xcode 9 (Swift 4) (v3.x) in current swift4 branch.
+* Xcode 8 (Swift 3) (v2.x) in swift3 branch.
 * Xcode 7 (Swift 2) (v1.x) in master branch.
 * Xcode 6.4 (Swift 1.2) before [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
 
@@ -175,7 +176,8 @@ Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/get?hello=Hello%20Pitaya!
 ## 环境要求
 
 * iOS 7.0+
-* Xcode 8 (Swift 3) v2.x 版，位于 swift3 分支（当前默认版本）
+* Xcode 8 (Swift 4) v3.x 版，位于 swift4 分支（当前默认版本）
+* Xcode 8 (Swift 3) v2.x 版，位于 swift3 分支
 * Xcode 7 (Swift 2) v1.x 版，位于 master 分支
 * Xcode 6.4 (Swift 1.2) 版： [v0.2.3](https://github.com/johnlui/Pitaya/releases/tag/v0.2.3)
 
