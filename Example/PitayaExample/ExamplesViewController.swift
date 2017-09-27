@@ -78,7 +78,7 @@ class ExamplesViewController: UIViewController {
         let file = File(name: "file", url: fileURL)
         
         self.pleaseWait()
-        Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
+        Pita.build(HTTPMethod: .POST, url: "http://tinylara.com:8000/pitaya.php")
             .addFiles([file])
             .responseString({ (string, response) -> Void in
                 self.resultLabel.text = string == "1" ? "success" : "failure"
@@ -91,7 +91,7 @@ class ExamplesViewController: UIViewController {
         let file = File(name: "file", data: data, type: "jpg")
         
         self.pleaseWait()
-        Pita.build(HTTPMethod: .POST, url: "http://staticonsae.sinaapp.com/pitaya.php")
+        Pita.build(HTTPMethod: .POST, url: "http://tinylara.com:8000/pitaya.php")
             .addFiles([file])
             .responseString({ (string, response) -> Void in
                 self.resultLabel.text = string == "1" ? "success" : "failure"
