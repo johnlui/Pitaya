@@ -82,7 +82,7 @@ class AddSSLPinning: BaseTestCase {
         let expectation = self.expectation(description: "testSSLPiningNotPassed")
         var errorPinning = 0
         
-        Pita.build(HTTPMethod: .GET, url: "https://autolayout.club/")
+        Pita.build(HTTPMethod: .GET, url: "https://www.baidu.com/")
             .addSSLPinning(LocalCertData: self.certData, SSLValidateErrorCallBack: { () -> Void in
                 print("Under the Man-in-the-middle attack!")
                 errorPinning = 1
