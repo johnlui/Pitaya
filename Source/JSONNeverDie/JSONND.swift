@@ -38,7 +38,7 @@ public struct JSONND {
         do {
             if let data = string.data(using: encoding) {
                 let d = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-                self.data = d as AnyObject!
+                self.data = d as AnyObject?
             }
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)

@@ -31,6 +31,6 @@ import Foundation
 // stolen from SwiftyJSON
 extension JSONND: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Any...) {
-        self.init(JSONdata: elements as AnyObject!)
+        self.init(JSONdata: elements as AnyObject?)
     }
 }

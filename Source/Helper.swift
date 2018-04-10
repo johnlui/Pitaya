@@ -63,6 +63,6 @@ class Helper {
     // stolen from Alamofire
     static func escape(_ string: String) -> String {
         let legalURLCharactersToBeEscaped: CFString = ":&=;+!@#$()',*" as CFString
-        return CFURLCreateStringByAddingPercentEscapes(nil, string as CFString!, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
+        return CFURLCreateStringByAddingPercentEscapes(nil, string as CFString?, nil, legalURLCharactersToBeEscaped, CFStringBuiltInEncodings.UTF8.rawValue) as String
     }
 }
