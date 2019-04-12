@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Pitaya/**/*','Source/**/*'
+  s.source_files = 'Pitaya/**/*.swift','Source/**/*'
 
   s.public_header_files = 'Pitaya/*.h'
   #s.frameworks = 'UIKit', 'AVFoundation'
