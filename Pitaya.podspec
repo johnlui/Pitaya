@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Pitaya"
-  s.version          = "1.0.0"
+  s.version          = "3.0.2"
   s.summary          = "A Swift HTTP / HTTPS networking library just incidentally execute on machines"
 
 # This description is used to generate tags and improve search results.
