@@ -1,4 +1,4 @@
 os: osx
-osx_image: xcode9
+osx_image: xcode10
 language: objective-c
-script: xcodebuild test -project Pitaya.xcodeproj -scheme Pitaya -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
+script: xcodebuild test -project Pitaya.xcodeproj -scheme Pitaya -destination 'platform=iOS Simulator,name=iPhone Xr,OS=latest'
