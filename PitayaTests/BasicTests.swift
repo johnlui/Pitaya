@@ -14,7 +14,7 @@ class BasicTests: BaseTestCase {
     func testGET() {
         let expectation = self.expectation(description: "testGET")
         
-        Pita.build(HTTPMethod: .GET, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .GET, url: "http://lvwenhan.com:8000/pitaya.php")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -29,7 +29,7 @@ class BasicTests: BaseTestCase {
     func testPOST() {
         let expectation = self.expectation(description: "testPOST")
         
-        Pita.build(HTTPMethod: .POST, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .POST, url: "http://lvwenhan.com:8000/pitaya.php")
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
@@ -46,7 +46,7 @@ class BasicTests: BaseTestCase {
         
         let expectation = self.expectation(description: "testOneMoreThing")
         Pitaya.DEBUG = true
-        Pita.build(HTTPMethod: .GET, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .GET, url: "http://lvwenhan.com:8000/pitaya.php")
             .responseString { (string, response) -> Void in
                 XCTAssert(string == "", "GET should success and return empty string with no params")
                 

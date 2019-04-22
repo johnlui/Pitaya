@@ -14,12 +14,12 @@ class SetTimeout: BaseTestCase {
     func testSetTimeoutSuccess() {
         let expectation = self.expectation(description: "testSetTimeoutSuccess")
 
-        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/delay/5", timeout: 8)
+        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/delay/5", timeout: 8)
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
             })
             .responseJSON { (json, response) -> Void in
-                XCTAssertEqual(json["url"].stringValue, "http://httpbin.org/delay/5")
+                XCTAssertEqual(json["url"].stringValue, "https://httpbin.org/delay/5")
                 expectation.fulfill()
         }
         waitForExpectations(timeout: self.defaultTimeout, handler: nil)
@@ -28,12 +28,12 @@ class SetTimeout: BaseTestCase {
     func testSetTimeoutFail() {
         let expectation = self.expectation(description: "testSetTimeoutFail")
         
-        Pita.build(HTTPMethod: .GET, url: "http://httpbin.org/delay/5", timeout: 2)
+        Pita.build(HTTPMethod: .GET, url: "https://httpbin.org/delay/5", timeout: 2)
             .onNetworkError({ (error) -> Void in
                 expectation.fulfill()
             })
             .responseJSON { (json, response) -> Void in
-                XCTAssertEqual(json["url"].stringValue, "http://httpbin.org/delay/5")
+                XCTAssert(false)
         }
         waitForExpectations(timeout: self.defaultTimeout, handler: nil)
     }

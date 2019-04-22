@@ -15,7 +15,7 @@ class AddFiles: BaseTestCase {
         let file = File(name: "file", url: self.URLForResource("logo@2x", withExtension: "jpg"))
         
         let expectation = self.expectation(description: "testAddOneFile")
-        Pita.build(HTTPMethod: .POST, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .POST, url: "http://lvwenhan.com:8000/pitaya.php")
             .addParams(["param": "test"])
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
@@ -35,7 +35,7 @@ class AddFiles: BaseTestCase {
         let file = File(name: "file", data: data, type: "jpg")
         
         let expectation = self.expectation(description: "testAddOneFileInData")
-        Pita.build(HTTPMethod: .POST, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .POST, url: "http://lvwenhan.com:8000/pitaya.php")
             .addParams(["param": "test"])
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
@@ -56,7 +56,7 @@ class AddFiles: BaseTestCase {
         let file = File(name: "file", url: self.URLForResource("logo@2x", withExtension: "jpg"))
         
         let expectation = self.expectation(description: "testOneMoreThing")
-        Pita.build(HTTPMethod: .GET, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .GET, url: "http://lvwenhan.com:8000/pitaya.php")
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)
@@ -75,7 +75,7 @@ class AddFiles: BaseTestCase {
         let file = File(name: "file", data: data, type: "jpg")
         
         let expectation = self.expectation(description: "testOneMoreThingInData")
-        Pita.build(HTTPMethod: .GET, url: "http://tinylara.com:8000/pitaya.php")
+        Pita.build(HTTPMethod: .GET, url: "http://lvwenhan.com:8000/pitaya.php")
             .addFiles([file])
             .onNetworkError({ (error) -> Void in
                 XCTAssert(false, error.localizedDescription)

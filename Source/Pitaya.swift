@@ -34,7 +34,7 @@ public typealias Pita = Pitaya
 open class Pitaya {
     
     /// if set to true, Pitaya will log all information in a NSURLSession lifecycle
-    open static var DEBUG = false
+    public static var DEBUG = false
     
     var pitayaManager: PitayaManager!
 
@@ -47,12 +47,12 @@ open class Pitaya {
     
     - returns: a Pitaya object
     */
-    open static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
+    public static func build(HTTPMethod method: HTTPMethod, url: String) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url)
         return p
     }
-    open static func build(HTTPMethod method: HTTPMethod, url: String, timeout: Double, execution: Execution = .async) -> Pitaya {
+    public static func build(HTTPMethod method: HTTPMethod, url: String, timeout: Double, execution: Execution = .async) -> Pitaya {
         let p = Pitaya()
         p.pitayaManager = PitayaManager.build(method, url: url, timeout: timeout, execution: execution)
         return p
