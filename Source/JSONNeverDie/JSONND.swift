@@ -77,7 +77,7 @@ public struct JSONND {
 
     public var RAW: String? {
         get {
-            if let _ = self.data {
+            if let _ = self.data, JSONSerialization.isValidJSONObject(self.data) {
                 do {
                     let d = try JSONSerialization.data(withJSONObject: self.data, options: .prettyPrinted)
                     return NSString(data: d, encoding: String.Encoding.utf8.rawValue) as String?
