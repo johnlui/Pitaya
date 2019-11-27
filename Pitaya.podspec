@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Pitaya"
-  s.version          = "3.0.2"
+  s.version          = "1.0.0"
   s.summary          = "A Swift HTTP / HTTPS networking library just incidentally execute on machines"
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Pitaya/**/*.swift','Source/**/*'
+  s.source_files = 'Pitaya/**/*','Source/**/*'
 
   s.public_header_files = 'Pitaya/*.h'
   #s.frameworks = 'UIKit', 'AVFoundation'
